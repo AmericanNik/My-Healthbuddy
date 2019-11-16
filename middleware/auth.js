@@ -1,21 +1,53 @@
 const jwt = require('jsonwebtoken');
-const config = require('config');
+const asyncHandler = require('./async');
+const errorResponse = require('../utils/errorResponse');
+const User = require('../models/User');
 
-module.exports = function(req, res, next) {
-  // Get token from header
-  const token = req.header('x-auth-token');
+//Protect Routes
 
-  //check if not token
-
-  if (!token) {
-    return res.status(401).json({ msg: 'No token, authorization denied' });
+exports.protect = asyncHandler(async (req, res, next) => {
+  let token;
+  console.log('Protecting!');
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith('Bearer')
+  ) {
+    token = req.headers.authorization.split(' ')[1];
   }
+  //   else if (req.cookies.token) {
+  //     token = req.cookies.token;
+  //   }
 
+  // Make sure token exists
+  if (!token) {
+    console.log('Firing here!@@!!! NO TOKEN');
+    return next(new errorResponse('Not authorized to access this route', 401));
+  }
   try {
-    const decoded = jwt.verify(token, config.get('jwtSecret'));
-    req.user = decoded.user;
+    console.log('Verifying Token!');
+
+    //verify token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    console.log(decoded);
+    req.user = await User.findById(decoded.id);
     next();
   } catch (err) {
-    res.status(401).json({ msg: 'Token is not valid' });
+    return next(new errorResponse('Not authorized to access this route', 401));
   }
+});
+
+//  Grant access to specific roles
+
+exports.authorize = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new errorResponse(
+          `User role ${req.user.role} is unauthorized to access this route`,
+          403
+        )
+      );
+    }
+    next();
+  };
 };

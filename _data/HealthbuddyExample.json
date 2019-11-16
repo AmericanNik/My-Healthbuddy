@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "5d713995b721c3bb38c1f5d0",
+    "user": "5d7a514b5d2c12c7449be045",
+    "name": "Abbys HealthBuddy",
+    "description": "Abby wants to become more fit",
+    "overallWellbeing": null,
+    "sevenDayAverage": null
+  },
+  {
+    "_id": "5dce2d0b724da890440cfe1c",
+    "name": "Jill's Healthbuddy",
+    "user": "5d7a514b5d2c12c7449be042",
+    "description": "I want to track my headaches",
+    "overallWellbeing": null,
+    "sevenDayAverage": null
+  },
+  {
+    "_id": "5dce2d0b724da890440cfe1d",
+    "user": "5d7a514b5d2c12c7449be043",
+    "name": "Jess's Healthbuddy",
+    "description": "I want to track allergies",
+    "overallWellbeing": null,
+    "sevenDayAverage": null
+  },
+  {
+    "_id": "5dce2d0b724da890440cfe1e",
+    "name": "Mary's Healthbuddy",
+    "user": "5d7a514b5d2c12c7449be044",
+    "description": "Mary has some other problems...",
+    "overallWellbeing": null,
+    "sevenDayAverage": null
+  }
+]

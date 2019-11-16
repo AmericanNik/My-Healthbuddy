@@ -54,8 +54,8 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: 'Booty Bay Calanders',
-  icon: 'fas fa-id-card-alt'
+  title: 'Health Buddy',
+  icon: 'fas fa-heartbeat'
 };
 
 export default Navbar;

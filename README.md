@@ -1,1 +1,2 @@
-# testing-1-2-3
+# Healthbuddy API
+ API for the group 3 healthbuddy app
