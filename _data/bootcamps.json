@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "5d713995b721c3bb38c1f5d0",
+    "user": "5d7a514b5d2c12c7449be045",
+    "name": "Abbys HealthBuddy",
+    "description": "Abby wants to become more fit",
+    "email": "enroll@devworks.com",
+    "overallWellbeing": 4.7,
+    "sevenDayAverage": 8,
+    "conditions": [
+      {
+        "condition": "headaches",
+        "conditionFeeling": 4,
+        "conditionAverage": 7,
+        "mostNoticed": ["Afternoon", "Evening"]
+      },
+      {
+        "condition": "Leg Cramps",
+        "conditionFeeling": 4,
+        "conditionAverage": 7,
+        "mostNoticed": ["Morning", "Afternoon", "Evening"]
+      }
+    ],
+    "medications": [
+      {
+        "medName": "ibepreufin",
+        "medPurpose": "Pain killer",
+        "perscribed": false
+      },
+      {
+        "medName": "albuterol",
+        "medPurpose": "clear up lungs for breathing",
+        "perscribed": true
+      }
+    ],
+    "nutrients": [
+      {
+        "userNutrient": "Vitamin C",
+        "neutrientPurpose:": "Vitamin C is the fountain of youth baby!"
+      },
+      {
+        "userNutrient": "B-12",
+        "nutrientPurpose": "Get those energy levels up!"
+      }
+    ],
+    "logs": [
+      {
+        "_id": "5d713995b721c3bb38g1f5d0",
+        "logDate": "date/time",
+        "logEntry": "Dear Health Buddy, today I...",
+        "logData": {
+          "dailyWellbeing": 8,
+          "feltBest": "All day",
+          "dailyCondition": [
+            {
+              "condition": "headache",
+              "conditionFeeling": 8,
+              "mostNoticed": ["Morning", "Afternoon", "Evening"]
+            },
+            {
+              "condition": "Leg Cramps",
+              "conditionFeeling": 4,
+              "mostNoticed": ["Morning", "Afternoon", "Evening"]
+            }
+          ],
+          "dailyActivity": {
+            "didExercise": true,
+            "didStretch": true,
+            "didMeditate": false,
+            "sleepWell": false,
+            "eatHealthy": false
+          },
+          "logMeds": [
+            {
+              "logMed": "ibepreufin",
+              "time": ["Morning", "Afternoon", "Evening"]
+            },
+            {
+              "logMed": "albuterol",
+              "time": ["Morning", "Afternoon", "Evening"]
+            }
+          ]
+        }
+      },
+      {
+        "_id": "5d713995b721c3bb38g1f5d6",
+        "logDate": "previousday",
+        "logEntry": "Dear Health Buddy, today I...asdasdas",
+        "logData": {
+          "dailyWellbeing": 8,
+          "feltBest": "All day",
+          "dailyCondition": [
+            {
+              "condition": "headache",
+              "conditionFeeling": 6,
+              "mostNoticed": ["Morning", "Afternoon", "Evening"]
+            },
+            {
+              "condition": "Leg Cramps",
+              "conditionFeeling": 6,
+              "mostNoticed": ["Afternoon", "Evening"]
+            }
+          ],
+          "dailyActivity": {
+            "didExercise": false,
+            "didStretch": false,
+            "didMeditate": false,
+            "sleepWell": false,
+            "eatHealthy": false
+          },
+          "logMeds": [
+            { "logMed": "ibepreufin", "time": ["Evening"] },
+            {
+              "logMed": "albuterol",
+              "time": ["Morning", "Afternoon", "Evening"]
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

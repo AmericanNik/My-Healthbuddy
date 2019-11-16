@@ -1,23 +1,47 @@
 const express = require('express');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const colors = require('colors');
+const cookieParser = require('cookie-parser');
+const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 require('dotenv').config();
 
-const app = express();
+//load env vars
 
-//  Connect Database
+dotenv.config({ path: './config/config.env' });
+
+// Connect to database
+
 connectDB();
 
-// Init Middleware
-app.use(express.json({ extended: false }));
+//Route files
+const healthbuddies = require('./routes/healthbuddies');
+const logs = require('./routes/logs');
+const auth = require('./routes/auth');
+const conditions = require('./routes/conditions');
 
-app.get('/', (req, res) => res.json({ msg: 'Welcome to the thunderdome' }));
+// Connect to Dabatase
 
-// Define Routes
-app.use('/api/users', require('./routes/users'));
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/contacts', require('./routes/contacts'));
-app.use('/api/events', require('./routes/events'));
-app.use('/api/invite', require('./routes/invite'));
+const app = express();
+
+// body parser
+app.use(express.json());
+
+app.use(cookieParser());
+
+//  Dev logging middleware
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
+//  Mount routers
+app.use('/api/v1/healthbuddies', healthbuddies);
+app.use('/api/v1/logs', logs);
+app.use('/api/v1/auth', auth);
+app.use('/api/v1/conditions', conditions);
+
+app.use(errorHandler);
 
 
 getZipCode = () => {
@@ -61,4 +85,18 @@ getWeather = () => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+const server = app.listen(
+  PORT,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} on http://localhost:${PORT}`
+      .brightBlue.bold.underline
+  )
+);
+
+// handle unhandled promoise rejections
+
+process.on('unhandledRejection', (err, promise) => {
+  console.log(`Error: ${err.message}`.red);
+  //close server and exit process
+  server.close(() => process.exit(1));
+});

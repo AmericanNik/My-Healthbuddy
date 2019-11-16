@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "5d7a514b5d2c12c7449be020",
+    "condition": "Headaches",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["Morning", "Afternoon"],
+    "rating": "8",
+    "healthbuddy": "5dce2d0b724da890440cfe1b",
+    "user": "5d7a514b5d2c12c7449be045"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be021",
+    "condition": "Nasuea",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["Afternoon", "Evening"],
+    "rating": "10",
+    "healthbuddy": "5dce2d0b724da890440cfe1c",
+    "user": "5d7a514b5d2c12c7449be042"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be022",
+    "condition": "Asthma",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["Morning", "Evening"],
+    "rating": "7",
+    "healthbuddy": "5dce2d0b724da890440cfe1d",
+    "user": "5d7a514b5d2c12c7449be043"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be023",
+    "condition": "Leg Cramps",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["Evening"],
+    "rating": "4",
+    "healthbuddy": "5dce2d0b724da890440cfe1e",
+    "user": "5d7a514b5d2c12c7449be044"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be024",
+    "condition": "Headaches",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["All-Day"],
+    "rating": "7",
+    "healthbuddy": "5dce2d0b724da890440cfe1e",
+    "user": "5d7a514b5d2c12c7449be042"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be025",
+    "condition": "Lightheadedness",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["All-Day"],
+    "rating": "5",
+    "healthbuddy": "5dce2d0b724da890440cfe1f",
+    "user": "5d7a514b5d2c12c7449be045"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be026",
+    "condition": "Shortness of breath",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["Afternoon", "Evening"],
+    "rating": "10",
+    "healthbuddy": "5dce2d0b724da890440cfe13",
+    "user": "5d7a514b5d2c12c7449be045"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be027",
+    "condition": "Dizzyness",
+    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
+    "mostNoticed": ["Morning", "Afternoon"],
+    "rating": "7",
+    "healthbuddy": "5dce2d0b724da890440cfe1h",
+    "user": "5d7a514b5d2c12c7449be042"
+  }
+]
