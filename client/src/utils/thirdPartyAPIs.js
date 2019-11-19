@@ -7,9 +7,11 @@ export default thirdPartyAPI({
             url: weatherAPIURL,
             method: 'GET'
         }).then(function (response) {
-            response.forEach(element => {
-                console.log(element);
-            });
+            let weather = {
+                temperature = response.main.temp,
+                humidity = response.main.humidity
+            }
+            console.log(weather);
         })
     },
 
