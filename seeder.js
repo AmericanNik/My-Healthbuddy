@@ -1,18 +1,18 @@
-const fs = require("fs");
-const mongoose = require("mongoose");
-const colors = require("colors");
-const dotenv = require("dotenv");
+const fs = require('fs');
+const mongoose = require('mongoose');
+const colors = require('colors');
+const dotenv = require('dotenv');
 
 //load env variables
 
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: './config/config.env' });
 
 //Load models
 
-const Healthbuddy = require("./models/Healthbuddy");
-const Log = require("./models/Log");
-const User = require("./models/User");
-const Condition = require("./models/Condition");
+const Healthbuddy = require('./models/Healthbuddy');
+const Log = require('./models/Log');
+const User = require('./models/User');
+const Condition = require('./models/Condition');
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, {
@@ -25,19 +25,19 @@ mongoose.connect(process.env.MONGO_URI, {
 //read JSON files
 
 const healthbuddies = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/HealthbuddyExample.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/HealthbuddyExample.json`, 'utf-8')
 );
 
 const logs = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/logs.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/logs.json`, 'utf-8')
 );
 
 const users = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/users.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8')
 );
 
 const conditions = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/conditions.json`, "utf-8")
+  fs.readFileSync(`${__dirname}/_data/conditions.json`, 'utf-8')
 );
 
 //  Import into DB
@@ -47,8 +47,9 @@ const importData = async () => {
     await Healthbuddy.create(healthbuddies);
     await Log.create(logs);
     await User.create(users);
+    await Condition.create(conditions);
     // await Condition.create(conditions);
-    console.log("Data Imported...".white.inverse);
+    console.log('Data Imported...'.white.inverse);
     process.exit();
   } catch (err) {
     console.log(err);
@@ -63,15 +64,15 @@ const deleteData = async () => {
     await Log.deleteMany();
     await User.deleteMany();
     await Condition.deleteMany();
-    console.log("Data Destroyed...".red.inverse);
+    console.log('Data Destroyed...'.red.inverse);
     process.exit();
   } catch (err) {
     console.log(err);
   }
 };
 
-if (process.argv[2] === "-i") {
+if (process.argv[2] === '-i') {
   importData();
-} else if (process.argv[2] === "-d") {
+} else if (process.argv[2] === '-d') {
   deleteData();
 }
