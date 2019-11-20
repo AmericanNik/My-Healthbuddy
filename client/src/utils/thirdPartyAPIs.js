@@ -1,4 +1,6 @@
 import axios from "axios";
+import { addWeather } from "../../../controllers/weather";
+const router = require("../../../controllers/weather");
 
 export default thirdPartyAPI({
     getWeather = () => {
@@ -38,6 +40,8 @@ export default thirdPartyAPI({
             let zipCode = response.zip_codes[0];
         }).then(function (res) {
             getWeather();
+        }).then(function (res2) {
+            addWeather(res2);
         })
     }
 
