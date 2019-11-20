@@ -50,7 +50,7 @@ const EventState = props => {
       }
     };
     try {
-      const res = await axios.post('/api/contacts/', event, config);
+      const res = await axios.post('/api/events/', event, config);
       dispatch({ type: ADD_EVENT, payload: res.data });
     } catch (err) {
       dispatch({ type: EVENT_ERROR, payload: err.response.msg });
