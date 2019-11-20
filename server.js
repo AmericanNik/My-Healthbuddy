@@ -33,7 +33,9 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-
+app.get('/', (req, res) => {
+  res.send('Welcome to the thunderdome');
+});
 //  Mount routers
 app.use('/api/v1/healthbuddies', healthbuddies);
 app.use('/api/v1/logs', logs);

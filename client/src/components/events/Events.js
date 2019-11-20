@@ -21,8 +21,8 @@ const Events = () => {
       {events !== null && !loading ? (
         <div>
           {filtered !== null
-            ? filtered.map(event => <EventItem key={event.id} event={event} />)
-            : events.map(event => <EventItem key={event.id} event={event} />)}
+            ? filtered.map(event => <EventItem key={event._id} event={event} />)
+            : events.map(event => <EventItem key={event._id} event={event} />)}
         </div>
       ) : (
         <Spinner />
