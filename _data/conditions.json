@@ -1,74 +1,626 @@
 [
   {
-    "_id": "5d7a514b5d2c12c7449be020",
-    "condition": "Headaches",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["Morning", "Afternoon"],
-    "rating": "8",
-    "healthbuddy": "5dce2d0b724da890440cfe1b",
-    "user": "5d7a514b5d2c12c7449be045"
+    "condition": "Arthritis",
+    "conditionSymptoms": "Arthritis is joint inflammation that can cause stiffness or pain."
   },
   {
-    "_id": "5d7a514b5d2c12c7449be021",
-    "condition": "Nasuea",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["Afternoon", "Evening"],
-    "rating": "10",
-    "healthbuddy": "5dce2d0b724da890440cfe1c",
-    "user": "5d7a514b5d2c12c7449be042"
+    "condition": "Acne",
+    "conditionSymptoms": "Acne is caused when blocked skin follicles from a plug caused by oil from glands, bacteria, and dead cells clump together and swell."
   },
   {
-    "_id": "5d7a514b5d2c12c7449be022",
+    "condition": "Allergy",
+    "conditionSymptoms": "An allergy is a hypersensitivity disorder of the immune system. Symptoms include red eyes, itchiness, and runny nose, eczema, hives, or an asthma attack. Allergies can play a major role in conditions such as asthma. In some people, severe allergies to environmental or dietary allergens or to medication may result in life-threatening reactions called anaphylaxis."
+  },
+  {
+    "condition": "ADHD",
+    "conditionSymptoms": "Attention deficit hyperactivity disorder is a developmental neuropsychiatric disorder in which there are significant problems with executive functions that cause attention deficits, hyperactivity, or impulsiveness which is not appropriate for a person's age. These symptoms must begin by age six to twelve and persist for more than six months for a diagnosis to be made. In school-aged individuals inattention symptoms often result in poor school performance. Although it causes impairment, particularly in modern society, many children with ADHD have a good attention span for tasks they find interesting."
+  },
+  {
+    "condition": "Altitude sickness",
+    "conditionSymptoms": "Altitude sickness—also known as acute mountain sickness, altitude illness, hypobaropathy, 'the altitude bends', or soroche—is a pathological effect of high altitude on humans, caused by acute exposure to low partial pressure of oxygen at high altitude. It commonly occurs above 2,400 metres. "
+  },
+  {
+    "condition": "Alzheimer's disease",
+    "conditionSymptoms": "Alzheimer's Disease is a progressive, neurodegenerative disease characterized by loss of function and death of nerve cells in several areas of the brain leading to loss of cognitive function such as memory and language."
+  },
+  {
+    "condition": "Andropause",
+    "conditionSymptoms": "Andropause — also known as male menopause — is said to be the result of a gradual drop in testosterone which is an androgen. The medical community is currently debating whether or not men really do go through a well-defined menopause. The condition 'andropause' is currently not recognized by the World Health Organization."
+  },
+  {
+    "condition": "Anorexia nervosa",
+    "conditionSymptoms": "Anorexia nervosa is an eating disorder characterized by food restriction, odd eating habits or rituals, obsession with having a thin figure, and an irrational fear of weight gain. It is accompanied by a distorted body self-perception, and typically involves excessive weight loss. Due to their fear of gaining weight, individuals with this disorder restrict the amount of food they consume."
+  },
+  {
+    "condition": "Arthritis",
+    "conditionSymptoms": "Arthritis is a form of joint disorder that involves inflammation of one or more joints. There are over 100 different forms of arthritis. The most common form of arthritis is osteoarthritis, a result of trauma to the joint, infection of the joint, or age. Other arthritis forms are rheumatoid arthritis, psoriatic arthritis, and related autoimmune diseases. "
+  },
+  {
+    "condition": "Asperger syndrome",
+    "conditionSymptoms": "Asperger syndrome, also known as Asperger's syndrome, Asperger disorder or simply Asperger's, is an autism spectrum disorder that is characterized by significant difficulties in social interaction and nonverbal communication, alongside restricted and repetitive patterns of behavior and interests. "
+  },
+  {
     "condition": "Asthma",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["Morning", "Evening"],
-    "rating": "7",
-    "healthbuddy": "5dce2d0b724da890440cfe1d",
-    "user": "5d7a514b5d2c12c7449be043"
+    "conditionSymptoms": "Asthma is a common chronic inflammatory disease of the airways characterized by variable and recurring symptoms, reversible airflow obstruction and bronchospasm. Common symptoms include wheezing, coughing, chest tightness, and shortness of breath. Asthma is thought to be caused by a combination of genetic and environmental factors."
   },
   {
-    "_id": "5d7a514b5d2c12c7449be023",
-    "condition": "Leg Cramps",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["Evening"],
-    "rating": "4",
-    "healthbuddy": "5dce2d0b724da890440cfe1e",
-    "user": "5d7a514b5d2c12c7449be044"
+    "condition": "Avoidant personality disorder",
+    "conditionSymptoms": "Avoidant personality disorder, also known as anxious personality disorder, is a Cluster C personality disorder recognized in the Diagnostic and Statistical Manual of Mental Disorders handbook as afflicting persons when they display a pervasive pattern of social inhibition, feelings of inadequacy, extreme sensitivity to negative evaluation, and avoidance of social interaction."
   },
   {
-    "_id": "5d7a514b5d2c12c7449be024",
-    "condition": "Headaches",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["All-Day"],
-    "rating": "7",
-    "healthbuddy": "5dce2d0b724da890440cfe1e",
-    "user": "5d7a514b5d2c12c7449be042"
+    "condition": "Back Pain",
+    "conditionSymptoms": "Back pain is pain felt in the back that usually originates from the muscles, nerves, bones, joints or other structures in the spine. However, internal structures such as the gallbladder and pancreas may also refer pain to the back. Most back pain is felt in the lower back. "
   },
   {
-    "_id": "5d7a514b5d2c12c7449be025",
-    "condition": "Lightheadedness",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["All-Day"],
-    "rating": "5",
-    "healthbuddy": "5dce2d0b724da890440cfe1f",
-    "user": "5d7a514b5d2c12c7449be045"
+    "condition": "Bad Breath",
+    "conditionSymptoms": "A foul odor exuding from the mouth, often caused by poor oral hygeine or poor diet"
   },
   {
-    "_id": "5d7a514b5d2c12c7449be026",
-    "condition": "Shortness of breath",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["Afternoon", "Evening"],
-    "rating": "10",
-    "healthbuddy": "5dce2d0b724da890440cfe13",
-    "user": "5d7a514b5d2c12c7449be045"
+    "condition": "Alopecia",
+    "conditionSymptoms": "Hair loss or baldness is a loss of hair from the head or body. Baldness can refer to general hair loss or androgenic alopecia. Some types of baldness can be caused by alopecia areata, an autoimmune disorder. The extreme forms of alopecia areata are alopecia totalis, which involves the loss of all head hair, and alopecia universalis, which involves the loss of all hair from the head and the body."
   },
   {
-    "_id": "5d7a514b5d2c12c7449be027",
-    "condition": "Dizzyness",
-    "conditionSymptoms": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque",
-    "mostNoticed": ["Morning", "Afternoon"],
-    "rating": "7",
-    "healthbuddy": "5dce2d0b724da890440cfe1h",
-    "user": "5d7a514b5d2c12c7449be042"
+    "condition": "Bedwetting",
+    "conditionSymptoms": "Nocturnal enuresis or nighttime urinary incontinence, commonly called bedwetting or sleepwetting, is involuntary urination while asleep after the age at which bladder control usually occurs. Nocturnal enuresis is considered primary when a child has not yet had a prolonged period of being dry. Secondary nocturnal enuresis is when a child or adult begins wetting again after having stayed dry."
+  },
+  {
+    "condition": "Bipolar disorder",
+    "conditionSymptoms": "Bipolar disorder, also known as bipolar affective disorder, is a mental disorder characterized by periods of elevated mood and periods of depression. The elevated mood is significant and is known as mania or hypomania depending on the severity or whether there is psychosis. During mania an individual feels or acts abnormally happy, energetic, or irritable."
+  },
+  {
+    "condition": "Bladder cancer",
+    "conditionSymptoms": "Bladder carcinoma is a carcinoma arising from the bladder epithelium. Approximately 90% of the bladder carcinomas are transitional cell carcinomas. The remainder are squamous cell carcinomas, adenocarcinomas and small cell neuroendocrine carcinomas."
+  },
+  {
+    "condition": "Body dysmorphic disorder",
+    "conditionSymptoms": "Body dysmorphic disorder, is a disorder that involves belief that one's own appearance is unusually defective and is worthy of being hidden or fixed. This belief manifests in thoughts that many times are pervasive and intrusive. About half of those diagnosed with BDD spend over three hours a day attempting to conceal or correct flaws that are perceived but often not reality. "
+  },
+  {
+    "condition": "Borderline personality disorder",
+    "conditionSymptoms": "Borderline personality disorder is a cluster-B personality disorder, the essential feature of which is a pattern of marked impulsivity and instability of affects, interpersonal relationships, and self-image. The pattern is present by early adulthood and occurs across a variety of situations and contexts. "
+  },
+  {
+    "condition": "Bronchitis",
+    "conditionSymptoms": "Acute bronchitis, also known as a chest cold, is short term inflammation of the bronchi of the lungs. The most common symptom is a cough. Other symptoms include coughing up mucus, wheezing, shortness of breath, fever, and chest discomfort. The infection may last from a few to ten days. "
+  },
+  {
+    "condition": "Bursitis",
+    "conditionSymptoms": "Bursitis is the inflammation of one or more bursae of synovial fluid in the body. They are lined with a synovial membrane that secretes a lubricating synovial fluid. There are more than 150 bursae in the human body. The bursae rest at the points where internal functionaries, such as muscles and tendons, slide across bone."
+  },
+  {
+    "condition": "Cancer",
+    "conditionSymptoms": "Malignant Neoplasm is a tumor composed of atypical neoplastic, often pleomorphic cells that invade other tissues. Malignant neoplasms often metastasize to distant anatomic sites and may recur after excision. The most common malignant neoplasms are carcinomas (adenocarcinomas or squamous cell carcinomas), Hodgkin and non-Hodgkin lymphomas, leukemias, melanomas, and sarcomas."
+  },
+  {
+    "condition": "Canker Sores",
+    "conditionSymptoms": "A small ulcer of the mouth or lips."
+  },
+  {
+    "condition": "Carpal tunnel syndrome",
+    "conditionSymptoms": "Carpal tunnel syndrome is a median entrapment neuropathy that causes paresthesia, pain, numbness, and other symptoms in the distribution of the median nerve due to its compression at the wrist in the carpal tunnel. The mechanism is not completely understood but can be considered compression of the median nerve traveling through the carpal tunnel."
+  },
+  {
+    "condition": "Celiac disease",
+    "conditionSymptoms": "Coeliac disease is an autoimmune disorder of the small intestine that occurs in genetically predisposed people of all ages from middle infancy onward. Symptoms include pain and discomfort in the digestive tract, chronic constipation and diarrhoea, failure to thrive, anaemia and fatigue, but these may be absent, and symptoms in other organ systems have been described."
+  },
+  {
+    "condition": "High Cholesterol",
+    "conditionSymptoms": "High blood cholesterol is a condition that causes the levels of certain bad fats, or lipids, to be too high in the blood. This condition is usually caused by lifestyle factors, such as diet, in combination with the genes that you inherit from your parents. Less commonly, it is caused by other medical conditions or some medicines."
+  },
+  {
+    "condition": "Chronic Obstructive Pulmonary Disease",
+    "conditionSymptoms": "Chronic obstructive pulmonary disease, also known as chronic obstructive lung disease, and chronic obstructive airway disease, among others, is a type of obstructive lung disease characterized by chronically poor airflow. It typically worsens over time. The main symptoms include shortness of breath, cough, and sputum production. Most people with chronic bronchitis have COPD. "
+  },
+  {
+    "condition": "Crohn's disease",
+    "conditionSymptoms": "Crohn's disease, also known as Crohn syndrome and regional enteritis, is a type of inflammatory bowel disease that may affect any part of the gastrointestinal tract from mouth to anus. Symptoms often include abdominal pain, diarrhea, fever, and weight loss. "
+  },
+  {
+    "condition": "Dandruff",
+    "conditionSymptoms": "Excess small pieces of dead skin in a person's hair."
+  },
+  {
+    "condition": "Deep vein thrombosis",
+    "conditionSymptoms": "Deep vein thrombosis, or deep venous thrombosis, is the formation of a blood clot within a deep vein, predominantly in the legs. Non-specific signs may include pain, swelling, redness, warmness, and engorged superficial veins. Pulmonary embolism, a potentially life-threatening complication, is caused by the detachment of a clot that travels to the lungs. "
+  },
+  {
+    "condition": "Dehydration",
+    "conditionSymptoms": "In physiology and medicine, dehydration is the excessive loss of body water, with an accompanying disruption of metabolic processes. The term dehydration may be used loosely to refer to any condition where fluid volume is reduced; most commonly, it refers to hypernatremia, but is also used to refer to hypovolemia. "
+  },
+  {
+    "condition": "Dependent personality disorder",
+    "conditionSymptoms": "Dependent personality disorder, formerly known as asthenic personality disorder, is a personality disorder that is characterized by a pervasive psychological dependence on other people. This personality disorder is a long-term condition in which people depend on others to meet their emotional and physical needs, with only a minority achieving normal levels of independence. "
+  },
+  {
+    "condition": "Depression",
+    "conditionSymptoms": "feelings of severe despondency and dejection."
+  },
+  {
+    "condition": "Diabetes mellitus",
+    "conditionSymptoms": "Diabetes mellitus, commonly referred to as diabetes, is a group of metabolic diseases in which there are high blood sugar levels over a prolonged period. Symptoms of high blood sugar include frequent urination, increased thirst, and increased hunger."
+  },
+  {
+    "condition": "Irritant diaper dermatitis",
+    "conditionSymptoms": "Irritant diaper dermatitis, also known as 'diaper dermatitis' and 'napkin dermatitis' and commonly known as diaper rash or nappy rash, is a generic term applied to skin rashes in the diaper area that are caused by various skin disorders and/or irritants. "
+  },
+  {
+    "condition": "Diarrhea",
+    "conditionSymptoms": "Diarrhea or diarrhoea is the condition of having at least three loose or liquid bowel movements each day. It often lasts for a few days and can result in dehydration due to fluid loss. Signs of dehydration often begin with loss of the normal stretchiness of the skin and changes in personality."
+  },
+  {
+    "condition": "Diverticulitis",
+    "conditionSymptoms": "Diverticulitis is a common digestive disease which involves the formation of pouches within the bowel wall. This process is known as diverticulosis, and typically occurs within the large intestine, or colon, although it can occasionally occur in the small intestine as well. Diverticulitis results when one of these diverticula becomes inflamed."
+  },
+  {
+    "condition": "Down syndrome",
+    "conditionSymptoms": "Down syndrome or Down's syndrome, also known as trisomy 21, is a genetic disorder caused by the presence of all or part of a third copy of chromosome 21. It is typically associated with physical growth delays, characteristic facial features, and mild to moderate intellectual disability."
+  },
+  {
+    "condition": "Dysfunctional uterine bleeding",
+    "conditionSymptoms": "Dysfunctional uterine bleeding is abnormal genital tract bleeding based in the uterus and found in the absence of demonstrable structural or organic pathology. It is usually due to hormonal disturbances: reduced levels of progesterone causes low levels of prostaglandin F2alpha and causes menorrhagia; increased levels of tissue plasminogen activator leads to more fibrinolysis. "
+  },
+  {
+    "condition": "Dyslexia",
+    "conditionSymptoms": "Dyslexia, also known as reading disorder or alexia, is a learning difficulty characterised by trouble reading despite a normal intelligence. Different people are affected to different degrees. Problems may include sounding out words, spelling words, reading quickly, writing words, pronouncing words when reading aloud, and understanding what was read. "
+  },
+  {
+    "condition": "Ear Infection",
+    "conditionSymptoms": "An ear infection (sometimes called acute otitis media) is an infection of the middle ear, the air-filled space behind the eardrum that contains the tiny vibrating bones of the ear. Children are more likely than adults to get ear infections."
+  },
+  {
+    "condition": "Dermatitis",
+    "conditionSymptoms": "Dermatitis or eczema is inflammation of the skin. It is characterized by itchy, erythematous, vesicular, weeping, and crusting patches. The term eczema is also commonly used to describe atopic dermatitis or atopic eczema. In some languages, dermatitis and eczema are synonyms, while in other languages dermatitis implies an acute condition and eczema a chronic one. "
+  },
+  {
+    "condition": "Endometriosis",
+    "conditionSymptoms": "Endometriosis is a disease in which tissue that normally grows inside the uterus grows outside the uterus. Its main symptoms are pelvic pain and infertility. Nearly half have chronic pelvic pain while in 70% pain occurs during menstruation. Pain with sex is also common. Infertility occurs in up to half of people. Endometriosis can have both social and psychological effects. "
+  },
+  {
+    "condition": "Benign prostatic hyperplasia",
+    "conditionSymptoms": "Benign prostatic hyperplasia, also called benign enlargement of the prostate, adenofibromyomatous hyperplasia and benign prostatic hypertrophy, is a benign increase in size of the prostate. BPH involves hyperplasia of prostatic stromal and epithelial cells, resulting in the formation of large, fairly discrete nodules in the transition zone of the prostate."
+  },
+  {
+    "condition": "Epilepsy",
+    "conditionSymptoms": "Epilepsy is a group of neurological disorders characterized by epileptic seizures. Epileptic seizures are episodes that can vary from brief and nearly undetectable to long periods of vigorous shaking. In epilepsy, seizures tend to recur, and have no immediate underlying cause while seizures that occur due to a specific cause are not deemed to represent epilepsy."
+  },
+  {
+    "condition": "Erectile dysfunction",
+    "conditionSymptoms": "Erectile dysfunction or impotence is sexual dysfunction characterized by the inability to develop or maintain an erection of the penis during sexual activity. A penile erection is the hydraulic effect of blood entering and being retained in sponge-like bodies within the penis."
+  },
+  {
+    "condition": "Fibromyalgia",
+    "conditionSymptoms": "Fibromyalgia is a medical condition characterised by chronic widespread pain and a heightened and painful response to pressure. Fibromyalgia symptoms are not restricted to pain, leading to the use of the alternative term fibromyalgia syndrome for the condition. Other symptoms include debilitating fatigue, sleep disturbance, and joint stiffness."
+  },
+  {
+    "condition": "Gallbladder disease",
+    "conditionSymptoms": "Gallbladder diseases are diseases involving the gallbladder. Gallstones may develop in the gallbladder as well as elsewhere in the biliary tract. If gallstones in the gallbladder are symptomatic, surgical removal of the gallbladder, known as cholecystectomy may be indicated. "
+  },
+  {
+    "condition": "Gallstone",
+    "conditionSymptoms": "A gallstone, also called a cholelith, is a calculus formed within the gallbladder as a concretion of bile components. Lithiasis in the gallbladder is called cholelithiasis. Gallstones are formed in the gallbladder but may pass distally into other parts of the biliary tract such as the cystic duct, common bile duct, pancreatic duct or the ampulla of Vater."
+  },
+  {
+    "condition": "Gastroesophageal reflux disease",
+    "conditionSymptoms": "Gastroesophageal reflux disease, gastro-oesophageal reflux disease, gastric reflux disease, acid reflux disease, or reflux is a chronic symptom of mucosal damage caused by stomach acid coming up from the stomach into the esophagus. "
+  },
+  {
+    "condition": "Generalized Anxiety Disorder",
+    "conditionSymptoms": "A disorder characterized by excessive or unrealistic anxiety about two or more aspects of life (work, social relationships, financial matters, etc.), often accompanied by symptoms such as palpitations, shortness of breath, or dizziness."
+  },
+  {
+    "condition": "Herpes simplex",
+    "conditionSymptoms": "Herpes simplex is a viral disease caused by the herpes simplex virus. Infections are categorized based on the part of the body infected. Oral herpes involves the face or mouth. It may result in small blisters in groups often called cold sores or fever blisters or may just cause a sore throat."
+  },
+  {
+    "condition": "Genital wart",
+    "conditionSymptoms": "Genital warts are symptoms of a highly contagious sexually transmitted disease caused by some types of human papillomavirus. It is spread through direct skin-to-skin contact, usually during oral, genital, or anal sex with an infected partner. Warts are the most easily recognized symptom of genital HPV infection."
+  },
+  {
+    "condition": "Glomerulonephritis",
+    "conditionSymptoms": "Glomerulonephritis, also known as glomerular nephritis, is a term used to refer to several kidney diseases. Many of the diseases are characterised by inflammation either of the glomeruli or small blood vessels in the kidneys, hence the name, but not all diseases necessarily have an inflammatory component."
+  },
+  {
+    "condition": "Gonorrhea",
+    "conditionSymptoms": "Gonnococcal infection, also known as gonorrhea, gonorrhoea and the clap is one of the two most common sexually transmitted infections in the United States along with chlamydia. This infection is caused by the bacterium Neisseria gonorrhoeae. The usual symptoms in men are a burning sensation with urination and penile discharge."
+  },
+  {
+    "condition": "Gout",
+    "conditionSymptoms": "Gout is a medical condition usually characterized by recurrent attacks of acute inflammatory arthritis—a red, tender, hot, swollen joint. The metatarsal-phalangeal joint at the base of the big toe is the most commonly affected. It may also present as tophi, kidney stones, or urate nephropathy."
+  },
+  {
+    "condition": "Gum Diseases",
+    "conditionSymptoms": "Inflammation of the soft tissue (gingiva) and abnormal loss of bone that surrounds the teeth and holds them in place. Gum disease is caused by toxins secreted by bacteria in 'plaque' that accumulate over time along the gum line. This plaque is a mixture of food, saliva, and bacteria."
+  },
+  {
+    "condition": "Gynecomastia",
+    "conditionSymptoms": "Gynecomastia is a common endocrine disorder in which there is a benign enlargement of breast tissue in males. Most adolescent boys, up to 70%, have some breast development during puberty. Newborn and adolescent males frequently experience temporary gynecomastia due to the influence of maternal hormones and hormonal changes during puberty, respectively."
+  },
+  {
+    "condition": "Head Lice",
+    "conditionSymptoms": "A louse that infests the scalp and hair of the human head and is especially common among schoolchildren."
+  },
+  {
+    "condition": "Headache",
+    "conditionSymptoms": "A headache or cephalalgia is pain anywhere in the region of the head or neck. It can be a symptom of a number of different conditions of the head and neck. Headaches can result from a wide range of causes both benign and more serious. Brain tissue itself is not sensitive to pain as it lacks pain receptors. "
+  },
+  {
+    "condition": "Deafness",
+    "conditionSymptoms": "Hearing loss, deafness, hard of hearing, anacusis, or hearing impairment, is a partial or total inability to hear. In children it may affect the development of language and can cause work related difficulties for adults. Hearing loss is caused by many factors, including: genetics, age, exposure to noise, illness, chemicals and physical trauma."
+  },
+  {
+    "condition": "Myocardial infarction",
+    "conditionSymptoms": "Myocardial infarction or acute myocardial infarction, commonly known as a heart attack, occurs when blood flow stops to part of the heart causing damage to the heart muscle. The most common symptom is chest pain or discomfort which may travel into the shoulder, arm, back, neck, or jaw. Often it is in the center or left side of the chest and lasts for more than a few minutes. "
+  },
+  {
+    "condition": "Cardiovascular disease",
+    "conditionSymptoms": "Cardiovascular disease is a class of diseases that involve the heart or blood vessels. Common CVDs include: ischemic heart disease, stroke, hypertensive heart disease, rheumatic heart disease, aortic aneurysms, cardiomyopathy, atrial fibrillation, congenital heart disease, endocarditis, and peripheral artery disease, among others. "
+  },
+  {
+    "condition": "Heartburn",
+    "conditionSymptoms": "a form of indigestion felt as a burning sensation in the chest, caused by acid regurgitation into the esophagus."
+  },
+  {
+    "condition": "Heat Stroke",
+    "conditionSymptoms": "Heat stroke is a severe heat illness, defined as hyperthermia with a body temperature greater than 40.6 °C due to environmental heat exposure with lack of thermoregulation. This is distinct from a fever, where there is a physiological increase in the temperature set point of the body. "
+  },
+  {
+    "condition": "Heel Pain",
+    "conditionSymptoms": "Heel pain is a common foot problem. Pain usually occurs under the heel or just behind it, where the Achilles tendon connects to the heel bone. Sometimes it can affect the side of the heel. Pain that occurs under the heel is known as plantar fasciitis."
+  },
+  {
+    "condition": "Hemorrhage",
+    "conditionSymptoms": "Bleeding, technically known as hemorrhaging or haemorrhaging, is blood escaping from the circulatory system. Bleeding can occur internally, where blood leaks from blood vessels inside the body, or externally, either through a natural opening such as the mouth, nose, ear, urethra, vagina or anus, or through a break in the skin."
+  },
+  {
+    "condition": "Hemorrhoids",
+    "conditionSymptoms": "Hemorrhoids or haemorrhoids, are vascular structures in the anal canal. In their normal state, they are cushions that help with stool control. They become pathological or piles when swollen or inflamed. At this point the condition is technically known as hemorrhoidal disease. The signs and symptoms of hemorrhoids depend on the type present."
+  },
+  {
+    "condition": "Hepatitis",
+    "conditionSymptoms": "Hepatitis is a medical condition defined by the inflammation of the liver and characterized by the presence of inflammatory cells in the tissue of the organ. Hepatitis may occur with limited or no symptoms, but often leads to jaundice, poor appetite, and malaise. Hepatitis is acute when it lasts less than six months and chronic when it persists longer."
+  },
+  {
+    "condition": "Herniated Discs",
+    "conditionSymptoms": "A herniated disc is a condition in which the annulus fibrosus (outer portion) of the vertebral disc is torn, enabling the nucleus (inner portion) to herniate or extrude through the fibers. ... In some cases, a discectomy or microdiscectomy surgery can be performed on the herniated disc to decompress the nerve root."
+  },
+  {
+    "condition": "Hiatal hernia",
+    "conditionSymptoms": "A hiatus hernia or hiatal hernia is the protrusion of the upper part of the stomach into the thorax through a tear or weakness in the diaphragm. Hiatus hernias often result in heartburn but may also cause chest pain or pain with eating. The most common cause is obesity. The diagnosis is often by endoscopy or medical imaging. "
+  },
+  {
+    "condition": "Histrionic personality disorder",
+    "conditionSymptoms": "Histrionic personality disorder is defined by the American Psychiatric Association as a personality disorder characterized by a pattern of excessive attention-seeking emotions, usually beginning in early adulthood, including inappropriately seductive behavior and an excessive need for approval. Histrionic people are lively, dramatic, vivacious, enthusiastic, and flirtatious."
+  },
+  {
+    "condition": "AIDS",
+    "conditionSymptoms": "Human immunodeficiency virus infection and acquired immune deficiency syndrome is a spectrum of conditions caused by infection with the human immunodeficiency virus. Following initial infection, a person may experience a brief period of influenza-like illness. This is typically followed by a prolonged period without symptoms. "
+  },
+  {
+    "condition": "HIV",
+    "conditionSymptoms": "he human immunodeficiency virus is a lentivirus that causes the acquired immunodeficiency syndrome, a condition in humans in which progressive failure of the immune system allows life-threatening opportunistic infections and cancers to thrive. Without treatment, average survival time after infection with HIV is estimated to be 9 to 11 years, depending on the HIV subtype. "
+  },
+  {
+    "condition": "Hives",
+    "conditionSymptoms": "Urticaria, commonly referred to as hives, is a kind of skin rash notable for pale red, raised, itchy bumps. Hives may cause a burning or stinging sensation. They are frequently caused by allergic reactions; however, there are many nonallergic causes. Most cases of hives lasting less than six weeks are the result of an allergic trigger. Chronic urticaria is rarely due to an allergy. "
+  },
+  {
+    "condition": "Hyperglycemia",
+    "conditionSymptoms": "Hyperglycemia, or high blood sugar is a condition in which an excessive amount of glucose circulates in the blood plasma. This is generally a blood sugar level higher than 11.1 mmol/l, but symptoms may not start to become noticeable until even higher values such as 15–20 mmol/l. A subject with a consistent range between ~5.6 and ~7 mmol/l is considered hyperglycemic."
+  },
+  {
+    "condition": "Hyperkalemia",
+    "conditionSymptoms": "Hyperkalemia refers to the condition in which the concentration of the electrolyte potassium in the blood is elevated. The symptoms of elevated potassium are nonspecific, and the condition is usually discovered on blood tests performed for another reason. Extreme hyperkalemia is a medical emergency due to the risk of potentially fatal abnormal heart rhythms."
+  },
+  {
+    "condition": "Hypertension",
+    "conditionSymptoms": "Pathological increase in blood pressure; a repeatedly elevated blood pressure exceeding 140 over 90 mmHg."
+  },
+  {
+    "condition": "Hyperthyroidism",
+    "conditionSymptoms": "Hyperthyroidism, also known as overactive thyroid and hyperthyreosis, is the condition that occurs due to excessive production of thyroid hormone by the thyroid gland. Thyrotoxicosis is the condition that occurs due to excessive thyroid hormone of any cause and thus includes hyperthyroidism. The opposite is hypothyroidism, which is the reduced production and secretion of T3 and/or T4."
+  },
+  {
+    "condition": "Hypothyroidism",
+    "conditionSymptoms": "Hypothyroidism, often called underactive thyroid or low thyroid and sometimes hypothyreosis, is a common endocrine disorder in which the thyroid gland does not produce enough thyroid hormone. It can cause a number of symptoms, such as tiredness, poor ability to tolerate cold, and weight gain."
+  },
+  {
+    "condition": "Infectious mononucleosis",
+    "conditionSymptoms": "Infectious mononucleosis is an infectious, widespread viral disease most commonly caused by the Epstein–Barr virus, one type of herpes virus, against which over 90% of adults are likely to have acquired immunity by the age of 40. Occasionally, the symptoms can recur at a later period."
+  },
+  {
+    "condition": "Influenza",
+    "conditionSymptoms": "Influenza, commonly known as 'the flu', is an infectious disease caused by the influenza virus. Symptoms can be mild to severe. The most common symptoms include: a high fever, runny nose, sore throat, muscle pains, headache, coughing, and feeling tired. These symptoms typically begin two days after exposure to the virus and most last less than a week. "
+  },
+  {
+    "condition": "Infertility",
+    "conditionSymptoms": "Infertility is the inability of a person, animal or plant to reproduce by natural means. It is usually not the natural state of a healthy adult organism, except notably among certain eusocial species. In humans, infertility may describe a woman who is unable to conceive as well as being unable to carry a pregnancy to full term. "
+  },
+  {
+    "condition": "Type 1 diabetes",
+    "conditionSymptoms": "Diabetes mellitus type 1 is a form of diabetes mellitus that results from the autoimmune destruction of the insulin-producing beta cells in the pancreas. The subsequent lack of insulin leads to increased blood and urine glucose. The classical symptoms are polyuria, polydipsia, polyphagia and weight loss. The cause of diabetes mellitus type 1 is unknown. "
+  },
+  {
+    "condition": "Iron Deficiency Anemia",
+    "conditionSymptoms": "Iron-deficiency anemia, also spelled iron-deficiency anaemia, is defined as a decrease in the amount of red blood cells or hemoglobin in the blood due to not enough iron. When anemia comes on slowly the symptoms are often vague and may include: feeling tired, weakness, shortness of breath or a poor ability to exercise."
+  },
+  {
+    "condition": "Irritable bowel syndrome",
+    "conditionSymptoms": "Irritable bowel syndrome or spastic colon is a symptom-based diagnosis. It is characterized by chronic abdominal pain, discomfort, bloating, and alteration of bowel habits. Diarrhea or constipation may predominate, or they may alternate. As a functional gastrointestinal disorder, IBS has no known organic cause."
+  },
+  {
+    "condition": "Chronic Childhood Arthritis",
+    "conditionSymptoms": "Juvenile idiopathic arthritis, also known as juvenile rheumatoid arthritis, is the most common form of arthritis in children and adolescents. JIA is an autoimmune, non-infective, inflammatory joint disease of more than 6 weeks duration in children less than 16 years of age. The disease commonly occurs in children from the ages of 7 to 12, but it may occur in adolescents as old as 15 years of age."
+  },
+  {
+    "condition": "Nephropathy",
+    "conditionSymptoms": "Kidney disease, also known as Nephropathy, means damage to or disease of a kidney. Nephrosis is non-inflammatory nephropathy. Nephritis is inflammatory kidney disease."
+  },
+  {
+    "condition": "Kidney Stone",
+    "conditionSymptoms": "A kidney stone, also known as a renal calculus or nephrolith, is a calculus formed in the kidneys from minerals in the urine. Kidney stones typically leave the body by passage in the urine stream, and many stones are formed and passed without causing symptoms. If stones grow to sufficient size they can cause blockage of the ureter."
+  },
+  {
+    "condition": "Leukemia",
+    "conditionSymptoms": "Leukemia or leukaemia is a group of cancers that usually begins in the bone marrow and results in high numbers of abnormal white blood cells. These white blood cells are not fully developed and are called blasts or leukemia cells. Symptoms may include bleeding and bruising problems, feeling very tired, fever and an increased risk of infections."
+  },
+  {
+    "condition": "Liver tumour",
+    "conditionSymptoms": "Liver tumors or hepatic tumors are tumors or growths on or in the liver. Several distinct types of tumors can develop in the liver because the liver is made up of various cell types. These growths can be benign or malignant. They may be discovered on medical imaging, or may be present in patients as an abdominal mass, hepatomegaly, abdominal pain, jaundice, or some other liver dysfunction."
+  },
+  {
+    "condition": "Lung cancer",
+    "conditionSymptoms": "Lung cancer, also known as carcinoma of the lung or pulmonary carcinoma, is a malignant lung tumor characterized by uncontrolled cell growth in tissues of the lung. If left untreated, this growth can spread beyond the lung by process of metastasis into nearby tissue or other parts of the body."
+  },
+  {
+    "condition": "Bovine spongiform encephalopathy",
+    "conditionSymptoms": "Bovine spongiform encephalopathy, commonly known as mad cow disease, is a fatal neurodegenerative disease in cattle that causes a spongy degeneration in the brain and spinal cord. BSE has a long incubation period, about 2.5 to 8 years, usually affecting adult cattle at a peak age onset of four to five years, all breeds being equally susceptible."
+  },
+  {
+    "condition": "Memory Loss",
+    "conditionSymptoms": "Unusual forgetfulness. You may not be able to remember new events, recall one or more memories of the past, or both. The memory loss may be for a short time and then resolve (transient). Or, it may not go away, and, depending on the cause, it can get worse over time."
+  },
+  {
+    "condition": "Migraine",
+    "conditionSymptoms": "Migraine is a chronic neurological disease characterized by recurrent moderate to severe headaches often in association with a number of autonomic nervous system symptoms. The word derives from the Greek ἡμικρανία, 'pain on one side of the head', from ἡμι-, 'half', and κρανίον, 'skull'. Typically the headache affects one half of the head, is pulsating in nature, and lasts from 2 to 72 hours."
+  },
+  {
+    "condition": "Dissociative identity disorder",
+    "conditionSymptoms": "Dissociative Identity Disorder, previously known as Multiple Personality Disorder, is a mental disorder on the dissociative spectrum characterized by at least two distinct and relatively enduring identities or dissociated personality states that alternately control a person's behavior, and is accompanied by memory impairment for important information not explained by ordinary forgetfulness."
+  },
+  {
+    "condition": "Multiple sclerosis",
+    "conditionSymptoms": "Multiple sclerosis, also known as disseminated sclerosis or encephalomyelitis disseminata, is an inflammatory disease in which the insulating covers of nerve cells in the brain and spinal cord are damaged. This damage disrupts the ability of parts of the nervous system to communicate, resulting in a wide range of signs and symptoms, including physical, mental, and sometimes psychiatric problems."
+  },
+  {
+    "condition": "Muscle Cramps",
+    "conditionSymptoms": "A muscle cramp is a sudden and involuntary contraction of one or more of your muscles. If you've ever been awakened in the night or stopped in your tracks by a sudden charley horse, you know that muscle cramps can cause severe pain."
+  },
+  {
+    "condition": "Muscle Fatigue",
+    "conditionSymptoms": "Muscle fatigue is the decline in ability of a muscle to generate force. It can be a result of vigorous exercise but abnormal fatigue may be caused by barriers to or interference with the different stages of muscle contraction."
+  },
+  {
+    "condition": "Muscle Pain",
+    "conditionSymptoms": "Myalgia, or muscle pain, is a symptom that presents with a large array of diseases. While the most common cause is the overuse of a muscle or group of muscles, acute myalgia may also be due to viral infections, especially in the absence of a traumatic history."
+  },
+  {
+    "condition": "Nail Biting",
+    "conditionSymptoms": "Habitual biting at the fingernails usually being symptomatic of emotional tensions and frustrations"
+  },
+  {
+    "condition": "Narcissistic personality disorder",
+    "conditionSymptoms": "Narcissistic personality disorder is a Cluster B personality disorder in which a person is excessively preoccupied with personal adequacy, power, prestige and vanity, mentally unable to see the destructive damage they are causing to themselves and to others in the process. It is estimated that this condition affects one percent of the population, with rates greater for men."
+  },
+  {
+    "condition": "Neck Pain",
+    "conditionSymptoms": "Neck pain is the sensation of discomfort in the neck area. Neck pain can result from disorders of any of the structures in the neck, including the cervical vertebrae and intervertebral discs, nerves, muscles, blood vessels, esophagus, larynx, trachea, lymphatic organs, thyroid gland, or parathyroid glands."
+  },
+  {
+    "condition": "Obesity",
+    "conditionSymptoms": "Obesity is a medical condition in which excess body fat has accumulated to the extent that it may have a negative effect on health, leading to reduced life expectancy and/or increased health problems."
+  },
+  {
+    "condition": "Obsessive-compulsive disorder",
+    "conditionSymptoms": "Obsessive–compulsive disorder is an anxiety disorder characterized by intrusive thoughts that produce uneasiness, apprehension, fear or worry, repetitive behaviors aimed at reducing the associated anxiety, or a combination of such obsessions and compulsions."
+  },
+  {
+    "condition": "Osteoarthritis",
+    "conditionSymptoms": "Osteoarthritis also known as degenerative arthritis, degenerative joint disease and osteoarthrosis, is a group of mechanical abnormalities involving degradation of joints, including articular cartilage and subchondral bone. Symptoms may include joint pain, tenderness, stiffness, locking, and sometimes an effusion."
+  },
+  {
+    "condition": "Osteomyelitis",
+    "conditionSymptoms": "Osteomyelitis is infection and inflammation of the bone or bone marrow. It can be usefully subclassified on the basis of the causative organism and the route, duration and anatomic location of the infection."
+  },
+  {
+    "condition": "Osteoporosis",
+    "conditionSymptoms": "Osteoporosis is a progressive bone disease that is characterized by a decrease in bone mass and density which can lead to an increased risk of fracture. In osteoporosis, the bone mineral density is reduced, bone microarchitecture deteriorates, and the amount and variety of proteins in bone are altered. Osteoporosis is defined by the World Health Organization as a bone mineral density of 2.5 standard deviations below that of a young adult."
+  },
+  {
+    "condition": "Ovarian Cancer",
+    "conditionSymptoms": "Ovarian cancer is a cancer that begins in an ovary. It results in abnormal cells that have the ability to invade or spread to other parts of the body. When this process begins, symptoms may be vague or not apparent, but they become more noticeable as the cancer progresses. These symptoms may include bloating, pelvic pain, and abdominal swelling, among others."
+  },
+  {
+    "condition": "Polycystic Ovary Syndrome",
+    "conditionSymptoms": "Polycystic ovary syndrome, also called hyperandrogenic anovulation, or Stein–Leventhal syndrome, is a set of symptoms due to a hormone imbalance in women. Symptoms include: irregular or no menstrual periods, heavy periods, excess body and facial hair, acne, pelvic pain, trouble getting pregnant, and patches of thick, darker, velvety skin. "
+  },
+  {
+    "condition": "Panic Attack",
+    "conditionSymptoms": "Panic attacks, also known as anxiety attacks, are periods of intense fear or apprehension of sudden onset accompanied by at least four or more bodily or cognitive symptoms and of variable duration from minutes to hours. Panic attacks usually begin abruptly and may reach a peak within 10 to 20 minutes but may continue for hours in some cases."
+  },
+  {
+    "condition": "Paranoid personality disorder",
+    "conditionSymptoms": "Paranoid personality disorder is a mental disorder characterized by paranoia and a pervasive, long-standing suspiciousness and generalized mistrust of others. Individuals with this personality disorder may be hypersensitive, easily feel slighted, and habitually relate to the world by vigilant scanning of the environment for clues or suggestions that may validate their fears or biases."
+  },
+  {
+    "condition": "Parkinson's disease",
+    "conditionSymptoms": "Parkinson's disease is a degenerative disorder of the central nervous system. The motor symptoms of Parkinson's disease result from the death of dopamine-generating cells in the substantia nigra, a region of the midbrain; the cause of this cell death is unknown."
+  },
+  {
+    "condition": "Peripheral Vascular Disease",
+    "conditionSymptoms": "Peripheral artery disease, also known as peripheral vascular disease peripheral artery occlusive disease, and peripheral obliterative arteriopathy, is narrowing of arteries other than those that supply the heart or brain. Most commonly the legs are affected."
+  },
+  {
+    "condition": "Personality Disorder",
+    "conditionSymptoms": "Personality disorders are a class of mental disorders characterized by enduring maladaptive patterns of behavior, cognition, and inner experience, exhibited across many contexts and deviating markedly from those accepted by the individual's culture. These patterns develop early, are inflexible, and are associated with significant distress or disability."
+  },
+  {
+    "condition": "Peptic Ulcer",
+    "conditionSymptoms": "Peptic ulcer disease, also known as a peptic ulcer or stomach ulcer, is a break in the lining of the stomach, first part of the small intestine, or occasionally the lower esophagus. An ulcer in the stomach is known as a gastric ulcer while that in the first part of the intestines is known as a duodenal ulcer."
+  },
+  {
+    "condition": "Phobia",
+    "conditionSymptoms": "In clinical psychology, a phobia is a type of anxiety disorder, usually defined as a persistent fear of an object or situation in which the sufferer commits to great lengths in avoiding, typically disproportional to the actual danger posed, often being recognized as irrational."
+  },
+  {
+    "condition": "Poliomyelitis",
+    "conditionSymptoms": "Poliomyelitis, often called polio or infantile paralysis, is an infectious disease caused by the poliovirus. Approximately 90% to 95% of infections cause no symptoms. Another 5 to 10% of people have minor symptoms such as: fever, headache, vomiting, diarrhea, neck stiffness and pains in the arms and legs."
+  },
+  {
+    "condition": "Pneumonia",
+    "conditionSymptoms": "Pneumonia is an inflammatory condition of the lung affecting primarily the microscopic air sacs known as alveoli. It is usually caused by infection with viruses or bacteria and less commonly other microorganisms, certain drugs and other conditions such as autoimmune diseases. Typical signs and symptoms include a cough, chest pain, fever, and difficulty breathing."
+  },
+  {
+    "condition": "Post-nasal drip",
+    "conditionSymptoms": "Post-nasal drip occurs when excessive mucus is produced by the nasal mucosa. The excess mucus accumulates in the throat or back of the nose. It is caused by rhinitis, sinusitis, gastroesophageal reflux disease, or by a disorder of swallowing. It is frequently caused by an allergy, which may be seasonal or persistent throughout the year."
+  },
+  {
+    "condition": "Posttraumatic stress disorder",
+    "conditionSymptoms": "Posttraumatic stress disorder may develop after a person is exposed to one or more traumatic events, such as major stress, sexual assault, terrorism, or other threats on a person's life. "
+  },
+  {
+    "condition": "Premenstrual syndrome",
+    "conditionSymptoms": "Premenstrual syndrome refers to a varied collection of physical and emotional symptoms during part of a woman's menstrual cycle."
+  },
+  {
+    "condition": "Prostate cancer",
+    "conditionSymptoms": "One of the most common malignant tumors afflicting men. The majority of carcinomas arise in the peripheral zone and a minority occur in the central or the transitional zone of the prostate gland. Grossly, prostatic carcinomas appear as ill-defined yellow areas of discoloration in the prostate gland lobes."
+  },
+  {
+    "condition": "Psoriasis",
+    "conditionSymptoms": "Psoriasis is a common, chronic, relapsing/remitting, immune-mediated systemic disease characterized by skin lesions including red, scaly patches, papules, and plaques, which usually itch. The skin lesions seen in psoriasis may vary in severity from minor localized patches to complete body coverage. The five main types of psoriasis are plaque, guttate, inverse, pustular, and erythrodermic."
+  },
+  {
+    "condition": "Restless legs syndrome",
+    "conditionSymptoms": "Restless legs syndrome also known as Willis-Ekbom disease or Wittmaack-Ekbom syndrome, is a neurological disorder characterized by an irresistible urge to move one's body to stop uncomfortable or odd sensations. It most commonly affects the legs, but can affect the arms, torso, head, and even phantom limbs. Moving the affected body part modulates the sensations, providing temporary relief."
+  },
+  {
+    "condition": "Rheumatoid arthritis",
+    "conditionSymptoms": "Rheumatoid arthritis is a chronic, systemic inflammatory disorder that primarily affects joints. It may result in deformed and painful joints, which can lead to loss of function. The disease may also have signs and symptoms in organs other than joints. The cause of RA is not completely understood. The process involves an inflammatory and fibrosis of the capsule around the joints."
+  },
+  {
+    "condition": "Rheumatic fever",
+    "conditionSymptoms": "Rheumatic fever, also known as acute rheumatic fever, is an inflammatory disease that can involve the heart, joints, skin, and brain. The disease typically develops two to four weeks after a throat infection. Signs and symptoms include fever, multiple painful joints, involuntary muscle movements, and a characteristic but uncommon non itchy rash known as erythema marginatum."
+  },
+  {
+    "condition": "Ringworm",
+    "conditionSymptoms": "Dermatophytosis is a clinical condition caused by fungal infection of the skin in humans, pets such as cats, and domesticated animals such as sheep and cattle. The term 'ringworm', commonly used to refer to such infections, is a misnomer, since the condition is caused by fungi of several different species and not by parasitic worms. "
+  },
+  {
+    "condition": "Rosacea",
+    "conditionSymptoms": "Rosacea is a chronic skin condition characterized by facial redness, small and superficial dilated blood vessels on facial skin, papules, pustules, and swelling. Rosacea affects all ages and has four subtypes, three affecting the skin and the fourth affecting the eyes."
+  },
+  {
+    "condition": "Scabies",
+    "conditionSymptoms": "Scabies, also known colloquially as the seven-year itch, is a contagious skin infection caused by the mite Sarcoptes scabiei. The mite is a tiny, and usually not directly visible, parasite which burrows under the host's skin, which in most people causes an intense itching sensation caused by an allergic response."
+  },
+  {
+    "condition": "Sciatica",
+    "conditionSymptoms": "Sciatica is a set of symptoms including pain caused by general compression or irritation of one of five spinal nerve roots of each sciatic nerve—or by compression or irritation of the left or right or both sciatic nerves. Symptoms include lower back pain, buttock pain, and numbness, pain or weakness in various parts of the leg and foot."
+  },
+  {
+    "condition": "Severe acute respiratory syndrome",
+    "conditionSymptoms": "Severe acute respiratory syndrome is a viral respiratory disease of zoonotic origin caused by the SARS coronavirus. Between November 2002 and July 2003, an outbreak of SARS in southern China caused an eventual 8,096 cases and 774 deaths reported in multiple countries with the majority of cases in Hong Kong according to the World Health Organization. "
+  },
+  {
+    "condition": "Schizoid personality disorder",
+    "conditionSymptoms": "Schizoid personality disorder is a personality disorder characterized by a lack of interest in social relationships, a tendency towards a solitary lifestyle, secretiveness, emotional coldness, and apathy. Affected individuals may simultaneously demonstrate a rich, elaborate and exclusively internal fantasy world."
+  },
+  {
+    "condition": "Schizophrenia",
+    "conditionSymptoms": "Schizophrenia is a mental disorder often characterized by abnormal social behavior and failure to recognize what is real. Common symptoms include false beliefs, unclear or confused thinking, auditory hallucinations, reduced social engagement and emotional expression, and inactivity. Diagnosis is based on observed behavior and the person's reported experiences."
+  },
+  {
+    "condition": "Sinusitis",
+    "conditionSymptoms": "Sinusitis, also known as a sinus infection or rhinosinusitis, is inflammation of the sinuses resulting in symptoms. Common signs and symptoms include thick nasal mucous, a plugged nose, and pain in the face. Other signs and symptoms may include fever, headaches, sore throat, and cough. The cough is often worse at night. Serious complications are rare."
+  },
+  {
+    "condition": "Skin cancer",
+    "conditionSymptoms": "Skin cancers are cancers that arise from the skin. They are due to the development of abnormal cells that have the ability to invade or spread to other parts of the body. There are three main types: basal cell cancer, squamous cell cancer and melanoma. The first two together along with a number of less common skin cancers are known as nonmelanoma skin cancer."
+  },
+  {
+    "condition": "Skin rash",
+    "conditionSymptoms": "Any change in the skin which affects its appearance or texture. A rash may be localised to one part of the body, or affect all the skin. Rashes may cause the skin to change color, itch, become warm, bumpy, dry, cracked or blistered, swell and may be painful."
+  },
+  {
+    "condition": "Sleep disorder",
+    "conditionSymptoms": "A sleep disorder, or somnipathy, is a medical disorder of the sleep patterns of a person or animal. Some sleep disorders are serious enough to interfere with normal physical, mental, social and emotional functioning. Polysomnography and actigraphy are tests commonly ordered for some sleep disorders. "
+  },
+  {
+    "condition": "Snoring",
+    "conditionSymptoms": "Snoring is the vibration of respiratory structures and the resulting sound due to obstructed air movement during breathing while sleeping. In some cases, the sound may be soft, but in most cases, it can be loud and unpleasant. Snoring during sleep may be a sign, or first alarm, of obstructive sleep apnea (OSA)."
+  },
+  {
+    "condition": "Social anxiety disorder",
+    "conditionSymptoms": "Social anxiety disorder, also known as social phobia, is an anxiety disorder characterised by an intense fear in one or more social situations causing considerable distress and impaired ability to function in at least some parts of daily life. These fears can be triggered by perceived or actual scrutiny from others."
+  },
+  {
+    "condition": "Staphylococcus aureus",
+    "conditionSymptoms": "Staphylococcus aureus is a gram-positive coccal bacterium that is a member of the Firmicutes, and is frequently found in the human respiratory tract and on the skin. It is positive for catalase and nitrate reduction. Although S. aureus is not always pathogenic, it is a common cause of skin infections, respiratory disease, and food poisoning."
+  },
+  {
+    "condition": "Stomach cancer",
+    "conditionSymptoms": "Streptococcal pharyngitis, streptococcal tonsillitis, or streptococcal sore throat is a type of pharyngitis caused by a group A streptococcal infection. It affects the pharynx including the tonsils and possibly the larynx. Common symptoms include fever, sore throat, and enlarged lymph nodes. It is the cause of 15–40% of sore throats among children and 5–15% in adults."
+  },
+  {
+    "condition": "Streptococcal pharyngitis",
+    "conditionSymptoms": "Streptococcal pharyngitis, streptococcal tonsillitis, or streptococcal sore throat is a type of pharyngitis caused by a group A streptococcal infection. It affects the pharynx including the tonsils and possibly the larynx. Common symptoms include fever, sore throat, and enlarged lymph nodes. It is the cause of 15–40% of sore throats among children and 5–15% in adults."
+  },
+  {
+    "condition": "Sunburn",
+    "conditionSymptoms": "Sunburn is a form of radiation burn that affects living tissue, such as skin, that results from an overexposure to ultraviolet radiation, commonly from the sun. Common symptoms in humans and other animals include red or reddish skin that is hot to the touch, pain, general fatigue, and mild dizziness. An excess of UV radiation can be life-threatening in extreme cases."
+  },
+  {
+    "condition": "Tennis elbow",
+    "conditionSymptoms": "Tennis elbow or lateral epicondylitis is a condition in which the outer part of the elbow becomes sore and tender. Tennis elbow is an acute or chronic inflammation of the tendons that join the forearm muscles on the outside of the elbow. The forearm muscles and tendons become damaged from overuse — repeating the same motions again and again."
+  },
+  {
+    "condition": "Testicular cancer",
+    "conditionSymptoms": "Testicular cancer is cancer that develops in the testicles, a part of the male reproductive system. Not all lumps on the testicles are tumors, and not all tumors are malignant. There are many other conditions, such as testicular microlithiasis, epididymal cysts, and appendix testis, which may be painful but are non-cancerous."
+  },
+  {
+    "condition": "Tooth Decay",
+    "conditionSymptoms": "Decay of the outer surface of a tooth as a result of bacterial action."
+  },
+  {
+    "condition": "Edwards syndrome",
+    "conditionSymptoms": "Edwards syndrome is a chromosomal disorder caused by the presence of all, or part of, an extra 18th chromosome. This genetic condition almost always results from nondisjunction during meiosis. It is named after John Hilton Edwards, who first described the syndrome in 1960. It is the second-most common autosomal trisomy, after Down syndrome, that carries to term. "
+  },
+  {
+    "condition": "Tuberculosis",
+    "conditionSymptoms": "Tuberculosis, MTB, or TB, in the past also called phthisis, phthisis pulmonalis, or consumption, is a widespread, and in many cases fatal, infectious disease caused by various strains of mycobacteria, usually Mycobacterium tuberculosis. Tuberculosis typically attacks the lungs, but can also affect other parts of the body."
+  },
+  {
+    "condition": "Ulcers",
+    "conditionSymptoms": "An open sore on an external or internal surface of the body, caused by a break in the skin or mucous membrane that fails to heal."
+  },
+  {
+    "condition": "Urinary tract infection",
+    "conditionSymptoms": "A urinary tract infection is an infection that affects part of the urinary tract. When it affects the lower urinary tract it is known as a simple cystitis and when it affects the upper urinary tract it is known as pyelonephritis."
+  },
+  {
+    "condition": "Varicose veins",
+    "conditionSymptoms": "Varicose veins are veins that have become enlarged and twisted. The term commonly refers to the veins on the leg, although varicose veins can occur elsewhere. Veins have pairs of leaflet valves to prevent blood from flowing backwards. Leg muscles pump the veins to return blood to the heart, against the effects of gravity."
+  },
+  {
+    "condition": "Vertigo",
+    "conditionSymptoms": "Vertigo is a subtype of dizziness in which a patient inappropriately experiences the perception of motion due to dysfunction of the vestibular system. It is often associated with nausea and vomiting as well as a balance disorder, causing difficulties with standing or walking. There are three types of vertigo. "
+  },
+  {
+    "condition": "Wart",
+    "conditionSymptoms": "A wart is a small, rough growth resembling a cauliflower or a solid blister. It typically occurs on humans' hands or feet but often in other locations. Warts are caused by a viral infection, specifically by one of the many types of human papillomavirus. There are as many as 10 varieties of warts, the most common considered to be mostly harmless."
+  },
+  {
+    "condition": "Candidiasis",
+    "conditionSymptoms": "Candidiasis is a fungal infection due to any types of Candida. When it affects the mouth, it is commonly called thrush. Signs and symptoms include white patches on the tongue or other areas of the mouth and throat. Other symptoms may include soreness and problems swallowing. When it affects the vagina, it is commonly called a yeast infection. "
   }
 ]
