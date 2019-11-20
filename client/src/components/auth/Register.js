@@ -1,108 +1,52 @@
-import React, { useState, useContext, useEffect } from 'react';
-import AlertContext from '../../context/alert/alertContext';
-import AuthContext from '../../context/auth/authContext';
+import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Register = props => {
-  const alertContext = useContext(AlertContext);
-  const authContext = useContext(AuthContext);
+const Register = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+        password2: ''
+    });
 
-  const { setAlert } = alertContext;
+    const { name, email, password, password2 } = formData;
 
-  const { register, error, clearErrors, isAuthenticated } = authContext;
+    
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      props.history.push('/');
-    }
-    if (error === 'User already exists') {
-      setAlert(error, 'danger', 6000);
-      clearErrors();
-    }
-    // eslint-disable-next-line
-  }, [error, isAuthenticated, props.history]);
-
-  const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: ''
-  });
-
-  const { name, email, password, password2 } = user;
-
-  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
-
-  const onSubmit = e => {
-    e.preventDefault();
-    if (name === '' || email === '' || password === '') {
-      setAlert('Please Enter All Fields', 'danger');
-    } else if (password !== password2) {
-      setAlert('Passwords do not match!');
-    } else {
-      register({
-        name,
-        email,
-        password
-      });
-    }
-  };
-
-  return (
-    <div className='form-container'>
-      <h1>
-        Account <span className='text-primary'>Register</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='name'>Name</label>
+    return (
+        <Fragment>
+      <h1 className="large text-primary">Sign Up</h1>
+      <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
+      <form className="form" action="create-profile.html">
+        <div className="form-group">
+          <input type="text" placeholder="Name" name="name" required />
+        </div>
+        <div className="form-group">
+          <input type="email" placeholder="Email Address" name="email" />
+        </div>
+        <div className="form-group">
           <input
-            type='text'
-            name='name'
-            value={name}
-            onChange={onChange}
-            required
+            type="password"
+            placeholder="Password"
+            name="password"
+            minLength="6"
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
+        <div className="form-group">
           <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={onChange}
-            required
+            type="password"
+            placeholder="Confirm Password"
+            name="password2"
+            minLength="6"
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-            required
-            minLength='6'
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password2'>Confirm Password</label>
-          <input
-            type='password'
-            name='password2'
-            value={password2}
-            onChange={onChange}
-            required
-            minLength='6'
-          />
-        </div>
-        <input
-          type='submit'
-          value='Register'
-          className='btn btn-primary btn-block'
-        ></input>
+        <input type="submit" className="btn btn-primary" value="Register" />
       </form>
-    </div>
-  );
-};
+      <p className="my-1">
+        Already have an account? <Link to="/login">sign in</Link>
+      </p>
+        </Fragment>
+    )
+}
 
-export default Register;
+export default Register
