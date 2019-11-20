@@ -14,7 +14,7 @@ class Graph extends Component {
                     ],
                     backgroundColor: "black",
                     borderColor: "green",
-                    borderWidth: 3,
+                    borderWidth: 2,
                     fill: false
 
                 },
@@ -26,7 +26,7 @@ class Graph extends Component {
                     ],
                     backgroundColor: "black",
                     borderColor: "blue",
-                    borderWidth: 3,
+                    borderWidth: 2,
                     fill: false
 
                 },
@@ -38,7 +38,7 @@ class Graph extends Component {
                     ],
                     backgroundColor: "black",
                     borderColor: "red",
-                    borderWidth: 3,
+                    borderWidth: 2,
                     fill: false
 
                 },
@@ -50,7 +50,7 @@ class Graph extends Component {
                     ],
                     backgroundColor: "black",
                     borderColor: "purple",
-                    borderWidth: 3,
+                    borderWidth: 2,
                     fill: false
 
 
@@ -58,6 +58,8 @@ class Graph extends Component {
             }
         }
     }
+
+    
 
     render() {
         return (
