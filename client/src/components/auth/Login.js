@@ -1,81 +1,30 @@
-import React, { useState, useContext, useEffect } from 'react';
-import AuthContext from '../../context/auth/authContext';
-import AlertContext from '../../context/alert/alertContext';
+import React, { Fragment, useState } from 'react';
 
-const Login = props => {
-  const alertContext = useContext(AlertContext);
-  const authContext = useContext(AuthContext);
+const Login = () => {
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
 
-  const { setAlert } = alertContext;
-  const { login, error, clearErrors, isAuthenticated } = authContext;
+    const { email, password, } = formData;
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      props.history.push('/');
-    }
-    if (error === 'Invalid Credentials') {
-      setAlert(error, 'danger', 6000);
-      clearErrors();
-    }
-    // eslint-disable-next-line
-  }, [error, isAuthenticated, props.history]);
-
-  const [user, setUser] = useState({
-    email: '',
-    password: ''
-  });
-
-  const { email, password } = user;
-
-  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
-
-  const onSubmit = e => {
-    e.preventDefault();
-    if (email === '' || password === '') {
-      setAlert('Please fill in all fields', 'danger');
-    } else {
-      login({
-        email,
-        password
-      });
-    }
-  };
-
-  return (
-    <div className='form-container'>
-      <h1>
-        Account <span className='text-primary'>Login</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={onChange}
-            required
-          />
+    return (
+        <Fragment>
+      <h1 className="large text-primary">Sign Up</h1>
+      <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
+      <form className="form" action="create-profile.html">
+        <div className="form-group">
+          <input type="text" placeholder="Name" name="name" required />
         </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-            required
-          />
+        <div className="form-group">
+          <input type="email" placeholder="Email Address" name="email" />
         </div>
-
-        <input
-          type='submit'
-          value='Login'
-          className='btn btn-primary btn-block'
-        ></input>
+        <div className="form-group">
+        </div>
+        <input type="submit" className="btn btn-primary" value="Register" />
       </form>
-    </div>
-  );
-};
+        </Fragment>
+    )
+}
 
-export default Login;
+export default Login
