@@ -59,7 +59,9 @@ class Graph extends Component {
         }
     }
 
-    
+    componentDidMount() {
+
+    };
 
     render() {
         return (
@@ -69,11 +71,11 @@ class Graph extends Component {
                     width={300}
                     height={300}
                     options={{
-                        maintainAspectRatio:false,
+                        maintainAspectRatio: false,
                         title: {
                             display: true,
                             text: "Health Buddy Trends",
-                            fontSize:25
+                            fontSize: 25
                         }
                     }}
                 />
