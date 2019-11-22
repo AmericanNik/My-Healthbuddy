@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
+const logs = require("../../../../controllers/logs");
 
 class Graph extends Component {
     constructor(props) {
         super(props);
         this.state = {
             chartData: {
-                labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+                labels: [],
                 datasets: [{
                     label: "Severity",
                     data: [// Severity Data from Database
-                        5, 6, 7, 8, 10, 1, 2, 5, 2, 4
+                        
                     ],
                     backgroundColor: "black",
                     borderColor: "green",
@@ -22,7 +23,7 @@ class Graph extends Component {
                     label: "Activity Level",
                     data: [
                         //Activity Level Data from Datbase
-                        1, 2, 3, 6, 10, 4, 5, 7, 4, 9
+                        
                     ],
                     backgroundColor: "black",
                     borderColor: "blue",
@@ -34,7 +35,7 @@ class Graph extends Component {
                     label: "Temperature",
                     data: [
                         //Temperature Data from Database
-                        6, 6, 6, 6, 6, 7, 8, 5, 10, 8
+                        
                     ],
                     backgroundColor: "black",
                     borderColor: "red",
@@ -46,7 +47,7 @@ class Graph extends Component {
                     label: "Humidity",
                     data: [
                         // Humidity Data from Database
-                        1, 2, 1, 3, 4, 5, 2, 3, 4, 5
+                        
                     ],
                     backgroundColor: "black",
                     borderColor: "purple",
@@ -60,8 +61,26 @@ class Graph extends Component {
     }
 
     componentDidMount() {
+        let dateArray = [];
+        let severityArray = [];
+        let temperatureArray = [];
+        let humidityArray = [];
 
-    };
+        logs.getLogs()
+            .then(logs =>
+                logs.date.forEach(dateElem => dateArray.push(dateElem)),
+                logs.severity.forEach(sevElem => severityArray.push(sevElem)),
+                logs.temperature.forEach(tempElem => temperatureArray.push(tempElem)),
+                logs.humidity.forEach(humElem => humidityArray.push(humElem))
+
+            )
+            .then(this.setState({
+
+            }))
+
+
+    }
+
 
     render() {
         return (
@@ -81,10 +100,11 @@ class Graph extends Component {
                 />
 
             </div>
-        )
+        );
     }
+};
 
-}
+
 
 
 

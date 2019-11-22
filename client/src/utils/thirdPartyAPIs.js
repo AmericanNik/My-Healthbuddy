@@ -4,11 +4,11 @@ const router = require("../../../controllers/weather");
 
 export default thirdPartyAPI({
     getWeather: function () {
-        return axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.weatherAPIKey}&zip=03103`)
+        return axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.weatherAPIKey}&zip=${zipCode}`)
             .then(function (response) {
                 let weather = {
-                    temperature = response.main.temp,
-                    humidity = response.main.humidity
+                    temperature = Math.floor(response.main.temp / 10),
+                    humidity = Math.floor(response.main.humidity / 10)
                 }
                 console.log(weather);
             })
@@ -32,7 +32,7 @@ export default thirdPartyAPI({
                 console.log(response.zip_codes[0]);
                 let zipCode = response.zip_codes[0];
             }).then(function (res) {
-                getWeather();
+                getWeather(res);
             }).then(function (res2) {
                 addWeather(res2);
             })
