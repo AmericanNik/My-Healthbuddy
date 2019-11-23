@@ -7,8 +7,8 @@ export default thirdPartyAPI({
         return axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.weatherAPIKey}&zip=${zipCode}`)
             .then(function (response) {
                 let weather = {
-                    temperature = Math.floor(response.main.temp / 10),
-                    humidity = Math.floor(response.main.humidity / 10)
+                    temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
+                    humidity: Math.floor(response.main.humidity / 10)
                 }
                 console.log(weather);
             })
