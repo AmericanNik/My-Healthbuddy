@@ -10,7 +10,7 @@ const Login = () => {
 
     return (
         <Fragment>
-      <h1 className="large text-primary">Sign Up</h1>
+      <h1 className="large text-primary">Sign In</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" action="create-profile.html">
         <div className="form-group">
@@ -21,7 +21,7 @@ const Login = () => {
         </div>
         <div className="form-group">
         </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <input type="submit" className="btn btn-primary" value="Login" />
       </form>
         </Fragment>
     )

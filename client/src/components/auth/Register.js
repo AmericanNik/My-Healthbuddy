@@ -43,7 +43,7 @@ const Register = () => {
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Already have an account? <Link to="/login">sign in</Link>
+        Already have an account? <Link to="/login">Sign in</Link>
       </p>
         </Fragment>
     )
