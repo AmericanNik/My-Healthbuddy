@@ -55,10 +55,21 @@ class Graph extends Component {
         }
     }
 
+    convertDate = () => {
+        let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let date = new Date(dateElem);
+        let month = monthArr[date.getMonth()];
+        let day = date.getDate();
+        let fullDate = `${month} ${day}`;
+        dateArray.push(fullDate);
+
+        console.log(fullDate);
+    }
+
     componentDidMount() {
         logs.getLogs()
             .then(logs =>
-                logs.logDate.forEach(dateElem => dateArray.push(dateElem)),
+                logs.logDate.forEach(dateElem => this.convertDate(dateElem)),
                 logs.dailyWellbeing.forEach(sevElem => severityArray.push(sevElem)),
                 logs.logWeather.temperature.forEach(tempElem => temperatureArray.push(tempElem)),
                 logs.logWeather.humidity.forEach(humElem => humidityArray.push(humElem)),
