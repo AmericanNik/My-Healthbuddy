@@ -66,13 +66,27 @@ class Graph extends Component {
         console.log(fullDate);
     }
 
+    convertTemp = () => {
+        let temp = tempElem/10;
+        temperatureArray.push(temp);
+    }
+
+    convertHumidity=()=>{
+        let humidity = humElem/10;
+        humidityArray.push(humidity);
+    }
+
+    // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
+    // humidity: Math.floor(response.main.humidity / 10)
+
+
     componentDidMount() {
         logs.getLogs()
             .then(logs =>
                 logs.logDate.forEach(dateElem => this.convertDate(dateElem)),
                 logs.dailyWellbeing.forEach(sevElem => severityArray.push(sevElem)),
-                logs.logWeather.temperature.forEach(tempElem => temperatureArray.push(tempElem)),
-                logs.logWeather.humidity.forEach(humElem => humidityArray.push(humElem)),
+                logs.logWeather.temperature.forEach(tempElem => this.convertTemp(tempElem)),
+                logs.logWeather.humidity.forEach(humElem => this.convertHumidity(humElem)),
                 logs.dailyActivity.forEch(actElem => activityArray.push(actElem))
             )
     };
