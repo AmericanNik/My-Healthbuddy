@@ -12,7 +12,7 @@ exports.getLogs = asyncHandler(async (req, res, next) => {
   if (req.params.healthbuddyId) {
     const logs = await Log.find({
       healthbuddy: req.params.healthbuddyId
-    }).populate('healthbuddy');
+    }).limit(30).populate('healthbuddy');
 
     return res
       .status(200)
