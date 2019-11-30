@@ -3,6 +3,23 @@ const asyncHandler = require('../middleware/async');
 const Log = require('../models/Log');
 const Healthbuddy = require('../models/Healthbuddy');
 
+exports.getAllLogs = asyncHandler(async (req, res, next) => {
+  if (req.params.healthbuddyId) {
+    const logs = await Log.find({
+      healthbuddy: req.params.healthbuddyId
+    }).populate('healthbuddy');
+
+    return res
+      .status(200)
+      .json({ success: true, count: logs.length, data: logs });
+  } else {
+    res.status(200).json(res.advancedResults);
+  }
+
+  console.log('Flag2');
+});
+
+
 //@desc     Get logs for a healthbuddy
 //@route    GET /api/v1/logs
 //@route    GET/api/v1/healbuddis/:healthbuddyId/logs
@@ -12,7 +29,7 @@ exports.getLogs = asyncHandler(async (req, res, next) => {
   if (req.params.healthbuddyId) {
     const logs = await Log.find({
       healthbuddy: req.params.healthbuddyId
-    }).populate('healthbuddy');
+    }).sort({ "logDate": -1 }).limit(30).populate('healthbuddy');
 
     return res
       .status(200)
