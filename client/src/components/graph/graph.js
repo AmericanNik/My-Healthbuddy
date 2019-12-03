@@ -87,7 +87,7 @@ class Graph extends Component {
                 logs.forEach(elem => severityArray.push(elem.dailyWellbeing)),
                 logs.forEach(elem => this.convertTemp(elem.logWeather.weatherTemp)),
                 logs.forEach(elem => this.convertHumidity(elem.logWeather.weatherHumidity)),
-                logs.forEch(elem => activityArray.push(elem.dailyActivity))
+                logs.forEach(elem => activityArray.push(elem.dailyActivity))
             )
         this.forceUpdate();
     };
