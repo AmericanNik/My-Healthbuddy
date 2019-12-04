@@ -67,12 +67,12 @@ class Graph extends Component {
     }
 
     convertTemp = () => {
-        let temp = tempElem/10;
+        let temp = tempElem / 10;
         temperatureArray.push(temp);
     }
 
-    convertHumidity=()=>{
-        let humidity = humElem/10;
+    convertHumidity = () => {
+        let humidity = humElem / 10;
         humidityArray.push(humidity);
     }
 
@@ -82,14 +82,15 @@ class Graph extends Component {
 
     componentDidMount() {
         logs.getLogs()
-            .then(logs =>
-                logs.forEach(elem => this.convertDate(elem.logDate)),
-                logs.forEach(elem => severityArray.push(elem.dailyWellbeing)),
-                logs.forEach(elem => this.convertTemp(elem.logWeather.weatherTemp)),
-                logs.forEach(elem => this.convertHumidity(elem.logWeather.weatherHumidity)),
-                logs.forEach(elem => activityArray.push(elem.dailyActivity))
-            )
-        this.forceUpdate();
+            .then(
+                logs.forEach(function (elem) {
+                    dateArray.push(this.convertDate(elem.logDate))
+                    severityArray.push(elem.dailyWellbeing);
+                    temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
+                    humidityArray.push(this.convertHumidity(elem.logWeather.weatherHumidity));
+                    activityArray.push(elem.dailyActivity);
+                }),
+                this.forceUpdate());
     };
 
 
