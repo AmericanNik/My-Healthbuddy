@@ -32,14 +32,19 @@ const LogSchema = new mongoose.Schema({
     enum: ['Morning', 'Afternoon', 'Evening', 'All-Day']
   },
   dailyCondition: [Object],
-  dailyActivity: Object,
+  dailyActivity: {
+    type: Number,
+    required: true,
+    max: 10,
+    min: 1
+  },
   logMeds: [Object],
   logNutrients: [Object],
-  logWeawther: [Object]
+  logWeather: [Object]
 });
 
 //  Static method to get average wellbeing
-LogSchema.statics.getAverageWellbeing = async function(healthbuddyId) {
+LogSchema.statics.getAverageWellbeing = async function (healthbuddyId) {
   console.log('Calculating average wellbeing<3'.brightBlue);
 
   const obj = await this.aggregate([
@@ -66,13 +71,13 @@ LogSchema.statics.getAverageWellbeing = async function(healthbuddyId) {
 
 // Call getAverageWellbeing after save
 
-LogSchema.post('save', function() {
+LogSchema.post('save', function () {
   this.constructor.getAverageWellbeing(this.healthbuddy);
 });
 
 //  Call before remove
 
-LogSchema.pre('remove', function() {
+LogSchema.pre('remove', function () {
   this.constructor.getAverageWellbeing(this.healthbuddy);
 });
 
