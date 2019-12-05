@@ -6,14 +6,12 @@ const Login = () => {
     password: ''
   });
 
-  const { email, password } = formData;
-
   return (
-    <Fragment>
-      <div className='container'>
-        <h1 className='large text-primary'>Welcome Back!</h1>
+    <div className='container'>
+      <Fragment>
+        <h1 className='large text-primary'>Sign In</h1>
         <p className='lead'>
-          <i className='fas fa-user'></i> Login to your account!
+          <i className='fas fa-user'></i> Create Your Account
         </p>
         <form className='form' action='create-profile.html'>
           <div className='form-group'>
@@ -23,10 +21,10 @@ const Login = () => {
             <input type='email' placeholder='Email Address' name='email' />
           </div>
           <div className='form-group'></div>
-          <input type='submit' className='btn btn-primary' value='Register' />
+          <input type='submit' className='btn btn-primary' value='Login' />
         </form>
-      </div>
-    </Fragment>
+      </Fragment>
+    </div>
   );
 };
 
