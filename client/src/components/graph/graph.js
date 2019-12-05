@@ -54,6 +54,8 @@ class Graph extends Component {
             }
         }
     }
+<<<<<<< HEAD
+=======
 
     convertDate = () => {
         let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -94,6 +96,7 @@ class Graph extends Component {
     };
 
 
+>>>>>>> eab97f6876895c82e101abb4bda7d7e0580a250f
     render() {
         return (
             <div className="graph">
@@ -111,10 +114,19 @@ class Graph extends Component {
                     }}
                 />
 
+
+
             </div>
         );
     }
+<<<<<<< HEAD
+}
+=======
 };
+
+
+>>>>>>> eab97f6876895c82e101abb4bda7d7e0580a250f
+
 
 
 
