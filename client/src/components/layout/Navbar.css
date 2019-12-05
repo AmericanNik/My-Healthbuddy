@@ -7,10 +7,23 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
-  bottom: -3px;
+  bottom: -2.5px;
   margin-right: 5px;
 }
 
 .logoText {
   color: red;
+}
+
+.logoText a:hover .testt {
+  height: 32px;
+  width: 32px;
+  background: url('./healthbuddyBearHeadRed.png');
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  bottom: -2.5px;
+  margin-right: 5px;
 }
