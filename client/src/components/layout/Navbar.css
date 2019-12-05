@@ -1,0 +1,16 @@
+.testt {
+  height: 32px;
+  width: 32px;
+  background: url('./healthbuddyBearHead.png');
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  bottom: -3px;
+  margin-right: 5px;
+}
+
+.logoText {
+  color: red;
+}
