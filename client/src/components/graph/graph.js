@@ -1,54 +1,124 @@
-import Chart from "chart.js";
+import React, { Component } from "react";
+import { Line } from "react-chartjs-2";
+const logs = require("../../../../controllers/logs");
 
-var myLineChart = new Chart(cty, {
-    type: 'line',
-    data: "",
-    options: {
-        scales: {
-            yAxes: [{
-                label: "Severity",
-                borderColor: window.chartColor.red,
-                backgroundColor: window.chartColor.red,
-                fill: false,
-                data: [],
-                yaxisID: y - axis - 1,
-            },
-            {
-                label: "Temperature",
-                borderColor: window.chartColor.blue,
-                backgroundColor: window.chartColor.blue,
-                fill: false,
-                data: [],
-                yaxisID: y - axis - 2,
+let dateArray = [];
+let severityArray = [];
+let activityArray = [];
+let temperatureArray = [];
+let humidityArray = [];
 
-            },
-            {
-                label: "Humidity",
-                borderColor: window.chartColor.green,
-                backgroundColor: window.chartColor.green,
-                fill: false,
-                data: [],
-                yaxisID: y - axis - 3,
-            }, {
-                label: "Activity Level",
-                borderColor: window.chartColor.black,
-                backgroundColor: window.chartColor.black,
-                fill: false,
-                data: [],
-                yaxisID: y - axis - 4,
+class Graph extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            chartData: {
+                labels: dateArray,
+                datasets: [{
+                    label: "Severity",
+                    data: severityArray,
+                    backgroundColor: "green",
+                    borderColor: "green",
+                    borderWidth: 2,
+                    fill: false
+
+                },
+                {
+                    label: "Activity Level",
+                    data: activityArray,
+                    backgroundColor: "blue",
+                    borderColor: "blue",
+                    borderWidth: 2,
+                    fill: false
+
+                },
+                {
+                    label: "Temperature",
+                    data: temperatureArray,
+                    backgroundColor: "red",
+                    borderColor: "red",
+                    borderWidth: 2,
+                    fill: false
+
+                },
+                {
+                    label: "Humidity",
+                    data: humidityArray,
+                    backgroundColor: "purple",
+                    borderColor: "purple",
+                    borderWidth: 2,
+                    fill: false
+
+
+                }]
             }
-            ]
         }
     }
-}, ctx, {
-    type: "",
-    data: "",
-    options: {
-        scales: {
-            xAxes: [{
-                type: "category",
-                labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
-            }]
-        }
+
+    convertDate = () => {
+        let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let date = new Date(dateElem);
+        let month = monthArr[date.getMonth()];
+        let day = date.getDate();
+        let fullDate = `${month} ${day}`;
+        dateArray.push(fullDate);
+
+        console.log(fullDate);
     }
-});
+
+    convertTemp = () => {
+        let temp = tempElem / 10;
+        temperatureArray.push(temp);
+    }
+
+    convertHumidity = () => {
+        let humidity = humElem / 10;
+        humidityArray.push(humidity);
+    }
+
+    // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
+    // humidity: Math.floor(response.main.humidity / 10)
+
+
+    componentDidMount() {
+        logs.getLogs()
+            .then(
+                logs.forEach(function (elem) {
+                    dateArray.push(this.convertDate(elem.logDate))
+                    severityArray.push(elem.dailyWellbeing);
+                    temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
+                    humidityArray.push(this.convertHumidity(elem.logWeather.weatherHumidity));
+                    activityArray.push(elem.dailyActivity);
+                }),
+                this.forceUpdate());
+    };
+
+
+    render() {
+        return (
+            <div className="graph">
+                <Line
+                    data={this.state.chartData}
+                    width={300}
+                    height={300}
+                    options={{
+                        maintainAspectRatio: false,
+                        title: {
+                            display: true,
+                            text: "Health Buddy Trends",
+                            fontSize: 25
+                        }
+                    }}
+                />
+
+            </div>
+        );
+    }
+};
+
+
+
+
+
+
+export default Graph;
