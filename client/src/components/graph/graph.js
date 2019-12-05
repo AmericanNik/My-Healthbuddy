@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
-const logs = require("../../../../controllers/logs");
+// const logs = require("../../../../controllers/logs");
 
 let dateArray = [];
 let severityArray = [];
@@ -54,8 +54,6 @@ class Graph extends Component {
             }
         }
     }
-<<<<<<< HEAD
-=======
 
     convertDate = () => {
         let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -96,7 +94,6 @@ class Graph extends Component {
     };
 
 
->>>>>>> eab97f6876895c82e101abb4bda7d7e0580a250f
     render() {
         return (
             <div className="graph">
@@ -119,13 +116,9 @@ class Graph extends Component {
             </div>
         );
     }
-<<<<<<< HEAD
-}
-=======
 };
 
 
->>>>>>> eab97f6876895c82e101abb4bda7d7e0580a250f
 
 
 
