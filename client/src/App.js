@@ -6,6 +6,7 @@ import Graph from './components/graph/graph';
 import Logs from './components/auth/Logs';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Footer from './components/layout/Footer';
 import './App.css';
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
       </Switch>
       <Route exact path='/logs' component={Logs} />
       <Route exact path='/graph' component={Graph} />
+      <Footer />
     </Fragment>
   </Router>
 );

@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className='logoDisplay'>
         <h1 className='logoText'>
           <Link to='/'>
-            <span className='testt'></span>Health Buddy
+            <span className='testt animatedhover bounce'></span>Health Buddy
           </Link>
         </h1>
       </div>

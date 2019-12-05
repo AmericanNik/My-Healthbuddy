@@ -19,6 +19,9 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -576,4 +579,38 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+}
+
+.displayContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  max-width: 780px;
+  text-align: center;
+  color: #f4f4f4;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border: 1px solid #dc3545;
+  align-items: center;
+}
+
+.loginDisplay {
+  height: 340px;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: #dc3545;
+  color: white;
+}
+
+.content {
+  flex: 1 0 auto;
+  padding: 10px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
