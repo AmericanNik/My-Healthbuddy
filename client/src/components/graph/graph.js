@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
-const logs = require("../../../../controllers/logs");
+// const logs = require("../../../../controllers/logs");
 
-let dateArray = [];
-let severityArray = [];
-let activityArray = [];
-let temperatureArray = [];
-let humidityArray = [];
+let dateArray = ["11/1","11/2","11/3","11/4"];
+let severityArray = [4,5,6,7];
+let activityArray = [5,4,3,6];
+let temperatureArray = [4,2,5,7];
+let humidityArray = [3,4,6,7];
 
 class Graph extends Component {
     constructor(props) {
@@ -55,42 +55,42 @@ class Graph extends Component {
         }
     }
 
-    convertDate = () => {
-        let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        let date = new Date(dateElem);
-        let month = monthArr[date.getMonth()];
-        let day = date.getDate();
-        let fullDate = `${month} ${day}`;
-        dateArray.push(fullDate);
+    // convertDate = () => {
+    //     let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    //     let date = new Date(dateElem);
+    //     let month = monthArr[date.getMonth()];
+    //     let day = date.getDate();
+    //     let fullDate = `${month} ${day}`;
+    //     dateArray.push(fullDate);
 
-        console.log(fullDate);
-    }
+    //     console.log(fullDate);
+    // }
 
-    convertTemp = () => {
-        let temp = tempElem / 10;
-        temperatureArray.push(temp);
-    }
+    // convertTemp = () => {
+    //     let temp = tempElem / 10;
+    //     temperatureArray.push(temp);
+    // }
 
-    convertHumidity = () => {
-        let humidity = humElem / 10;
-        humidityArray.push(humidity);
-    }
+    // convertHumidity = () => {
+    //     let humidity = humElem / 10;
+    //     humidityArray.push(humidity);
+    // }
 
     // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
     // humidity: Math.floor(response.main.humidity / 10)
 
 
     componentDidMount() {
-        logs.getLogs()
-            .then(
-                logs.forEach(function (elem) {
-                    dateArray.push(this.convertDate(elem.logDate))
-                    severityArray.push(elem.dailyWellbeing);
-                    temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
-                    humidityArray.push(this.convertHumidity(elem.logWeather.weatherHumidity));
-                    activityArray.push(elem.dailyActivity);
-                }),
-                this.forceUpdate());
+        // logs.getLogs()
+        //     .then(
+        //         logs.forEach(function (elem) {
+        //             dateArray.push(this.convertDate(elem.logDate))
+        //             severityArray.push(elem.dailyWellbeing);
+        //             temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
+        //             humidityArray.push(this.convertHumidity(elem.logWeather.weatherHumidity));
+        //             activityArray.push(elem.dailyActivity);
+        //         }),
+        //         this.forceUpdate());
     };
 
 
