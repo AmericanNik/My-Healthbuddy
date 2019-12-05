@@ -83,13 +83,12 @@ class Graph extends Component {
     componentDidMount() {
         logs.getLogs()
             .then(logs =>
-                logs.forEach(elem => this.convertDate(elem.logDate)),
-                logs.forEach(elem => severityArray.push(elem.dailyWellbeing)),
-                logs.forEach(elem => this.convertTemp(elem.logWeather.weatherTemp)),
-                logs.forEach(elem => this.convertHumidity(elem.logWeather.weatherHumidity)),
-                logs.forEch(elem => activityArray.push(elem.dailyActivity))
+                logs.logDate.forEach(dateElem => this.convertDate(dateElem)),
+                logs.dailyWellbeing.forEach(sevElem => severityArray.push(sevElem)),
+                logs.logWeather.temperature.forEach(tempElem => this.convertTemp(tempElem)),
+                logs.logWeather.humidity.forEach(humElem => this.convertHumidity(humElem)),
+                logs.dailyActivity.forEch(actElem => activityArray.push(actElem))
             )
-        this.forceUpdate();
     };
 
 
