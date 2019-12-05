@@ -15,7 +15,7 @@ class Graph extends Component {
             chartData: {
                 labels: dateArray,
                 datasets: [{
-                    label: "Severity",
+                    label: "Well-Being",
                     data: severityArray,
                     backgroundColor: "green",
                     borderColor: "green",
