@@ -3,11 +3,11 @@ import { Line } from 'react-chartjs-2';
 // const logs = require('../../../../controllers/logs');
 let logs = null;
 
-let dateArray = [];
-let severityArray = [];
-let activityArray = [];
-let temperatureArray = [];
-let humidityArray = [];
+let dateArray = ["11/1","11/2","11/3","11/4"];
+let severityArray = [6,5,8,3];
+let activityArray = [2,3,4,1];
+let temperatureArray = [6,5,6,5];
+let humidityArray = [4,4,4,3];
 
 class Graph extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Graph extends Component {
         labels: dateArray,
         datasets: [
           {
-            label: 'Severity',
+            label: 'Well-Being',
             data: severityArray,
             backgroundColor: 'green',
             borderColor: 'green',
@@ -53,6 +53,10 @@ class Graph extends Component {
     };
   }
 
+  getLogs =()=>{
+
+  }
+
   convertDate = () => {
     let monthArr = [
       'Jan',
@@ -83,28 +87,28 @@ class Graph extends Component {
   //     temperatureArray.push(temp);
   //   };
 
-  convertHumidity = () => {
-    let humElem = null;
-    let humidity = humElem / 10;
-    humidityArray.push(humidity);
-  };
+//   convertHumidity = () => {
+//     let humElem = null;
+//     let humidity = humElem / 10;
+//     humidityArray.push(humidity);
+//   };
 
   // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
   // humidity: Math.floor(response.main.humidity / 10)
 
   componentDidMount() {
-    logs.getLogs().then(
-      logs.forEach(function(elem) {
-        dateArray.push(this.convertDate(elem.logDate));
-        severityArray.push(elem.dailyWellbeing);
-        temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
-        humidityArray.push(
-          this.convertHumidity(elem.logWeather.weatherHumidity)
-        );
-        activityArray.push(elem.dailyActivity);
-      }),
-      this.forceUpdate()
-    );
+    // getLogs().then(
+    //   logs.forEach(function(elem) {
+    //     dateArray.push(this.convertDate(elem.logDate));
+    //     severityArray.push(elem.dailyWellbeing);
+    //     temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
+    //     humidityArray.push(
+    //       this.convertHumidity(elem.logWeather.weatherHumidity)
+    //     );
+    //     activityArray.push(elem.dailyActivity);
+    //   }),
+    //   this.forceUpdate()
+    // );
   }
 
   render() {

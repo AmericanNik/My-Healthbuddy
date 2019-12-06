@@ -32,12 +32,7 @@ const LogSchema = new mongoose.Schema({
     enum: ['Morning', 'Afternoon', 'Evening', 'All-Day']
   },
   dailyCondition: [Object],
-  dailyActivity: {
-    type: Number,
-    required: true,
-    max: 10,
-    min: 1
-  },
+  dailyActivity: [Object],
   logMeds: [Object],
   logNutrients: [Object],
   logWeather: [Object]
