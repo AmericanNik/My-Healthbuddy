@@ -1,5 +1,6 @@
 import React, { Fragment, useState, Component } from 'react';
 import { Link } from 'react-router-dom';
+import StateList from "../../utils/states.json";
 
 
 
@@ -12,12 +13,16 @@ class Logs extends Component {
     }
   }
 
-  handleChange = event => {
+  handleCityChange = event => {
     this.setState({
       city: event.target.value,
+    })
+  };
+  handleStateChange = event => {
+    this.setState({
       stateAbbr: event.target.value
     })
-  }
+  };
 
   render() {
     return (
@@ -41,13 +46,66 @@ class Logs extends Component {
           <h2>Location</h2>
           <p>Where were you today?</p>
           <form>
-            <input type="text" value={this.state.city} onChange={this.handleChange} />City
+            <input type="text" value={this.state.city} onChange={this.handleCityChange} />City
           </form>
           <form>
-            <input type="text" value={this.state.stateAbbr} onChange={this.handleChange} />State Abbreviation
+            <label>State
+              <select value={this.state.value} onChange={this.handleStateChange}>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </label>
           </form>
 
-          <input type="submit" className="btn btn-primary logSubmit" value="Submit" />
+          <input type="submit" className="btn btn-primary logSubmit" value="Submit"/>
 
         </form>
       </Fragment>
