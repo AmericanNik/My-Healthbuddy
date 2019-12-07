@@ -23,8 +23,8 @@ const App = () => (
       <Route exact path='/logs' component={Logs} />
       <Route exact path='/graph' component={Graph} />
       <ConditionSearchBar />
-      <Footer />
       </Switch>
+      <Footer />
     </Fragment>
   </Router>
 );
