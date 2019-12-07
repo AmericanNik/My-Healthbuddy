@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 // const logs = require('../../../../controllers/logs');
-let logs = null;
+import Logs from "../../utils/API";
 
 let dateArray = ["11/1","11/2","11/3","11/4"];
 let severityArray = [6,5,8,3];
@@ -53,10 +53,6 @@ class Graph extends Component {
     };
   }
 
-  getLogs =()=>{
-
-  }
-
   convertDate = () => {
     let monthArr = [
       'Jan',
@@ -97,7 +93,7 @@ class Graph extends Component {
   // humidity: Math.floor(response.main.humidity / 10)
 
   componentDidMount() {
-    // getLogs().then(
+    Logs.getLogs().then(
     //   logs.forEach(function(elem) {
     //     dateArray.push(this.convertDate(elem.logDate));
     //     severityArray.push(elem.dailyWellbeing);
@@ -108,7 +104,7 @@ class Graph extends Component {
     //     activityArray.push(elem.dailyActivity);
     //   }),
     //   this.forceUpdate()
-    // );
+    );
   }
 
   render() {
