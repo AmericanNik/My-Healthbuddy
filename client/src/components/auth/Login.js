@@ -18,10 +18,10 @@ const Login = () => {
             </p>
             <form className='form' action='create-profile.html'>
               <div className='form-group'>
-                <input type='text' placeholder='Name' name='name' required />
+                <input type='text' placeholder='Email Address' name='name' required />
               </div>
               <div className='form-group'>
-                <input type='email' placeholder='Email Address' name='email' />
+                <input type='email' placeholder='Password' name='email' />
               </div>
               <div className='form-group'></div>
               <input type='submit' className='btn btn-primary' value='Login' />

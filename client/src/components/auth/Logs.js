@@ -26,9 +26,9 @@ class Logs extends Component {
 
   render() {
     return (
+    <div className="container">
       <Fragment>
         <h1 className="large text-primary">How did you feel today?</h1>
-        <p className="lead"><i className="fa fa-ambulance"></i></p>
         <form className="form" action="create-profile.html">
           <div className="form-group">
             <input type="text" placeholder="Dear Health Buddy, today was..." name="name" required />
@@ -49,7 +49,6 @@ class Logs extends Component {
             <input type="text" value={this.state.city} onChange={this.handleCityChange} />City
           </form>
           <form>
-            <label>State
               <select value={this.state.value} onChange={this.handleStateChange}>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -102,6 +101,8 @@ class Logs extends Component {
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
               </select>
+            <label>
+              State
             </label>
           </form>
 
@@ -109,6 +110,7 @@ class Logs extends Component {
 
         </form>
       </Fragment>
+      </div>
 
     )
   }
