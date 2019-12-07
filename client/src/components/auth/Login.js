@@ -28,7 +28,7 @@ const Login = () => {
             </form>
           </Fragment>
           <div>
-            Forgot your password? <Link to='register'>Reset Password</Link>
+            Don't have an account? <Link to='register'>Sign Up</Link>
           </div>
         </div>
       </div>
