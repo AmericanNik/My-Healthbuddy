@@ -111,20 +111,22 @@ class Graph extends Component {
 
   render() {
     return (
-      <div className="graph">
-        <Line
-          data={this.state.chartData}
-          width={300}
-          height={300}
-          options={{
-            maintainAspectRatio: false,
-            title: {
-              display: true,
-              text: "Health Buddy Trends",
-              fontSize: 25
-            }
-          }}
-        />
+      <div className="container">
+        <div className="graph">
+          <Line
+            data={this.state.chartData}
+            width={300}
+            height={300}
+            options={{
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: "Health Buddy Trends",
+                fontSize: 25
+              }
+            }}
+          />
+        </div>
       </div>
     );
   }

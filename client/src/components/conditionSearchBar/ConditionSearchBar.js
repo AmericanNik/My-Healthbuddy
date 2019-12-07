@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export class ConditionSearchBar extends Component {
-  state = {
-    conditionSearchTerm: '',
-    timeNumber: 0
-  };
+  constructor() {
+    super();
+    this.timer = null;
+
+    this.state = {
+      conditionSearchTerm: ""
+    };
+  }
 
   debounce = (func, wait, immediate) => {
     var timeout;
@@ -29,27 +33,12 @@ export class ConditionSearchBar extends Component {
   };
 
   onInputChange = async event => {
+    clearTimeout(this.timer);
     this.setState({ conditionSearchTerm: event.target.value });
-    this.setState({ timeNumber: this.state.timeNumber + 1 });
-    console.log('time number 1: ' + this.state.timeNumber);
 
-    let returnedFunction = this.debounce(() => {
-      console.log('searching!!!!');
+    this.timer = setTimeout(() => {
+      console.log("search!");
     }, 500);
-    window.addEventListener('resize', returnedFunction);
-
-    // setTimeout(() => {
-    //   this.setState({ timeNumber: 0 });
-    // }, 2000);
-
-    // setTimeout(() => {
-    //   if (this.state.timeNumber != 0) {
-    //     console.log('search');
-    //   }
-    // }, 250);
-
-    // this.setState({ timeNumber: 0 });
-    console.log('time Number 2: ' + this.state.timeNumber);
   };
 
   onFormSubmit = event => {
@@ -61,7 +50,7 @@ export class ConditionSearchBar extends Component {
       <div>
         <form onSubmit={this.onFormSubmit}>
           <input
-            type='text'
+            type="text"
             value={this.state.conditionSearchTerm}
             onChange={this.onInputChange}
           />
