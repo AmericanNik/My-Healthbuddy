@@ -7,6 +7,7 @@ import Logs from './components/auth/Logs';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Footer from './components/layout/Footer';
+import ConditionSearchBar from './components/conditionSearchBar/ConditionSearchBar';
 import './App.css';
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
       </Switch>
       <Route exact path='/logs' component={Logs} />
       <Route exact path='/graph' component={Graph} />
+      <ConditionSearchBar />
       <Footer />
     </Fragment>
   </Router>
