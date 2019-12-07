@@ -111,11 +111,12 @@ class Graph extends Component {
 
   render() {
     return (
+      <div className="container">
       <div className="graph">
         <Line
           data={this.state.chartData}
-          width={300}
-          height={300}
+          width={800}
+          height={400}
           options={{
             maintainAspectRatio: false,
             title: {
@@ -125,6 +126,7 @@ class Graph extends Component {
             }
           }}
         />
+      </div>
       </div>
     );
   }
