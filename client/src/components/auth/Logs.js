@@ -26,7 +26,7 @@ class Logs extends Component {
 
   render() {
     return (
-    <div className="logsPage">
+    <div className="container">
       <Fragment>
         <h1 className="large text-primary">How did you feel today?</h1>
         <form className="form" action="create-profile.html">
