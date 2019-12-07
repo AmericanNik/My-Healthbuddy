@@ -117,7 +117,7 @@ class Graph extends Component {
         <Line
           data={this.state.chartData}
           width={300}
-          height={300}
+          height={400}
           options={{
             maintainAspectRatio: false,
             title: {
