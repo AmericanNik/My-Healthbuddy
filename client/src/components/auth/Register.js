@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { PromiseProvider } from 'mongoose';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,12 @@ const Register = () => {
     password: '',
     password2: ''
   });
+
+  const handleClick = () => {
+    return <Redirect to='/graph' />
+  }
+
+
 
   const { name, email, password, password2 } = formData;
 
@@ -47,6 +54,7 @@ const Register = () => {
                 type='submit'
                 className='btn btn-primary'
                 value='Register'
+                onClick={handleClick}
               />
             </form>
             <p className='my-1'>

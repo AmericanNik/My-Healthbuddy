@@ -24,7 +24,7 @@ const Login = () => {
                 <input type='email' placeholder='Password' name='email' />
               </div>
               <div className='form-group'></div>
-              <input type='submit' className='btn btn-primary' value='Login' />
+              <Link to ="/graph" className="loginButton">Login</Link>
             </form>
           </Fragment>
           <div>
