@@ -41,10 +41,10 @@ app.use("/api/v1/logs", logs);
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/conditions", conditions);
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 app.use(errorHandler);
 
