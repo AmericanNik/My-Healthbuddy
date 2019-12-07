@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6edf1044.chunk.css",
+    "main.js": "/static/js/main.f0aaee1c.chunk.js",
+    "main.js.map": "/static/js/main.f0aaee1c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e077b804.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e077b804.js.map",
+    "static/js/2.77d097df.chunk.js": "/static/js/2.77d097df.chunk.js",
+    "static/js/2.77d097df.chunk.js.map": "/static/js/2.77d097df.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c88c27d70200304b7383315c3ca0d332.js": "/precache-manifest.c88c27d70200304b7383315c3ca0d332.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.6edf1044.chunk.css.map": "/static/css/main.6edf1044.chunk.css.map",
+    "static/media/App.css": "/static/media/healthbuddyBackground.f1b977f8.png",
+    "static/media/Navbar.css": "/static/media/healthbuddyBearHeadRed.63b63da7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e077b804.js",
+    "static/js/2.77d097df.chunk.js",
+    "static/css/main.6edf1044.chunk.css",
+    "static/js/main.f0aaee1c.chunk.js"
+  ]
+}
