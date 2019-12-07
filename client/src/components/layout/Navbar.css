@@ -27,3 +27,9 @@
   bottom: -2.5px;
   margin-right: 5px;
 }
+
+.footer{
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}

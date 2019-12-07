@@ -35,14 +35,32 @@ class Logs extends Component {
           </div>
           <h2>Well-Being</h2>
           <p>On a scale of 1-10, how did you feel today?</p>
-          <form>
-            <input type="number" min="1" max="10" />
-          </form>
+          <select>
+          <option value="1">1</option> 
+          <option value="2">2</option> 
+          <option value="3">3</option> 
+          <option value="4">4</option> 
+          <option value="5">5</option> 
+          <option value="6">6</option> 
+          <option value="7">7</option> 
+          <option value="8">8</option> 
+          <option value="9">9</option> 
+          <option value="10">10</option> 
+        </select>
           <h2>Activity</h2>
           <p>On a scale of 1-10, how active were you today?</p>
-          <form>
-            <input type="number" min="1" max="10" />
-          </form>
+        <select>
+          <option value="1">1</option> 
+          <option value="2">2</option> 
+          <option value="3">3</option> 
+          <option value="4">4</option> 
+          <option value="5">5</option> 
+          <option value="6">6</option> 
+          <option value="7">7</option> 
+          <option value="8">8</option> 
+          <option value="9">9</option> 
+          <option value="10">10</option> 
+        </select>
           <h2>Location</h2>
           <p>Where were you today?</p>
           <form>

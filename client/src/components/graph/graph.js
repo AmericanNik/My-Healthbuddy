@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
+import { Link } from 'react-router-dom';
 // const logs = require('../../../../controllers/logs');
 let logs = null;
 
@@ -127,6 +128,7 @@ class Graph extends Component {
           }}
         />
       </div>
+      <h2>Enter your daily log <Link to='logs'>here!</Link></h2>
       </div>
     );
   }
