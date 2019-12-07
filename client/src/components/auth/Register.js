@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import Graph from '../../components/graph/graph';
 import { Link, Redirect } from 'react-router-dom';
 import { PromiseProvider } from 'mongoose';
 
@@ -11,7 +12,7 @@ const Register = () => {
   });
 
   const handleClick = () => {
-    return <Redirect to='/graph' />
+    return <Redirect to exact path="/graph" component={Graph} />
   }
 
 
