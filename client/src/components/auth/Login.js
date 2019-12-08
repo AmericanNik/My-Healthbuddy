@@ -16,15 +16,19 @@ const Login = () => {
             <p className='lead'>
               <i className='fas fa-user'></i> Log into your account
             </p>
-            <form className='form' action='create-profile.html'>
+            <form className='form' action='/graph'>
               <div className='form-group'>
                 <input type='text' placeholder='Email Address' name='name' required />
               </div>
               <div className='form-group'>
-                <input type='email' placeholder='Password' name='email' />
+                <input type='password' placeholder='Password' name='password' />
               </div>
               <div className='form-group'></div>
-              <input type='submit' className='btn btn-primary' value='Login' />
+              <input
+                type='submit'
+                className='btn btn-primary'
+                value='Log In'
+              />
             </form>
           </Fragment>
           <div>

@@ -19,12 +19,11 @@ const App = () => (
       <Switch>
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
-
-      <Route exact path='/logs' component={Logs} />
-      <Route exact path='/graph' component={Graph} />
-      <ConditionSearchBar />
-      <Footer />
+        <Route exact path='/logs' component={Logs} />
+        <Route exact path='/graph' component={Graph} />
+        <ConditionSearchBar />
       </Switch>
+      <Footer />
     </Fragment>
   </Router>
 );
