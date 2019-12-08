@@ -1,0 +1,322 @@
+[
+    {
+        "date": 1573776000000,
+        "dailyWellbeing": 5,
+        "activity": 6,
+        "weather": {
+            "temperature": 50,
+            "humidity": 45
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1573862400000,
+        "dailyWellbeing": 6,
+        "activity": 7,
+        "weather": {
+            "temperature": 35,
+            "humidity": 38
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1573948800000,
+        "dailyWellbeing": 4,
+        "activity": 2,
+        "weather": {
+            "temperature": 36,
+            "humidity": 35
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574035200000,
+        "dailyWellbeing": 8,
+        "activity": 6,
+        "weather": {
+            "temperature": 41,
+            "humidity":35
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574121600000,
+        "dailyWellbeing": 5,
+        "activity": 5,
+        "weather": {
+            "temperature": 43,
+            "humidity": 38
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574208000000,
+        "dailyWellbeing": 6,
+        "activity": 4,
+        "weather": {
+            "temperature": 40,
+            "humidity": 35
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574294400000,
+        "dailyWellbeing": 9,
+        "activity": 8,
+        "weather": {
+            "temperature": 48,
+            "humidity": 55
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574380800000,
+        "dailyWellbeing": 7,
+        "activity": 5,
+        "weather": {
+            "temperature": 49,
+            "humidity": 50
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574467200000,
+        "dailyWellbeing": 4,
+        "activity": 2,
+        "weather": {
+            "temperature": 46,
+            "humidity": 40
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574553600000,
+        "dailyWellbeing": 8,
+        "activity": 5,
+        "weather": {
+            "temperature": 40,
+            "humidity": 40
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574640000000,
+        "dailyWellbeing": 9,
+        "activity": 8,
+        "weather": {
+            "temperature": 51,
+            "humidity": 45
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574726400000,
+        "dailyWellbeing": 7,
+        "activity": 4,
+        "weather": {
+            "temperature": 61,
+            "humidity": 50
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574812800000,
+        "dailyWellbeing": 10,
+        "activity": 9,
+        "weather": {
+            "temperature": 51,
+            "humidity":40
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574899200000,
+        "dailyWellbeing": 8,
+        "activity": 7,
+        "weather": {
+            "temperature": 45,
+            "humidity": 45
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1574985600000,
+        "dailyWellbeing": 4,
+        "activity": 3,
+        "weather": {
+            "temperature": 38,
+            "humidity": 50
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575072000000,
+        "dailyWellbeing": 4,
+        "activity": 4,
+        "weather": {
+            "temperature": 34,
+            "humidity": 43
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575158400000,
+        "dailyWellbeing": 3,
+        "activity": 5,
+        "weather": {
+            "temperature": 30,
+            "humidity": 35
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575244800000,
+        "dailyWellbeing": 5,
+        "activity": 4,
+        "weather": {
+            "temperature": 32,
+            "humidity": 40
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575331200000,
+        "dailyWellbeing": 6,
+        "activity": 6,
+        "weather": {
+            "temperature": 33,
+            "humidity": 40
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575417600000,
+        "dailyWellbeing": 7,
+        "activity": 5,
+        "weather": {
+            "temperature": 37,
+            "humidity": 35
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575504000000,
+        "dailyWellbeing": 8,
+        "activity": 6,
+        "weather": {
+            "temperature": 43,
+            "humidity": 40
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575590400000,
+        "dailyWellbeing": 4,
+        "activity": 5,
+        "weather": {
+            "temperature": 30,
+            "humidity": 45
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575676800000,
+        "dailyWellbeing": 5,
+        "activity": 5,
+        "weather": {
+            "temperature": 31,
+            "humidity": 33
+        },
+        "logEntry": ""
+    },
+    {
+        "date": 1575763200000,
+        "dailyWellbeing": 4,
+        "activity": 5,
+        "weather": {
+            "temperature":31 ,
+            "humidity": 34
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1575849600000,
+        "dailyWellbeing": 5,
+        "activity": 5,
+        "weather": {
+            "temperature": 50,
+            "humidity": 44
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1575936000000,
+        "dailyWellbeing": 4,
+        "activity": 4,
+        "weather": {
+            "temperature":59 ,
+            "humidity": 45
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1576022400000,
+        "dailyWellbeing":5 ,
+        "activity":5 ,
+        "weather": {
+            "temperature":33 ,
+            "humidity": 40
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1576108800000,
+        "dailyWellbeing": 7,
+        "activity": 5,
+        "weather": {
+            "temperature":30 ,
+            "humidity": 54
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1576108800000,
+        "dailyWellbeing": 5,
+        "activity": 4,
+        "weather": {
+            "temperature":33 ,
+            "humidity": 45
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1576195200000,
+        "dailyWellbeing": 6,
+        "activity": 5,
+        "weather": {
+            "temperature": 45,
+            "humidity": 50
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1576368000000,
+        "dailyWellbeing": 8,
+        "activity": 6,
+        "weather": {
+            "temperature": 46,
+            "humidity": 50
+        },
+        "logEntry":""
+    },
+    {
+        "date": 1576454400000,
+        "dailyWellbeing": 5,
+        "activity": 6,
+        "weather": {
+            "temperature": 41,
+            "humidity": 40
+        },
+        "logEntry":""
+    }
+]

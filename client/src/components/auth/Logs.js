@@ -1,6 +1,8 @@
 import React, { Fragment, useState, Component } from 'react';
+import axios from "axios";
 import { Link } from 'react-router-dom';
 import StateList from "../../utils/states.json";
+// let thirdPartyAPI = require ("../../utils/thirdPartyAPIs");
 
 
 
@@ -9,7 +11,8 @@ class Logs extends Component {
     super();
     this.state = {
       city: "",
-      stateAbbr: ""
+      stateAbbr: "",
+      zipCode: ""
     }
   }
 
@@ -24,49 +27,76 @@ class Logs extends Component {
     })
   };
 
+  getWeather = function () {
+    return axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.weatherAPIKey}&zip=${this.state.zipCode}`)
+      .then(function (response) {
+        let weather = {
+          temperature: ((response.data.main.temp - 273.15) * 1.8 + 32),
+          humidity: response.main.humidity
+        }
+        console.log(weather);
+      })
+  }
+
+  getZipCodeAndWeather = () => {
+    return axios.get(`https://www.zipcodeapi.com/rest/${process.env.zipCodeAPIKey}/city-zips.json/${this.state.city}/${this.state.stateAbbr}`)
+      .then(function (response) {
+        console.log(response.zip_codes[0]);
+        let zip = response.zip_codes[0];
+        this.setState({
+          zipCode: zip
+        })
+      }).then(function (res) {
+        // getWeather(res);
+      }).then(function (res2) {
+        // addWeather(res2);
+      })
+  };
+
+
   render() {
     return (
-    <div className="container">
-      <Fragment>
-        <h1 className="large text-primary">How did you feel today?</h1>
-        <form className="form" action="create-profile.html">
-          <div className="form-group">
-            <input type="text" placeholder="Dear Health Buddy, today was..." name="name" required />
-          </div>
-          <h2>Well-Being</h2>
-          <p>On a scale of 1-10, how did you feel today?</p>
-          <select>
-          <option value="1">1</option> 
-          <option value="2">2</option> 
-          <option value="3">3</option> 
-          <option value="4">4</option> 
-          <option value="5">5</option> 
-          <option value="6">6</option> 
-          <option value="7">7</option> 
-          <option value="8">8</option> 
-          <option value="9">9</option> 
-          <option value="10">10</option> 
-        </select>
-          <h2>Activity</h2>
-          <p>On a scale of 1-10, how active were you today?</p>
-        <select>
-          <option value="1">1</option> 
-          <option value="2">2</option> 
-          <option value="3">3</option> 
-          <option value="4">4</option> 
-          <option value="5">5</option> 
-          <option value="6">6</option> 
-          <option value="7">7</option> 
-          <option value="8">8</option> 
-          <option value="9">9</option> 
-          <option value="10">10</option> 
-        </select>
-          <h2>Location</h2>
-          <p>Where were you today?</p>
-          <form>
-            <input type="text" value={this.state.city} onChange={this.handleCityChange} />City
+      <div className="container">
+        <Fragment>
+          <h1 className="large text-primary">How did you feel today?</h1>
+          <form className="form" action="create-profile.html">
+            <div className="form-group">
+              <input type="text" placeholder="Dear Health Buddy, today was..." name="name" required />
+            </div>
+            <h2>Well-Being</h2>
+            <p>On a scale of 1-10, how did you feel today?</p>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <h2>Activity</h2>
+            <p>On a scale of 1-10, how active were you today?</p>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <h2>Location</h2>
+            <p>Where were you today?</p>
+            <form>
+              <input type="text" value={this.state.city} onChange={this.handleCityChange} />City
           </form>
-          <form>
+            <form>
               <select value={this.state.value} onChange={this.handleStateChange}>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -119,15 +149,15 @@ class Logs extends Component {
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
               </select>
-            <label>
-              State
+              <label>
+                State
             </label>
+            </form>
+
+            <input type="submit" className="btn btn-primary logSubmit" value="Submit" onCLick={this.getZipCodeAndWeather} />
+
           </form>
-
-          <input type="submit" className="btn btn-primary logSubmit" value="Submit"/>
-
-        </form>
-      </Fragment>
+        </Fragment>
       </div>
 
     )

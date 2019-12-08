@@ -2,7 +2,7 @@ import axios from "axios";
 import { addWeather } from "../../../controllers/weather";
 const router = require("../../../controllers/weather");
 
-export default thirdPartyAPI({
+exports.thirdPartyAPI({
     getWeather: function () {
         return axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.weatherAPIKey}&zip=${zipCode}`)
             .then(function (response) {
