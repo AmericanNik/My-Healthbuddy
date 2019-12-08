@@ -1,13 +1,23 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Graph from '../../components/graph/graph';
+import { Link, Redirect } from 'react-router-dom';
+import { PromiseProvider } from 'mongoose';
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
+    toGraph: true,
     name: '',
     email: '',
     password: '',
     password2: ''
   });
+
+  const handleClick = () => {
+    return <Redirect to="/graph" />
+  }
+
+
 
   const { name, email, password, password2 } = formData;
 
@@ -20,7 +30,7 @@ const Register = () => {
             <p className='lead'>
               <i className='fas fa-user'></i> Create Your Account
             </p>
-            <form className='form' action='create-profile.html'>
+            <form className='form' action='/graph'>
               <div className='form-group'>
                 <input type='text' placeholder='Name' name='name' required />
               </div>
@@ -47,10 +57,11 @@ const Register = () => {
                 type='submit'
                 className='btn btn-primary'
                 value='Register'
+                onClick={handleClick}
               />
             </form>
             <p className='my-1'>
-              Already have an account? <Link to='/login'>sign in</Link>
+              Already have an account? <Link to='/login'>Sign In</Link>
             </p>
           </div>
         </Fragment>

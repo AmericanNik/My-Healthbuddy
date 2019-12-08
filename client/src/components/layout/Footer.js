@@ -1,9 +1,10 @@
 import React from 'react';
+import './Navbar.css';
 
 const Footer = () => {
   return (
     <footer className='footer'>
-      <p>Healthbuddy 2019</p>
+      <p>HealthBuddy 2019</p>
     </footer>
   );
 };
