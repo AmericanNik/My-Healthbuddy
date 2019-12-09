@@ -8,6 +8,7 @@ class Logs extends Component {
     super(props);
     this.state = {
       logEntry: '',
+      logTime: '',
       city: '',
       stateAbbr: ''
     };
@@ -16,6 +17,8 @@ class Logs extends Component {
   onLogEntryChange = async event => {
     console.log(this.state.logEntry);
     this.setState({ logEntry: event.target.value });
+    const d = new Date();
+    this.setState({ logTime: d.toString() });
   };
 
   handleCityChange = event => {
@@ -41,7 +44,8 @@ class Logs extends Component {
               <div>
                 {this.state.logEntry !== '' ? (
                   <div className='screenJournal'>
-                    <h5 className='journalHeader'> Dear HealthBuddy...</h5>
+                    <h5>{this.state.logTime}</h5>
+                    <h4 className='journalHeader'> Dear HealthBuddy...</h4>
                     <p className='journalEntry'>{this.state.logEntry}</p>
                   </div>
                 ) : (

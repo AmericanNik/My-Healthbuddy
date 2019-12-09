@@ -28,3 +28,11 @@
   border: double 2px #dc3545;
   color: black;
 }
+
+.journalHeader {
+  margin-top: -10px;
+}
+
+.journalEntry {
+  margin-left: 15px;
+}
