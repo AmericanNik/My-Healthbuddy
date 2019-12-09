@@ -11,12 +11,23 @@
   margin-right: 5px;
 }
 
+#navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbuttons {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
 .logoLink {
   font-size: 2rem;
   font-weight: bold;
   height: 50px;
   padding-left: 10px;
   padding-right: 10px;
+  justify-content: flex-start;
 }
 
 .logoLink:hover {
