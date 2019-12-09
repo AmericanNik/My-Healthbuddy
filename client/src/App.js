@@ -8,23 +8,24 @@ import Logs from './components/auth/Logs';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Footer from './components/layout/Footer';
-import ConditionSearchBar from './components/conditionSearchBar/ConditionSearchBar';
 import './App.css';
 
 const App = () => (
   <Router>
-    <Fragment>
-      <Navbar />
-      <Route exact path='/' component={Landing} />
-      <Switch>
-        <Route exact path='/register' component={Register} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/logs' component={Logs} />
-        <Route exact path='/graph' component={Graph} />
-        <ConditionSearchBar />
-      </Switch>
-      <Footer />
-    </Fragment>
+    <div className='content'>
+      <Fragment>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/logs' component={Logs} />
+          <Route exact path='/graph' component={Graph} />
+        </Switch>
+      </Fragment>
+      <div className='push'></div>
+    </div>
+    <Footer />
   </Router>
 );
 

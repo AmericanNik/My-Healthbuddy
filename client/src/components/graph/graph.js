@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
+import OptionDivider from './OptionDivider';
 // const logs = require('../../../../controllers/logs');
 import Logs from '../../utils/API';
+import './graph.css';
 
 let dateArray = ['11/1', '11/2', '11/3', '11/4'];
 let severityArray = [6, 5, 8, 3];
@@ -111,25 +113,38 @@ class Graph extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <div className='graph'>
-          <Line
-            data={this.state.chartData}
-            width={800}
-            height={400}
-            options={{
-              maintainAspectRatio: false,
-              title: {
-                display: true,
-                text: 'Health Buddy Trends',
-                fontSize: 25
-              }
-            }}
-          />
+      <div className='landing graphContainer'>
+        <div className='ui grid fluid'>
+          <div className='ui two column centered grid'>
+            <div className='column'>
+              <h1 className='dashboardTitle'>
+                Welcome To Your HealthBuddy Dashboard
+              </h1>
+            </div>
+          </div>
         </div>
-        <h2>
-          Enter your daily log <Link to='logs'>here!</Link>
-        </h2>
+        <div className='mainArea'>
+          <div className='graph'>
+            <Line
+              data={this.state.chartData}
+              width={800}
+              height={400}
+              options={{
+                maintainAspectRatio: false,
+                title: {
+                  display: true,
+                  text: 'Health Buddy Trends',
+                  fontSize: 25
+                }
+              }}
+            />
+          </div>
+
+          <OptionDivider />
+          <h2>
+            Enter your daily log <Link to='logs'>here!</Link>
+          </h2>
+        </div>
       </div>
     );
   }

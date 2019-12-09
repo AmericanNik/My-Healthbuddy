@@ -3,7 +3,6 @@ import Graph from '../../components/graph/graph';
 import { Link, Redirect } from 'react-router-dom';
 import { PromiseProvider } from 'mongoose';
 
-
 const Register = () => {
   const [formData, setFormData] = useState({
     toGraph: true,
@@ -14,18 +13,16 @@ const Register = () => {
   });
 
   const handleClick = () => {
-    return <Redirect to="/graph" />
-  }
-
-
+    return <Redirect to='/graph' />;
+  };
 
   const { name, email, password, password2 } = formData;
 
   return (
     <div className='landing'>
-      <div className='dark-overlay'>
+      <div className='mainArea'>
         <Fragment>
-          <div className='container displayContainer'>
+          <div className='container landing-inner'>
             <h1 className='large text-primary'>Sign Up</h1>
             <p className='lead'>
               <i className='fas fa-user'></i> Create Your Account

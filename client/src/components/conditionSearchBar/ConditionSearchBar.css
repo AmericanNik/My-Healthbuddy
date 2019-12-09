@@ -1,0 +1,34 @@
+.searchHead {
+  color: #dc3545;
+}
+
+.conditionResults {
+  width: 100%;
+  margin-top: 0px;
+
+  cursor: pointer;
+}
+
+.conditionResults:hover {
+  color: #dc3545;
+  background-color: #3333;
+  cursor: pointer;
+}
+
+.conditionSearchBar {
+}
+
+.resultsContainer {
+  background-color: #2222;
+  text-align: left;
+  font-size: 1.4rem;
+  margin-top: 0px;
+}
+
+.resultsContainer:hover {
+  /* color: red; */
+}
+
+.resultsH3 {
+  margin-top: 0px;
+}
