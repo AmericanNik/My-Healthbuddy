@@ -1,0 +1,47 @@
+.videoSearchDisplay {
+  background-color: #dc3545;
+  border-radius: 0px 0px 15px 15px;
+  padding: 20px 15px 20px 15px;
+  line-height: 2rem;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+}
+
+.conditionHeader {
+  color: white;
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.conditionHeader span {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+.clearButton {
+  margin-top: 10px;
+}
+
+.clearButton2 {
+  margin-top: 10px;
+}
+.conditionCta {
+  background-color: green;
+  padding: 25px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+h3 {
+  padding-bottom: 10px;
+}
