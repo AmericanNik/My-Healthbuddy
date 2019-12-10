@@ -5,7 +5,9 @@ import OptionDivider from './OptionDivider';
 // const logs = require('../../../../controllers/logs');
 import Logs from "../../utils/API";
 import demoLogs from "../../utils/demoLogs";
+import LogList from "../logList/logList";
 import "./graph.css";
+
 
 let dateArray = [];
 let severityArray = [];
@@ -17,6 +19,7 @@ class Graph extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      clicked: false,
       chartData: {
         labels: dateArray,
         datasets: [
@@ -73,7 +76,7 @@ class Graph extends Component {
         "Nov",
         "Dec"
       ];
-      let dateElem =elem.date;
+      let dateElem = elem.date;
       let date = new Date(dateElem);
       let month = monthArr[date.getMonth()];
       let day = date.getDate();
@@ -98,9 +101,15 @@ class Graph extends Component {
 
   };
 
+  handleClick = () => {
+    this.setState({
+      clicked: true
+    })
+  }
 
 
-render() {
+
+  render() {
     return (
       <div className='landing graphContainer'>
         <div className='ui grid fluid'>
@@ -129,7 +138,9 @@ render() {
             />
           </div>
           <OptionDivider />
-          
+          <div className="graph">
+            <LogList />
+          </div>
         </div>
       </div>
     );

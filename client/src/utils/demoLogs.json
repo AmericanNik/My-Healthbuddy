@@ -7,7 +7,7 @@
             "temperature": 50,
             "humidity": 45
         },
-        "logEntry": ""
+        "logEntry": "Hello Health Buddy! This is my first entry"
     },
     {
         "date": 1573862400000,

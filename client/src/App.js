@@ -8,6 +8,7 @@ import Logs from './components/auth/Logs';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Footer from './components/layout/Footer';
+import LogList from "./components/logList/logList";
 import './App.css';
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
           <Route exact path='/login' component={Login} />
           <Route exact path='/logs' component={Logs} />
           <Route exact path='/graph' component={Graph} />
+          <Route exact path ="/loglist" component = {LogList}/>
         </Switch>
       </Fragment>
       <div className='push'></div>
