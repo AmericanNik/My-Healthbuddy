@@ -4,7 +4,9 @@ import './Navbar.css';
 const Footer = () => {
   return (
     <footer className='footer'>
-      <p>HealthBuddy 2019</p>
+      <div className=''>
+        <p>HealthBuddy 2019</p>
+      </div>
     </footer>
   );
 };

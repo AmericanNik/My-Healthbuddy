@@ -5,9 +5,9 @@ const Healthbuddy = require('../models/Healthbuddy');
 
 //@desc     Get conditions
 //@route    GET /api/v1/conditions
-//@route    GET/api/v1/healbuddis/:healthbuddyId/conditions
 //@access   Private
 
+// ORIGINAL DO NOT DELETE THIS COMMENTED SECTION OF CODE JUST YET
 exports.getConditions = asyncHandler(async (req, res, next) => {
   if (req.params.healthbuddyId) {
     const conditions = await Condition.find({
@@ -17,6 +17,30 @@ exports.getConditions = asyncHandler(async (req, res, next) => {
     return res.status(200).json(res.advancedResults);
   } else {
     res.status(200).json(res.advancedResults);
+  }
+});
+
+//@desc     Search conditions
+//@route    GET /search/:condition
+//@access   Public
+
+exports.searchCondition = asyncHandler(async (req, res, next) => {
+  if (req.params.condition) {
+    const condition = await Condition.find(
+      {
+        condition: {
+          $regex: new RegExp(req.params.condition)
+        }
+      },
+      {
+        _id: 0,
+        __v: 0
+      },
+      function(err, data) {}
+    ).sort({ condition: 1 });
+    res
+      .status(201)
+      .json({ success: true, count: condition.length, data: condition });
   }
 });
 

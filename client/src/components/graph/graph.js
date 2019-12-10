@@ -1,9 +1,11 @@
-import React, { Component } from "react";
-import { Line } from "react-chartjs-2";
+import React, { Component } from 'react';
+import { Line } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
+import OptionDivider from './OptionDivider';
 // const logs = require('../../../../controllers/logs');
 import Logs from "../../utils/API";
 import demoLogs from "../../utils/demoLogs";
+import "./graph.css";
 
 let dateArray = [];
 let severityArray = [];
@@ -19,34 +21,34 @@ class Graph extends Component {
         labels: dateArray,
         datasets: [
           {
-            label: "Well-Being",
+            label: 'Well-Being',
             data: severityArray,
-            backgroundColor: "green",
-            borderColor: "green",
+            backgroundColor: 'green',
+            borderColor: 'green',
             borderWidth: 2,
             fill: false
           },
           {
-            label: "Activity Level",
+            label: 'Activity Level',
             data: activityArray,
-            backgroundColor: "blue",
-            borderColor: "blue",
+            backgroundColor: 'blue',
+            borderColor: 'blue',
             borderWidth: 2,
             fill: false
           },
           {
-            label: "Temperature",
+            label: 'Temperature',
             data: temperatureArray,
-            backgroundColor: "red",
-            borderColor: "red",
+            backgroundColor: 'red',
+            borderColor: 'red',
             borderWidth: 2,
             fill: false
           },
           {
-            label: "Humidity",
+            label: 'Humidity',
             data: humidityArray,
-            backgroundColor: "purple",
-            borderColor: "purple",
+            backgroundColor: 'purple',
+            borderColor: 'purple',
             borderWidth: 2,
             fill: false
           }
@@ -97,28 +99,40 @@ class Graph extends Component {
   };
 
 
-  render() {
+
+render() {
     return (
-      <div className="container">
-        <div className="graph">
-          <Line
-            data={this.state.chartData}
-            width={800}
-            height={400}
-            options={{
-              maintainAspectRatio: false,
-              title: {
-                display: true,
-                text: "Health Buddy Trends",
-                fontSize: 25
-              }
-            }}
-          />
+      <div className='landing graphContainer'>
+        <div className='ui grid fluid'>
+          <div className='ui two column centered grid'>
+            <div className='column'>
+              <h1 className='dashboardTitle'>
+                Welcome To Your HealthBuddy Dashboard
+              </h1>
+            </div>
+          </div>
         </div>
-        <h2>Enter your daily log <Link to='logs'>here!</Link></h2>
+        <div className='mainArea'>
+          <div className='graph'>
+            <Line
+              data={this.state.chartData}
+              width={800}
+              height={400}
+              options={{
+                maintainAspectRatio: false,
+                title: {
+                  display: true,
+                  text: 'Health Buddy Trends',
+                  fontSize: 25
+                }
+              }}
+            />
+          </div>
+          <OptionDivider />
+          
+        </div>
       </div>
     );
   }
 }
-
 export default Graph;

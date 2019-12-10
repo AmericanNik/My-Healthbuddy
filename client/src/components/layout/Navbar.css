@@ -1,35 +1,106 @@
 .testt {
-  height: 32px;
-  width: 32px;
+  height: 40px;
+  width: 40px;
   background: url('./healthbuddyBearHead.png');
   display: inline-block;
   position: relative;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
-  bottom: -2.5px;
+  bottom: -5px;
   margin-right: 5px;
 }
 
-.logoText {
-  color: red;
+#navbar {
+  display: flex;
+  justify-content: space-between;
 }
 
-.logoText a:hover .testt {
-  height: 32px;
-  width: 32px;
-  background: url('./healthbuddyBearHeadRed.png');
-  display: inline-block;
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-  bottom: -2.5px;
-  margin-right: 5px;
+.navbuttons {
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
-.footer{
-  width: 100%;
-  bottom: 0;
-  position: absolute;
+.logoLink {
+  font-size: 2rem;
+  font-weight: bold;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: flex-start;
 }
+
+.logoLink:hover {
+  background-color: #dc3545;
+}
+
+.mainNav li {
+  text-decoration: none;
+}
+
+.navButtons ul,
+li {
+  margin: 0;
+}
+
+.navLogin {
+  height: 50px;
+  width: 60px;
+  margin-top: 0;
+}
+
+.navSignUp {
+  height: 50px;
+  width: 80px;
+  margin-top: 0;
+}
+.navSignUp:hover {
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+}
+
+.navLogin:hover {
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+}
+
+.signUpButton {
+  margin-top: 20px;
+  text-align: center;
+}
+.loginButton {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.logoText:hover {
+  color: #dc3545;
+}
+
+#signUpLink:hover {
+  /* background-color: #dc3545; */
+}
+
+@media only screen and (max-width: 700px) {
+  .div.navbar {
+    height: 100px;
+    display: block;
+  }
+  #navbar {
+    height: 100px;
+  }
+  .logoLink {
+    font-size: 34px;
+    font-weight: bold;
+    height: 60px;
+    padding: 8px;
+    margin-top: 0;
+  }
+}
+/* @media all and (min-width: 701px) {
+  .navbar {
+    height: 50px;
+  }
+} */
