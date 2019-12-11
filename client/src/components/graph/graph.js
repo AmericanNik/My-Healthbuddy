@@ -145,9 +145,6 @@ const Graph = () => {
         </div>
 
         <OptionDivider />
-        <h2>
-          Enter your daily log <Link to='logs'>here!</Link>
-        </h2>
       </div>
     </div>
   );

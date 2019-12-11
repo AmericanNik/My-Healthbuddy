@@ -121,10 +121,10 @@ export class ConditionSearchBar extends Component {
             <div>
               {this.state.conditionSearchTerm !== '' &&
               this.state.results === null ? (
-                <div class='ui segment'>
+                <div className='ui segment'>
                   <p></p>
-                  <div class='ui active dimmer'>
-                    <div class='ui loader'></div>
+                  <div className='ui active dimmer'>
+                    <div className='ui loader'></div>
                   </div>
                 </div>
               ) : (
@@ -138,14 +138,7 @@ export class ConditionSearchBar extends Component {
           )}
         </form>
         {this.state.selectedCondition === null ? (
-          <div>
-            {/* <div class='ui segment'>
-              <p></p>
-              <div class='ui active dimmer'>
-                <div class='ui loader'></div>
-              </div>
-            </div> */}
-          </div>
+          <div></div>
         ) : (
           <div>
             <VideoSearch

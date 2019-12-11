@@ -20,9 +20,7 @@ const LogEntry = props => {
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
-    if (isAuthenticated) {
-      props.history.push('/dashboard');
-    }
+    authContext.loadUser();
     if (error === 'Duplicate field value entered') {
       setAlert('User Already Exists', 'danger');
       clearErrors();
