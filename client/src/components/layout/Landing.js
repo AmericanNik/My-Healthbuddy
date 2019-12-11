@@ -4,16 +4,6 @@ import ConditionSearchBar from '../conditionSearchBar/ConditionSearchBar';
 import './Landing.css';
 
 class Landing extends React.Component {
-  componentDidMount() {
-    const v = document.getElementById('navLogoLink');
-    v.className += ' currentPage';
-  }
-
-  componentWillUnmount() {
-    const v = document.getElementById('navLogoLink');
-    v.className = v.className.substring(0, v.className.length - 12);
-  }
-
   render() {
     return (
       <div className='mainContain'>

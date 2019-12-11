@@ -63,6 +63,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 //@access   Private
 
 exports.getMe = asyncHandler(async (req, res, next) => {
+  console.log('GET ME WAS FIRED: ' + req.user);
   const user = await User.findById(req.user.id);
 
   res.status(200).json({ success: true, data: user });

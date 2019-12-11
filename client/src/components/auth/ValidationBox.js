@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ValidationBox = props => {
-  console.log(props);
   const { password, confirmPassword } = props;
 
   let validationSwitch = {
@@ -70,18 +69,16 @@ const ValidationBox = props => {
     }
 
     if (
-      validationSwitch.lowerPass == true &&
-      validationSwitch.upperPass == true &&
-      validationSwitch.numberPass == true &&
-      validationSwitch.specialPass == true &&
-      validationSwitch.lengthPass == true &&
-      validationSwitch.matchPass == true
+      validationSwitch.lowerPass === true &&
+      validationSwitch.upperPass === true &&
+      validationSwitch.numberPass === true &&
+      validationSwitch.specialPass === true &&
+      validationSwitch.lengthPass === true &&
+      validationSwitch.matchPass === true
     ) {
       validationSwitch.validPass = true;
     }
-    props.passValid(validationSwitch.validPass);
   };
-  console.log(validationSwitch);
 
   testPassword(password);
 
@@ -164,7 +161,7 @@ const ValidationBox = props => {
           </ul>
         </div>
       ) : (
-        <div>No Password Entered</div>
+        <div></div>
       )}
     </div>
   );

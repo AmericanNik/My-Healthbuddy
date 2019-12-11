@@ -8,7 +8,6 @@ html {
 html,
 body {
   height: 100%;
-  margin: 0;
 }
 body {
   background: none;
@@ -168,7 +167,8 @@ img {
 
 .alert {
   padding: 0.8rem;
-  margin: 1rem 0;
+  margin: 2px;
+  border-bottom: #171717;
   opacity: 0.9;
   background: var(--light-color);
   color: #333;

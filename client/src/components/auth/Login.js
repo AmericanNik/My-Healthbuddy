@@ -1,95 +1,93 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
+import AuthContext from '../../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
+const Login = props => {
+  const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
 
-    this.state = {
-      email: '',
-      password: ''
-    };
-  }
+  const { setAlert } = alertContext;
+  const { login, error, clearErrors, isAuthenticated } = authContext;
 
-  componentDidMount() {
-    // Changes CSS Class In Nav to active.
-    const v = document.getElementById('navLoginLink');
-    v.className += ' currentPage';
-  }
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push('/dashboard');
+    }
+    if (error === 'Invalid Credentials') {
+      setAlert('User Already Exists', 'danger');
+      clearErrors();
+    }
+  });
 
-  componentDidUpdate() {}
+  const [user, setUser] = useState({
+    email: '',
+    password: ''
+  });
 
-  componentWillUnmount() {
-    const v = document.getElementById('navLoginLink');
-    v.className = v.className.substring(0, v.className.length - 12);
-  }
-  //  Captures input and sets as state
-  onEmailChange = async event => {
-    this.setState({ email: event.target.value });
+  const { email, password } = user;
+
+  const onChange = e => {
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  onPasswordChange = async event => {
-    this.setState({ password: event.target.value });
+  const onSubmit = e => {
+    e.preventDefault();
+    if (email === '' || password === '') {
+      setAlert('Please fill in all fields', 'danger');
+    } else {
+      login({ email, password });
+    }
   };
 
-  render() {
-    return (
-      <section className='landing'>
-        <div>
-          <div className='mainArea'>
-            <div className='container landing-inner'>
-              <Fragment>
-                <h1 className='large text-primary'>Welcome Back!</h1>
-                <p className='lead'>
-                  <i className='fas fa-user'></i> Log into your account
-                </p>
-                <p>
-                  {this.state.passwordValid === 'true' ? (
-                    <span>Passed!</span>
-                  ) : (
-                    <span>Failed!</span>
-                  )}
-                </p>
-                <p>{this.state.email}</p>
-                <p>{this.state.password}</p>
-                <form className='form' action='/graph'>
-                  <div className='form-group'>
-                    <input
-                      type='text'
-                      placeholder='Email Address'
-                      name='name'
-                      onChange={this.onEmailChange}
-                      required
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <input
-                      type='password'
-                      placeholder='Password'
-                      onChange={this.onPasswordChange}
-                      name='password'
-                    />
-                  </div>
-                  <div className='form-group'></div>
+  return (
+    <section className='landing'>
+      <div>
+        <div className='mainArea'>
+          <div className='container landing-inner'>
+            <Fragment>
+              <h1 className='large text-primary'>Welcome Back!</h1>
+              <p className='lead'>
+                <i className='fas fa-user'></i> Log into your account
+              </p>
+              <form className='form'>
+                <div className='form-group'>
                   <input
-                    type='submit'
-                    className='ui fluid button red large'
-                    value='Log In'
-                    onClick={this.submitLogin}
+                    type='email'
+                    placeholder='Email Address'
+                    name='email'
+                    value={email}
+                    onChange={onChange}
                   />
-                </form>
-              </Fragment>
-              <br />
-              <div>
-                Don't have an account? <Link to='register'>Sign Up</Link>
-              </div>
+                </div>
+                <div className='form-group'>
+                  <input
+                    type='password'
+                    placeholder='Password'
+                    value={password}
+                    onChange={onChange}
+                    name='password'
+                  />
+                </div>
+                <div className='form-group'></div>
+                <input
+                  type='submit'
+                  className='ui fluid button red large'
+                  value='Login'
+                  onClick={onSubmit}
+                />
+              </form>
+            </Fragment>
+            <br />
+            <div>
+              Don't have an account? <Link to='register'>Sign Up</Link>
             </div>
           </div>
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </section>
+  );
+};
 
 export default Login;
