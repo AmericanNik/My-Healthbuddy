@@ -1,3 +1,15 @@
-.mainArea {
-  margin-top: 20px;
+.validationUl {
+  text-align: initial;
+}
+
+.grid-container {
+  display: inline-grid;
+}
+
+.fail {
+  color: #dc3545;
+}
+
+.pass {
+  color: #35db5a;
 }

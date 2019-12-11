@@ -7,12 +7,12 @@ const OptionDivider = () => {
         <div className='ui two column very relaxed stackable grid stackable'>
           <div className='column'>
             <div className='ui button massive green'>
-              <i class='calendar plus icon'></i> New Log
+              <i className='calendar plus icon'></i> New Log
             </div>
           </div>
           <div className='middle aligned column'>
             <div className='ui big button massive'>
-              <i class='file alternate icon'></i>
+              <i className='file alternate icon'></i>
               View Log
             </div>
           </div>

@@ -15,7 +15,6 @@ class Logs extends Component {
   }
 
   onLogEntryChange = async event => {
-    console.log(this.state.logEntry);
     this.setState({ logEntry: event.target.value });
     const d = new Date();
     this.setState({ logTime: d.toString() });
@@ -31,8 +30,6 @@ class Logs extends Component {
       stateAbbr: event.target.value
     });
   };
-
-  l;
 
   render() {
     return (

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
 import OptionDivider from './OptionDivider';
+import axios from 'axios';
 // const logs = require('../../../../controllers/logs');
 import Logs from '../../utils/API';
 import './graph.css';
@@ -109,6 +110,17 @@ class Graph extends Component {
       //   }),
       //   this.forceUpdate()
       ();
+  }
+
+  componentWillMount() {
+    axios
+      .get('/api/v1/auth/me')
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   render() {

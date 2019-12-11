@@ -11,10 +11,10 @@
   margin-right: 5px;
 }
 
-#navbar {
+/* #navbar {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .navbuttons {
   margin-left: auto;
@@ -31,6 +31,10 @@
 }
 
 .logoLink:hover {
+  background-color: #dc3545;
+}
+
+.currentPage {
   background-color: #dc3545;
 }
 
@@ -69,10 +73,12 @@ li {
 .signUpButton {
   margin-top: 20px;
   text-align: center;
+  font-size: 1.2rem;
 }
 .loginButton {
   margin-top: 20px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .logoText:hover {
@@ -83,21 +89,57 @@ li {
   /* background-color: #dc3545; */
 }
 
-@media only screen and (max-width: 700px) {
-  .div.navbar {
-    height: 100px;
-    display: block;
-  }
-  #navbar {
-    height: 100px;
-  }
+@media all and (max-width: 700px) {
   .logoLink {
-    font-size: 34px;
-    font-weight: bold;
-    height: 60px;
-    padding: 8px;
-    margin-top: 0;
+    margin-top: -20px;
+    display: inline-block;
   }
+
+  .testt {
+    margin-top: 3px;
+  }
+
+  #navbar {
+    height: 70px;
+  }
+
+  .navSignUp {
+    height: 30px;
+  }
+  .navLogin {
+    height: 30px;
+  }
+
+  .signUpButton {
+    margin-top: 8px;
+  }
+
+  .loginButton {
+    margin-top: 8px;
+  }
+
+  .navButtons {
+    height: 30px;
+  }
+}
+
+@media all and (max-width: 391) {
+  .navbar {
+    width: 100%;
+    padding-right: 150px;
+  }
+}
+
+@media all and (max-width: 300px) {
+  .testt {
+    height: -20px;
+    margin-left: auto;
+    display: inline-block;
+  }
+
+  /* .healthbuddyLogoName {
+    display: none;
+  } */
 }
 /* @media all and (min-width: 701px) {
   .navbar {
