@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect,useState } from "react";
+import React, { Component, useContext, useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 import OptionDivider from "./OptionDivider";
@@ -10,8 +10,8 @@ import demoLogs from "../../utils/demoLogs";
 import LogList from "../logList/logList";
 import "./graph.css";
 
-let logEntry="";
-let logTime="";
+let logEntry = "";
+let logTime = "";
 let dateArray = [];
 let severityArray = [];
 let activityArray = [];
@@ -21,13 +21,17 @@ let humidityArray = [];
 const Graph = () => {
   const authContext = useContext(AuthContext);
 
-  const { isAuthenticated, logout,user } = authContext;
+  const { isAuthenticated, logout, user } = authContext;
 
   const [user1, setUser] = useState({
     logEntry: ''
   })
+  const[clicked,setClicked]=useState({
+    isClicked: false
+  })
 
   const {
+    isClicked,
     logEntry,
     logTime,
     city,
@@ -80,19 +84,19 @@ const Graph = () => {
     ]
   };
 
-  const handleClick =()=>{
-    if(this.state.isClicked){
-      this.setState({
-        isClicked:false
+  const handleClick = () => {
+    if (clicked.isClicked) {
+      setClicked({
+        isClicked: false
       })
     }
-    else{
-      this.setState({
-        isClicked:true
+    else {
+      setClicked({
+        isClicked: true
       })
     }
   }
-  
+
   const convertDate = () => {
     let monthArr = [
       "Jan",
@@ -116,7 +120,7 @@ const Graph = () => {
     dateArray.push(fullDate);
   };
 
-  demoLogs.map(function(elem,index){
+  demoLogs.map(function (elem, index) {
     let monthArr = [
       "Jan",
       "Feb",
@@ -139,8 +143,8 @@ const Graph = () => {
     dateArray.push(fullDate);
     severityArray.push(elem.dailyWellbeing);
     activityArray.push(elem.activity);
-    temperatureArray.push((elem.weather.temperature)/10);
-    humidityArray.push((elem.weather.humidity)/10);
+    temperatureArray.push((elem.weather.temperature) / 10);
+    humidityArray.push((elem.weather.humidity) / 10);
 
   })
 
@@ -188,9 +192,11 @@ const Graph = () => {
             }}
           />
         </div>
-        <OptionDivider />
+        <OptionDivider handleClick={handleClick} />
         <div className="graph">
-          <LogList />
+          {(clicked.isClicked === true) ?
+            <LogList />
+            : null}
         </div>
       </div>
     </div>
