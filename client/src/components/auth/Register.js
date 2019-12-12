@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import Graph from '../../components/graph/graph';
 import { Link, Redirect } from 'react-router-dom';
 import { PromiseProvider } from 'mongoose';
+import API from "../../utils/API";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +13,13 @@ const Register = () => {
     password2: ''
   });
 
+  const { name, email, password, password2 } = formData;
+
   const handleClick = () => {
-    return <Redirect to='/graph' />;
+    API.createUser(formData);
+    return <Redirect to="/graph" />;
   };
 
-  const { name, email, password, password2 } = formData;
 
   return (
     <div className='landing'>

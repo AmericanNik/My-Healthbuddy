@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, Redirect } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 
@@ -7,6 +7,10 @@ const Login = () => {
     email: '',
     password: ''
   });
+
+  const handleClick = () => {
+    return <Redirect to='/graph' />;
+  };
 
   return (
     <section className='landing'>
@@ -39,6 +43,7 @@ const Login = () => {
                   type='submit'
                   className='btn btn-primary'
                   value='Log In'
+                  onClick={handleClick}
                 />
               </form>
             </Fragment>

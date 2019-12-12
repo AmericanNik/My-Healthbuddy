@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
 import OptionDivider from './OptionDivider';
-// const logs = require('../../../../controllers/logs');
-import Logs from "../../utils/API";
+import API from "../../utils/API";
 import demoLogs from "../../utils/demoLogs";
 import LogList from "../logList/logList";
 import "./graph.css";
@@ -40,7 +39,7 @@ class Graph extends Component {
             fill: false
           },
           {
-            label: 'Temperature',
+            label: 'Temperature(divided by 10)',
             data: temperatureArray,
             backgroundColor: 'red',
             borderColor: 'red',
@@ -48,7 +47,7 @@ class Graph extends Component {
             fill: false
           },
           {
-            label: 'Humidity',
+            label: 'Humidity(divided by 10)',
             data: humidityArray,
             backgroundColor: 'purple',
             borderColor: 'purple',
@@ -87,29 +86,55 @@ class Graph extends Component {
       temperatureArray.push((elem.weather.temperature) / 10);
       humidityArray.push((elem.weather.humidity) / 10)
     })
-    // Logs.getLogs().then(
-    //   logs.forEach(function(elem) {
-    //     dateArray.push(this.convertDate(elem.logDate));
+    // API.getLogs().then(
+    //   logs.forEach(function (elem) {
+    //     let monthArr = [
+    //       "Jan",
+    //       "Feb",
+    //       "Mar",
+    //       "Apr",
+    //       "May",
+    //       "Jun",
+    //       "Jul",
+    //       "Aug",
+    //       "Sep",
+    //       "Oct",
+    //       "Nov",
+    //       "Dec"
+    //     ];
+    //     let dateElem = elem.logDate;
+    //     let date = new Date(dateElem);
+    //     let month = monthArr[date.getMonth()];
+    //     let day = date.getDate();
+    //     let fullDate = `${month} ${day}`;
+    //     dateArray.push(fullDate);
     //     severityArray.push(elem.dailyWellbeing);
-    //     temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
-    //     humidityArray.push(
-    //       this.convertHumidity(elem.logWeather.weatherHumidity)
-    //     );
+    //     temperatureArray.push((elem.logWeather.weatherTemp) / 10);
+    //     humidityArray.push((elem.logWeather.weatherHumidity) / 10);
     //     activityArray.push(elem.dailyActivity);
     //   }),
-    this.forceUpdate();
+      this.forceUpdate();
 
   };
 
   handleClick = () => {
-    this.setState({
-      clicked: true
-    })
+    if (this.state.clicked === false) {
+      this.setState({
+        clicked: true
+      })
+    }
+    else {
+      this.setState({
+        clicked: false
+      })
+    }
   }
 
 
 
   render() {
+    const isClicked = this.state.clicked;
+
     return (
       <div className='landing graphContainer'>
         <div className='ui grid fluid'>
@@ -137,9 +162,14 @@ class Graph extends Component {
               }}
             />
           </div>
+          <button onClick={this.handleClick}>Test Button</button>
           <OptionDivider />
           <div className="graph">
-            <LogList />
+            {isClicked ? (
+              <LogList />
+            ) : (
+                null
+              )}
           </div>
         </div>
       </div>
