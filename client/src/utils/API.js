@@ -5,5 +5,6 @@ export default {
         return axios.get("/api/v1/logs", res => {
             console.log(res);
         });
-    }
+    },
+    
 }
