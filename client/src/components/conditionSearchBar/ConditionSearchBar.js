@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import VideoSearch from "../VideoSearch/VideoSearch";
-import "./ConditionSearchBar.css";
+import React, { Component } from 'react';
+import axios from 'axios';
+import VideoSearch from '../VideoSearch/VideoSearch';
+import './ConditionSearchBar.css';
 
 export class ConditionSearchBar extends Component {
   constructor() {
@@ -10,23 +9,17 @@ export class ConditionSearchBar extends Component {
     this.timer = null;
 
     this.state = {
-      conditionSearchTerm: "",
+      conditionSearchTerm: '',
       conditionsReturned: 0,
       selectedCondition: null,
       selectedSymptoms: null,
       results: null
     };
 
-    const newArr = [];
-
-    const onClick = event => {
-      console.log(event);
-    };
-
     this.clearSearch = () => {
-      console.log("Clicked!");
+      console.log('Clicked!');
       this.setState({
-        conditionSearchTerm: "",
+        conditionSearchTerm: '',
         selectedCondition: null,
         results: null
       });
@@ -46,7 +39,7 @@ export class ConditionSearchBar extends Component {
   };
 
   clicked = (condition, conditionSymptoms) => {
-    this.setState({ conditionSearchTerm: "" });
+    this.setState({ conditionSearchTerm: '' });
     this.setState({ selectedCondition: condition });
     this.setState({ selectedSymptoms: conditionSymptoms });
     console.log(condition);
@@ -59,17 +52,17 @@ export class ConditionSearchBar extends Component {
       conditionSearchTerm: event.target.value.trim().toLowerCase()
     });
 
-    if (this.state.conditionSearchTerm === "") {
+    if (this.state.conditionSearchTerm === '') {
       this.setState({ results: null });
     }
 
-    if (this.state.conditionSearchTerm !== "") {
+    if (this.state.conditionSearchTerm !== '') {
       this.setState({ selectedCondition: null, selectedSymptoms: null });
     }
 
     this.timer = setTimeout(() => {
-      if (this.state.conditionSearchTerm !== "") {
-        console.log("searching!");
+      if (this.state.conditionSearchTerm !== '') {
+        console.log('searching!');
         this.callConditions();
       }
     }, 500);
@@ -83,12 +76,12 @@ export class ConditionSearchBar extends Component {
     let newData = this.state.results;
     let suggestionsList;
 
-    if (newData !== null && this.state.conditionSearchTerm !== "") {
+    if (newData !== null && this.state.conditionSearchTerm !== '') {
       suggestionsList = newData.map((suggestion, index) => {
         return (
           <li
             key={index}
-            className="conditionResults"
+            className='conditionResults'
             ref={suggestion.condition}
             symptoms={suggestion.conditionSymptoms}
             onClick={() =>
@@ -102,57 +95,50 @@ export class ConditionSearchBar extends Component {
     }
 
     return (
-      <div className="container form">
-        <h1 className="searchHead">
+      <div className='container form'>
+        <h1 className='searchHead'>
           Search Conditions To Start Tracking Your Health:
         </h1>
-        {this.state.conditionSearchTerm === "" ? (
+        {this.state.conditionSearchTerm === '' ? (
           <div />
         ) : (
           <h3>
-            {"Search Results: "} {this.state.conditionsReturned}
+            {'Search Results: '} {this.state.conditionsReturned}
           </h3>
         )}
         <form onSubmit={this.onFormSubmit}>
           <input
-            className="ui input focus massive conditionSearchBar"
-            type="text"
-            placeholder="Search Conditions..."
+            className='ui input focus massive conditionSearchBar'
+            type='text'
+            placeholder='Search Conditions...'
             ref={input => (this.search = input)}
             value={this.state.conditionSearchTerm}
             onChange={this.onInputChange}
           />
-          {this.state.conditionSearchTerm === "" ? (
+          {this.state.conditionSearchTerm === '' ? (
             <div></div>
           ) : (
             <div>
-              {this.state.conditionSearchTerm !== "" &&
+              {this.state.conditionSearchTerm !== '' &&
               this.state.results === null ? (
-                <div class="ui segment">
+                <div className='ui segment'>
                   <p></p>
-                  <div class="ui active dimmer">
-                    <div class="ui loader"></div>
+                  <div className='ui active dimmer'>
+                    <div className='ui loader'></div>
                   </div>
                 </div>
               ) : (
                 <div>
-                  <h3 className="resultsH3">
-                    <ul className="resultsContainer">{suggestionsList}</ul>
-                  </h3>{" "}
+                  <h3 className='resultsH3'>
+                    <ul className='resultsContainer'>{suggestionsList}</ul>
+                  </h3>{' '}
                 </div>
               )}
             </div>
           )}
         </form>
         {this.state.selectedCondition === null ? (
-          <div>
-            {/* <div class='ui segment'>
-              <p></p>
-              <div class='ui active dimmer'>
-                <div class='ui loader'></div>
-              </div>
-            </div> */}
-          </div>
+          <div></div>
         ) : (
           <div>
             <VideoSearch

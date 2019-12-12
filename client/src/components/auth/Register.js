@@ -1,22 +1,68 @@
-import React, { Fragment, useState } from 'react';
-import Graph from '../../components/graph/graph';
-import { Link, Redirect } from 'react-router-dom';
-import { PromiseProvider } from 'mongoose';
+import React, { Fragment, useState, useEffect, useContext } from 'react';
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 
-const Register = () => {
-  const [formData, setFormData] = useState({
-    toGraph: true,
+import Alerts from '../../components/layout/Alerts';
+import { Link } from 'react-router-dom';
+import ValidationBox from './ValidationBox';
+import './Register.css';
+
+const Register = props => {
+  const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
+
+  const { setAlert } = alertContext;
+  const { register, error, clearErrors, isAuthenticated } = authContext;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push('/dashboard');
+    }
+    if (error === 'Duplicate field value entered') {
+      setAlert('User Already Exists', 'danger');
+      clearErrors();
+    }
+    // eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
+
+  const [user, setUser] = useState({
     name: '',
     email: '',
     password: '',
     password2: ''
   });
 
-  const handleClick = () => {
-    return <Redirect to='/graph' />;
+  const { name, email, password, password2 } = user;
+
+  const onChange = e => {
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const { name, email, password, password2 } = formData;
+  const onSubmit = e => {
+    console.log('CLicked!!!');
+    e.preventDefault();
+    if (name === '' || email === '' || password === '') {
+      setAlert('Please enter all fields', 'danger');
+    } else if (password !== password2) {
+      setAlert('Passwords do not match', 'danger');
+    } else {
+      var strongRegex = new RegExp(
+        '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})'
+      );
+
+      if (strongRegex.test(password)) {
+        console.log('Made it here to fire register user!');
+        register({
+          name,
+          email,
+          password
+        });
+        console.log('local storage on submit: ' + localStorage.token);
+      } else {
+        setAlert('You need a stronger password', 'danger');
+      }
+    }
+  };
 
   return (
     <div className='landing'>
@@ -27,19 +73,37 @@ const Register = () => {
             <p className='lead'>
               <i className='fas fa-user'></i> Create Your Account
             </p>
-            <form className='form' action='/graph'>
+            <div className='alertDisplay'>
+              <Alerts />
+            </div>
+            <form className='form' onSubmit={onSubmit}>
               <div className='form-group'>
-                <input type='text' placeholder='Name' name='name' required />
+                <input
+                  type='text'
+                  placeholder='Name'
+                  value={name}
+                  name='name'
+                  // required
+                  onChange={onChange}
+                />
               </div>
               <div className='form-group'>
-                <input type='email' placeholder='Email Address' name='email' />
+                <input
+                  type='email'
+                  placeholder='Email Address'
+                  name='email'
+                  value={email}
+                  onChange={onChange}
+                  required
+                />
               </div>
               <div className='form-group'>
                 <input
                   type='password'
                   placeholder='Password'
                   name='password'
-                  minLength='6'
+                  value={password}
+                  onChange={onChange}
                 />
               </div>
               <div className='form-group'>
@@ -47,14 +111,16 @@ const Register = () => {
                   type='password'
                   placeholder='Confirm Password'
                   name='password2'
-                  minLength='6'
+                  value={password2}
+                  onChange={onChange}
                 />
               </div>
+              <ValidationBox password={password} confirmPassword={password2} />
               <input
                 type='submit'
-                className='btn btn-primary'
+                className='ui fluid button red large'
                 value='Register'
-                onClick={handleClick}
+                onClick={onSubmit}
               />
             </form>
             <p className='my-1'>
@@ -66,42 +132,5 @@ const Register = () => {
     </div>
   );
 };
-
-// return (
-//   <Fragment>
-//     <h1 className='large text-primary'>Sign Up</h1>
-//     <p className='lead'>
-//       <i className='fas fa-user'></i> Create Your Account
-//     </p>
-//     <form className='form' action='create-profile.html'>
-//       <div className='form-group'>
-//         <input type='text' placeholder='Name' name='name' required />
-//       </div>
-//       <div className='form-group'>
-//         <input type='email' placeholder='Email Address' name='email' />
-//       </div>
-//       <div className='form-group'>
-//         <input
-//           type='password'
-//           placeholder='Password'
-//           name='password'
-//           minLength='6'
-//         />
-//       </div>
-//       <div className='form-group'>
-//         <input
-//           type='password'
-//           placeholder='Confirm Password'
-//           name='password2'
-//           minLength='6'
-//         />
-//       </div>
-//       <input type='submit' className='btn btn-primary' value='Register' />
-//     </form>
-//     <p className='my-1'>
-//       Already have an account? <Link to='/login'>Sign in</Link>
-//     </p>
-//   </Fragment>
-// );
 
 export default Register;
