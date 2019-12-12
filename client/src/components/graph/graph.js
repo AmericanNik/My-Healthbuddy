@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect } from "react";
+import React, { Component, useContext, useEffect,useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 import OptionDivider from "./OptionDivider";
@@ -10,6 +10,8 @@ import demoLogs from "../../utils/demoLogs";
 import LogList from "../logList/logList";
 import "./graph.css";
 
+let logEntry="";
+let logTime="";
 let dateArray = [];
 let severityArray = [];
 let activityArray = [];
@@ -19,9 +21,22 @@ let humidityArray = [];
 const Graph = () => {
   const authContext = useContext(AuthContext);
 
-  const { isAuthenticated, logout, user } = authContext;
+  const { isAuthenticated, logout,user } = authContext;
 
-  const []
+  const [user1, setUser] = useState({
+    isClicked: false
+  })
+
+  const {
+    logEntry,
+    logTime,
+    city,
+    stateAbbr,
+    overallWellbeing,
+    activity,
+    conditions
+  } = user;
+
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
@@ -64,6 +79,20 @@ const Graph = () => {
       }
     ]
   };
+
+  const handleClick =()=>{
+    if(this.state.isClicked){
+      this.setState({
+        isClicked:false
+      })
+    }
+    else{
+      this.setState({
+        isClicked:true
+      })
+    }
+  }
+  
   const convertDate = () => {
     let monthArr = [
       "Jan",
@@ -132,10 +161,10 @@ const Graph = () => {
               }}
             />
           </div>
-          <button onClick={this.handleClick}>Test Button</button>
+          <button onClick={handleClick}>Test Button</button>
           <OptionDivider />
           <div className="graph">
-            {isClicked ? (
+            {this.isClicked ? (
               <LogList />
             ) : (
                 null
