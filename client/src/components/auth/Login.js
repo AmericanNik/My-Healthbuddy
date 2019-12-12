@@ -1,15 +1,44 @@
-import React, { Fragment, useState, Redirect } from 'react';
+import React, { Fragment, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
+import AuthContext from '../../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
 
-const Login = () => {
-  const [formData, setFormData] = useState({
+const Login = props => {
+  const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
+
+  const { setAlert } = alertContext;
+  const { login, error, clearErrors, isAuthenticated } = authContext;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push('/dashboard');
+    }
+    if (error === 'Invalid Credentials') {
+      setAlert('User Already Exists', 'danger');
+      clearErrors();
+    }
+  });
+
+  const [user, setUser] = useState({
     email: '',
     password: ''
   });
 
-  const handleClick = () => {
-    return <Redirect to='/graph' />;
+  const { email, password } = user;
+
+  const onChange = e => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    if (email === '' || password === '') {
+      setAlert('Please fill in all fields', 'danger');
+    } else {
+      login({ email, password });
+    }
   };
 
   return (
@@ -22,31 +51,35 @@ const Login = () => {
               <p className='lead'>
                 <i className='fas fa-user'></i> Log into your account
               </p>
-              <form className='form' action='/graph'>
+              <form className='form'>
                 <div className='form-group'>
                   <input
-                    type='text'
+                    type='email'
                     placeholder='Email Address'
-                    name='name'
-                    required
+                    name='email'
+                    value={email}
+                    onChange={onChange}
                   />
                 </div>
                 <div className='form-group'>
                   <input
                     type='password'
                     placeholder='Password'
+                    value={password}
+                    onChange={onChange}
                     name='password'
                   />
                 </div>
                 <div className='form-group'></div>
                 <input
                   type='submit'
-                  className='btn btn-primary'
-                  value='Log In'
-                  onClick={handleClick}
+                  className='ui fluid button red large'
+                  value='Login'
+                  onClick={onSubmit}
                 />
               </form>
             </Fragment>
+            <br />
             <div>
               Don't have an account? <Link to='register'>Sign Up</Link>
             </div>

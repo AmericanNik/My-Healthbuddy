@@ -8,7 +8,6 @@ html {
 html,
 body {
   height: 100%;
-  margin: 0;
 }
 body {
   background: none;
@@ -20,7 +19,7 @@ footer {
 
 body {
   margin: 0;
-  padding-bottom: 2rem;
+  padding-bottom: 2.11rem;
   min-height: 100%;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
@@ -168,7 +167,8 @@ img {
 
 .alert {
   padding: 0.8rem;
-  margin: 1rem 0;
+  margin: 2px;
+  border-bottom: #171717;
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
@@ -323,8 +323,8 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
+  position: absolute;
+  /* z-index: 1; */
   width: 100%;
   top: 0;
   border-bottom: solid 1px var(--primary-color);
@@ -511,10 +511,6 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-  .container {
-    margin-top: 8rem;
-  }
-
   .hide-sm {
     display: none;
   }

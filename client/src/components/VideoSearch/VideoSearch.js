@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link, HashRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import youtube from './youtube';
 import VideoDetail from './VideoDetail';
 import VideoList from './VideoList';

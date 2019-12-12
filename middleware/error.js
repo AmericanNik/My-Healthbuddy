@@ -6,7 +6,9 @@ const errorHandler = (err, req, res, next) => {
   error.message = err.message;
 
   //log to console for dev
+  console.log('DEV CONSOLE LOGS');
   console.log(err.name);
+  console.log(err);
 
   console.log('req.user: ');
   console.log(req.user);
@@ -27,10 +29,10 @@ const errorHandler = (err, req, res, next) => {
   //Mongoose validation error
   if (err.name === 'ValidationError') {
     const message = Object.values(err.errors).map(value => value.message);
-    error = new ErrorResponse(message, 400);
-  }
 
-  console.log('It really got this bad');
+    error = new ErrorResponse(message, 206, { data: err.message });
+    console.log(error.message);
+  }
 
   res
     .status(error.statusCode || 500)
