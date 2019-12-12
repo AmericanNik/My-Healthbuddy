@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const OptionDivider = () => {
+
+const OptionDivider = (props) => {
+  console.log(props);
   return (
     <div className='optionDivider'>
       <div className='ui placeholder segment '>
@@ -14,8 +16,8 @@ const OptionDivider = () => {
             </Link>
           </div>
           <div className='middle aligned column'>
-            <div className='ui big button massive'>
-              <i className='file alternate icon'></i>
+            <div className='ui big button massive' onClick={props.handleClick}>
+            <i className='file alternate icon'></i>
               View Log
             </div>
           </div>

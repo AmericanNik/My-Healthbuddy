@@ -26,8 +26,8 @@ class LogList extends Component {
                             <h3>Date: {moment((item.date)).format("MMM D YYYY")}</h3>
                             <h3>Daily Well-Being:{item.dailyWellbeing}</h3>
                             <h3>Activity Level :{item.activity}</h3>
-                            <h3>Temperature:{item.weather.temperature}</h3>
-                            <h3>Humidity:{item.weather.humidity}</h3>
+                            <h3>Temperature:{item.weather.temperature}&deg;F</h3>
+                            <h3>Humidity:{item.weather.humidity}%</h3>
                             <h3>Log Note :{item.logEntry}</h3>
                         </Fragment>
                     }
