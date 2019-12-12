@@ -107,37 +107,33 @@ const Graph = () => {
 
   return (
     <div className="landing graphContainer">
-      <div className="ui grid fluid">
-        <div className="ui two column centered grid">
-          <div className="column">
-            <h1 className="dashboardTitle">
-              Welcome {user && user.data.name} To Your HealthBuddy Dashboard
-            </h1>
-          </div>
+      <div className="ui fluid grid">
+        <div className="column">
+          <h1 className="dashboardTitle">
+            Welcome {user && user.data.name} To Your HealthBuddy Dashboard
+          </h1>
         </div>
-        <div className="mainArea">
-          <div className="graph">
-            <Line
-              data={this.state.chartData}
-              width={800}
-              height={400}
-              options={{
-                maintainAspectRatio: false,
-                title: {
-                  display: true,
-                  text: "Health Buddy Trends",
-                  fontSize: 25
-                }
-              }}
-            />
-          </div>
-          <OptionDivider />
-          <div className="graph">
-            <LogList />
-          </div>
+      </div>
+      <div className="mainArea">
+        <div className="graph">
+          <Line
+            data={chartData}
+            width={800}
+            height={400}
+            options={{
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: "Health Buddy Trends",
+                fontSize: 25
+              }
+            }}
+          />
         </div>
-
         <OptionDivider />
+        <div className="graph">
+          <LogList />
+        </div>
       </div>
     </div>
   );
