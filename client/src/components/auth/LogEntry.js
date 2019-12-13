@@ -9,8 +9,14 @@ import { Redirect } from 'react-router-dom';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import './Logs.css';
+import Atmosphere from '../LogEntry/Atmosphere/Atmosphere';
+import OverallWellbeing from '../LogEntry/overallWellbeing/OverallWellbeing';
+import DailyActivity from '../LogEntry/DailyActivity/DailyActivity';
+import SubmitLog from '../LogEntry/SubmitLog/SubmitLog';
+import JournalEntry from '../LogEntry/JournalEntry/JournalEntry';
 import { Link } from 'react-router-dom';
 import StateList from '../../utils/states.json';
+import './LogEntry.css';
 
 const LogEntry = props => {
   const alertContext = useContext(AlertContext);
@@ -29,23 +35,21 @@ const LogEntry = props => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    logEntry: '',
+    journalEntry: '',
     logTime: '',
-    city: '',
-    stateAbbr: '',
-    overallWellbeing: 0,
-    activity: '',
-    conditions: []
+    overallWellbeing: 1,
+    dailyActivity: 1,
+    conditions: [],
+    atmosphericData: {}
   });
 
   const {
-    logEntry,
+    journalEntry,
     logTime,
-    city,
-    stateAbbr,
     overallWellbeing,
-    activity,
-    conditions
+    dailyActivity,
+    conditions,
+    atmosphericData
   } = user;
 
   const onChange = e => {
@@ -59,151 +63,55 @@ const LogEntry = props => {
       setAlert('Please Enter Daily Wellbeing', 'danger');
     } else {
       let fullLog = {
-        logEntry,
+        journalEntry,
         overallWellbeing,
-        city,
-        stateAbbr,
-        activity,
-        logTime
+        dailyActivity,
+        logTime,
+        atmosphericData
       };
       console.log(fullLog);
       props.history.push('/dashboard');
     }
   };
 
+  const returnAtmosphere = atmosphereData => {
+    console.log('-----------------------------');
+    console.log(atmosphereData);
+    setUser({ ...user, atmosphericData: atmosphereData });
+  };
+
+  const returnOverallWellbeing = overallWellbeing => {
+    setUser({ ...user, overallWellbeing: overallWellbeing });
+  };
+
+  const returnDailyAcivity = dailyActivity => {
+    setUser({ ...user, dailyActivity: dailyActivity });
+  };
+
+  const returnJournalEntry = journalEntry => {
+    setUser({ ...user, journalEntry: journalEntry });
+  };
+
   return (
     <div className='container'>
       <div className='logContainer'>
         <Fragment>
-          <h1 className='large text-primary'>How did you do today?</h1>
-          <div>
-            <div>
-              {logEntry !== '' ? (
-                <div className='screenJournal'>
-                  <h5>{logTime}</h5>
-                  <h4 className='journalHeader'> Dear HealthBuddy...</h4>
-                  <p className='journalEntry'>{logEntry}</p>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
+          <div className='logEntryHeader'>
+            <h1 className='large text-primary'>How Was Today?</h1>
+            <h2>{`Enter todays details to help keep track of your life & health!`}</h2>
           </div>
-          <form className='form' onSubmit={onFormSubmit}>
-            <div className='form-group'>
-              <textarea
-                className='logEntry'
-                type='text'
-                value={logEntry}
-                placeholder='Dear HealthBuddy, today was...'
-                name='logEntry'
-                href='logEntry'
-                onChange={onChange}
-              />
-            </div>
-            <h2>Well-Being</h2>
-            <p>On a scale of 1-10, how did you feel today?</p>
-            <select
-              type='number'
-              value={overallWellbeing}
-              name='overallWellbeing'
-              href='overallWellbeing'
-              onChange={onChange}
-            >
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-            </select>
-            <h2>Activity</h2>
-            <p>On a scale of 1-10, how active were you today?</p>
-            <select
-              type='number'
-              value={activity}
-              name='activity'
-              href='activity'
-              onChange={onChange}
-            >
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-            </select>
-            <h2>Location</h2>
-            <p>Where were you today?</p>
-            <input type='text' name='city' value={city} onChange={onChange} />
-            City
-            <select name='stateAbbr' value={stateAbbr} onChange={onChange}>
-              <option value='AL'>Alabama</option>
-              <option value='AK'>Alaska</option>
-              <option value='AZ'>Arizona</option>
-              <option value='AR'>Arkansas</option>
-              <option value='CA'>California</option>
-              <option value='CO'>Colorado</option>
-              <option value='CT'>Connecticut</option>
-              <option value='DE'>Delaware</option>
-              <option value='FL'>Florida</option>
-              <option value='GA'>Georgia</option>
-              <option value='HI'>Hawaii</option>
-              <option value='ID'>Idaho</option>
-              <option value='IL'>Illinois</option>
-              <option value='IN'>Indiana</option>
-              <option value='IA'>Iowa</option>
-              <option value='KS'>Kansas</option>
-              <option value='KY'>Kentucky</option>
-              <option value='LA'>Louisiana</option>
-              <option value='ME'>Maine</option>
-              <option value='MD'>Maryland</option>
-              <option value='MA'>Massachusetts</option>
-              <option value='MI'>Michigan</option>
-              <option value='MN'>Minnesota</option>
-              <option value='MS'>Mississippi</option>
-              <option value='MO'>Missouri</option>
-              <option value='MT'>Montana</option>
-              <option value='NE'>Nebraska</option>
-              <option value='NV'>Nevada</option>
-              <option value='NH'>New Hampshire</option>
-              <option value='NJ'>New Jersey</option>
-              <option value='NM'>New Mexico</option>
-              <option value='NY'>New York</option>
-              <option value='NC'>North Carolina</option>
-              <option value='ND'>North Dakota</option>
-              <option value='OH'>Ohio</option>
-              <option value='OK'>Oklahoma</option>
-              <option value='OR'>Oregon</option>
-              <option value='PA'>Pennsylvania</option>
-              <option value='RI'>Rhode Island</option>
-              <option value='SC'>South Carolina</option>
-              <option value='SD'>South Dakota</option>
-              <option value='TN'>Tennessee</option>
-              <option value='TX'>Texas</option>
-              <option value='UT'>Utah</option>
-              <option value='VT'>Vermont</option>
-              <option value='VA'>Virginia</option>
-              <option value='WA'>Washington</option>
-              <option value='WV'>West Virginia</option>
-              <option value='WI'>Wisconsin</option>
-              <option value='WY'>Wyoming</option>
-            </select>
-            <label>State</label>
-            <input
-              type='submit'
-              className='btn btn-primary logSubmit'
-              value='Submit'
-            />
-          </form>
+          <JournalEntry returnJournalEntry={returnJournalEntry} />
+          <Atmosphere returnAtmosphere={returnAtmosphere} />
+          <OverallWellbeing returnOverallWellbeing={returnOverallWellbeing} />
+          <DailyActivity returnDailyAcivity={returnDailyAcivity} />
+          <SubmitLog
+            journalEntry={journalEntry}
+            logTime={logTime}
+            overallWellbeing={overallWellbeing}
+            dailyActivity={dailyActivity}
+            conditions={conditions}
+            atmosphericData={atmosphericData}
+          />
         </Fragment>
       </div>
     </div>

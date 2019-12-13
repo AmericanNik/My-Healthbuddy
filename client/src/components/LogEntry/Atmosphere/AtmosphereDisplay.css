@@ -1,0 +1,23 @@
+.mainDisplay {
+  background-color: #f4f4f4;
+  color: black;
+  margin: 10px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  line-height: 1.8rem;
+  padding: 10px 0 15px 10px;
+}
+
+.displaySplitContainer {
+  margin-top: 10px;
+}
+
+.leftSide ul {
+  text-align: left;
+  padding-left: 30px;
+}
+
+.rightSide ul {
+  text-align: left;
+  padding-left: 30px;
+}

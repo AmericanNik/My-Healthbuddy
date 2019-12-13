@@ -1,0 +1,35 @@
+.submitLogButton {
+  cursor: pointer;
+  color: white;
+  max-width: 80%;
+  font-size: 2rem;
+  padding: 1.5rem, 0rem;
+  background-color: #069e25;
+  border: none;
+  margin: 5px;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  line-height: initial;
+}
+
+.submitLogButton:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}
+
+.submitLogButton:hover {
+  color: white;
+  border-color: currentColor;
+  background-color: #35db5a;
+}
+
+.submitLogButton h2 {
+  text-align: center;
+}
+
+.submitLogButtonContainer {
+  margin-top: 25px;
+}

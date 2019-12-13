@@ -7,3 +7,27 @@
     margin-top: 0px;
   }
 }
+
+@media all and (min-height: 500px) {
+  div.landing-inner {
+    margin-top: 80px;
+  }
+}
+
+@media all and (min-height: 650px) {
+  div.landing-inner {
+    margin-top: 200px;
+  }
+}
+
+@media all and (min-height: 800px) {
+  div.landing-inner {
+    margin-top: 300px;
+  }
+}
+
+@media all and (min-height: 1000px) {
+  div.landing-inner {
+    margin-top: 400px;
+  }
+}

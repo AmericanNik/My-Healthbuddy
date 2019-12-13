@@ -1,14 +1,14 @@
-import React, { Component, useContext, useEffect } from "react";
-import { Line } from "react-chartjs-2";
-import { Link } from "react-router-dom";
-import OptionDivider from "./OptionDivider";
-import AuthContext from "../../context/auth/authContext";
-import axios from "axios";
+import React, { Component, useContext, useEffect } from 'react';
+import { Line } from 'react-chartjs-2';
+import { Link } from 'react-router-dom';
+import OptionDivider from './OptionDivider';
+import AuthContext from '../../context/auth/authContext';
+import axios from 'axios';
 // const logs = require('../../../../controllers/logs');
-import Logs from "../../utils/API";
-import demoLogs from "../../utils/demoLogs";
-import LogList from "../logList/logList";
-import "./graph.css";
+import Logs from '../../utils/API';
+import demoLogs from '../../utils/demoLogs';
+import LogList from '../logList/logList';
+import './graph.css';
 
 let dateArray = [];
 let severityArray = [];
@@ -30,34 +30,34 @@ const Graph = () => {
     labels: dateArray,
     datasets: [
       {
-        label: "Well-Being",
+        label: 'Well-Being',
         data: severityArray,
-        backgroundColor: "green",
-        borderColor: "green",
+        backgroundColor: 'green',
+        borderColor: 'green',
         borderWidth: 2,
         fill: false
       },
       {
-        label: "Activity Level",
+        label: 'Activity Level',
         data: activityArray,
-        backgroundColor: "blue",
-        borderColor: "blue",
+        backgroundColor: 'blue',
+        borderColor: 'blue',
         borderWidth: 2,
         fill: false
       },
       {
-        label: "Temperature",
+        label: 'Temperature',
         data: temperatureArray,
-        backgroundColor: "red",
-        borderColor: "red",
+        backgroundColor: 'red',
+        borderColor: 'red',
         borderWidth: 2,
         fill: false
       },
       {
-        label: "Humidity",
+        label: 'Humidity',
         data: humidityArray,
-        backgroundColor: "purple",
-        borderColor: "purple",
+        backgroundColor: 'purple',
+        borderColor: 'purple',
         borderWidth: 2,
         fill: false
       }
@@ -65,18 +65,18 @@ const Graph = () => {
   };
   const convertDate = () => {
     let monthArr = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
     ];
     let dateElem = null;
     let date = new Date(dateElem);
@@ -106,16 +106,16 @@ const Graph = () => {
   // }
 
   return (
-    <div className="landing graphContainer">
-      <div className="ui fluid grid">
-        <div className="column">
-          <h1 className="dashboardTitle">
+    <div className='landing graphContainer'>
+      <div className='ui fluid grid'>
+        <div className='column'>
+          <h1 className='dashboardTitle'>
             Welcome {user && user.data.name} To Your HealthBuddy Dashboard
           </h1>
         </div>
       </div>
-      <div className="mainArea">
-        <div className="graph">
+      <div className='mainArea'>
+        <div className='graph'>
           <Line
             data={chartData}
             width={800}
@@ -124,14 +124,14 @@ const Graph = () => {
               maintainAspectRatio: false,
               title: {
                 display: true,
-                text: "Health Buddy Trends",
+                text: 'Health Buddy Trends',
                 fontSize: 25
               }
             }}
           />
         </div>
         <OptionDivider />
-        <div className="graph">
+        <div className='graph'>
           <LogList />
         </div>
       </div>
