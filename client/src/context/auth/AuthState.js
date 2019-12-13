@@ -61,6 +61,7 @@ const AuthState = props => {
 
       loadUser();
     } catch (err) {
+      alert('You Entered The Wrong Email/Password');
       dispatch({
         type: REGISTER_FAIL,
         payload: err.response.data.error
@@ -84,6 +85,7 @@ const AuthState = props => {
 
       loadUser();
     } catch (err) {
+      alert('You Entered The Wrong Email/Password');
       dispatch({
         type: LOGIN_FAIL,
         payload: err.response.data.error

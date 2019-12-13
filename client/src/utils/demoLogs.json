@@ -4,8 +4,8 @@
         "dailyWellbeing": 5,
         "activity": 6,
         "weather": {
-            "temperature": 50,
-            "humidity": 45
+            "temperature": 25,
+            "humidity": 65
         },
         "logEntry": "Hello Health Buddy! This is my first entry"
     },
@@ -14,38 +14,38 @@
         "dailyWellbeing": 6,
         "activity": 7,
         "weather": {
-            "temperature": 35,
-            "humidity": 38
+            "temperature": 38,
+            "humidity": 55
         },
-        "logEntry": ""
+        "logEntry": "I felt pretty good today!"
     },
     {
         "date": 1573948800000,
         "dailyWellbeing": 4,
         "activity": 2,
         "weather": {
-            "temperature": 36,
-            "humidity": 35
+            "temperature": 28,
+            "humidity": 30
         },
-        "logEntry": ""
+        "logEntry": "Didn't do too much today and I felt below average"
     },
     {
         "date": 1574035200000,
         "dailyWellbeing": 8,
         "activity": 6,
         "weather": {
-            "temperature": 41,
-            "humidity":35
+            "temperature": 29,
+            "humidity": 59
         },
-        "logEntry": ""
+        "logEntry": "Felt great today!"
     },
     {
         "date": 1574121600000,
         "dailyWellbeing": 5,
         "activity": 5,
         "weather": {
-            "temperature": 43,
-            "humidity": 38
+            "temperature": 38,
+            "humidity": 76
         },
         "logEntry": ""
     },
@@ -54,8 +54,8 @@
         "dailyWellbeing": 6,
         "activity": 4,
         "weather": {
-            "temperature": 40,
-            "humidity": 35
+            "temperature": 39,
+            "humidity": 92
         },
         "logEntry": ""
     },
@@ -64,58 +64,58 @@
         "dailyWellbeing": 9,
         "activity": 8,
         "weather": {
-            "temperature": 48,
-            "humidity": 55
+            "temperature": 38,
+            "humidity": 90
         },
-        "logEntry": ""
+        "logEntry": "Went for a long hike today! Felt amazing!"
     },
     {
         "date": 1574380800000,
         "dailyWellbeing": 7,
         "activity": 5,
         "weather": {
-            "temperature": 49,
-            "humidity": 50
+            "temperature": 38,
+            "humidity": 73
         },
-        "logEntry": ""
+        "logEntry": "Excellent day"
     },
     {
         "date": 1574467200000,
         "dailyWellbeing": 4,
         "activity": 2,
         "weather": {
-            "temperature": 46,
-            "humidity": 40
+            "temperature": 42,
+            "humidity": 73
         },
-        "logEntry": ""
+        "logEntry": "Stayed at home most of the day and didn't feel very good"
     },
     {
         "date": 1574553600000,
         "dailyWellbeing": 8,
         "activity": 5,
         "weather": {
-            "temperature": 40,
-            "humidity": 40
+            "temperature": 37,
+            "humidity": 45
         },
-        "logEntry": ""
+        "logEntry": "Another great day!"
     },
     {
         "date": 1574640000000,
         "dailyWellbeing": 9,
         "activity": 8,
         "weather": {
-            "temperature": 51,
-            "humidity": 45
+            "temperature": 36,
+            "humidity": 88
         },
-        "logEntry": ""
+        "logEntry": "WOW"
     },
     {
         "date": 1574726400000,
         "dailyWellbeing": 7,
         "activity": 4,
         "weather": {
-            "temperature": 61,
-            "humidity": 50
+            "temperature": 42,
+            "humidity": 68
         },
         "logEntry": ""
     },
@@ -124,18 +124,18 @@
         "dailyWellbeing": 10,
         "activity": 9,
         "weather": {
-            "temperature": 51,
-            "humidity":40
+            "temperature": 44,
+            "humidity": 87
         },
-        "logEntry": ""
+        "logEntry": "Best day so far!"
     },
     {
         "date": 1574899200000,
         "dailyWellbeing": 8,
         "activity": 7,
         "weather": {
-            "temperature": 45,
-            "humidity": 45
+            "temperature": 40,
+            "humidity": 75
         },
         "logEntry": ""
     },
@@ -144,38 +144,38 @@
         "dailyWellbeing": 4,
         "activity": 3,
         "weather": {
-            "temperature": 38,
-            "humidity": 50
+            "temperature": 33,
+            "humidity": 58
         },
-        "logEntry": ""
+        "logEntry": "I really needed to get out of the house more today"
     },
     {
         "date": 1575072000000,
         "dailyWellbeing": 4,
         "activity": 4,
         "weather": {
-            "temperature": 34,
-            "humidity": 43
+            "temperature": 26,
+            "humidity": 47
         },
-        "logEntry": ""
+        "logEntry": "Another lazy day"
     },
     {
         "date": 1575158400000,
         "dailyWellbeing": 3,
         "activity": 5,
         "weather": {
-            "temperature": 30,
-            "humidity": 35
+            "temperature": 26,
+            "humidity": 73
         },
-        "logEntry": ""
+        "logEntry": "Was relatively active but this cold didn't help anything"
     },
     {
         "date": 1575244800000,
         "dailyWellbeing": 5,
         "activity": 4,
         "weather": {
-            "temperature": 32,
-            "humidity": 40
+            "temperature": 29,
+            "humidity": 86
         },
         "logEntry": ""
     },
@@ -184,18 +184,18 @@
         "dailyWellbeing": 6,
         "activity": 6,
         "weather": {
-            "temperature": 33,
-            "humidity": 40
+            "temperature": 30,
+            "humidity": 79
         },
-        "logEntry": ""
+        "logEntry": "Decent day"
     },
     {
         "date": 1575417600000,
         "dailyWellbeing": 7,
         "activity": 5,
         "weather": {
-            "temperature": 37,
-            "humidity": 35
+            "temperature": 31,
+            "humidity": 72
         },
         "logEntry": ""
     },
@@ -204,8 +204,8 @@
         "dailyWellbeing": 8,
         "activity": 6,
         "weather": {
-            "temperature": 43,
-            "humidity": 40
+            "temperature": 31,
+            "humidity": 69
         },
         "logEntry": ""
     },
@@ -214,8 +214,8 @@
         "dailyWellbeing": 4,
         "activity": 5,
         "weather": {
-            "temperature": 30,
-            "humidity": 45
+            "temperature": 28,
+            "humidity": 78
         },
         "logEntry": ""
     },
@@ -224,8 +224,8 @@
         "dailyWellbeing": 5,
         "activity": 5,
         "weather": {
-            "temperature": 31,
-            "humidity": 33
+            "temperature": 22,
+            "humidity": 67
         },
         "logEntry": ""
     },
@@ -234,60 +234,60 @@
         "dailyWellbeing": 4,
         "activity": 5,
         "weather": {
-            "temperature":31 ,
-            "humidity": 34
+            "temperature": 20,
+            "humidity": 64
         },
-        "logEntry":""
+        "logEntry": ""
     },
     {
         "date": 1575849600000,
         "dailyWellbeing": 5,
         "activity": 5,
         "weather": {
-            "temperature": 50,
-            "humidity": 44
+            "temperature": 42,
+            "humidity": 93
         },
-        "logEntry":""
+        "logEntry": ""
     },
     {
         "date": 1575936000000,
         "dailyWellbeing": 4,
         "activity": 4,
         "weather": {
-            "temperature":59 ,
-            "humidity": 45
+            "temperature": 51,
+            "humidity": 86
         },
-        "logEntry":""
+        "logEntry": ""
     },
     {
         "date": 1576022400000,
-        "dailyWellbeing":5 ,
-        "activity":5 ,
+        "dailyWellbeing": 5,
+        "activity": 5,
         "weather": {
-            "temperature":33 ,
+            "temperature": 33,
             "humidity": 40
         },
-        "logEntry":""
+        "logEntry": ""
     },
     {
         "date": 1576108800000,
         "dailyWellbeing": 7,
         "activity": 5,
         "weather": {
-            "temperature":30 ,
+            "temperature": 30,
             "humidity": 54
         },
-        "logEntry":""
+        "logEntry": ""
     },
     {
         "date": 1576108800000,
         "dailyWellbeing": 5,
         "activity": 4,
         "weather": {
-            "temperature":33 ,
+            "temperature": 33,
             "humidity": 45
         },
-        "logEntry":""
+        "logEntry": ""
     },
     {
         "date": 1576195200000,
@@ -297,7 +297,7 @@
             "temperature": 45,
             "humidity": 50
         },
-        "logEntry":""
+        "logEntry": ""
     },
     {
         "date": 1576368000000,
@@ -307,7 +307,7 @@
             "temperature": 46,
             "humidity": 50
         },
-        "logEntry":""
+        "logEntry": "Was able to do more today and it felt great!"
     },
     {
         "date": 1576454400000,
@@ -317,6 +317,6 @@
             "temperature": 41,
             "humidity": 40
         },
-        "logEntry":""
+        "logEntry": ""
     }
 ]
