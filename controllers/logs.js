@@ -29,8 +29,8 @@ exports.getLogs = asyncHandler(async (req, res, next) => {
     const logs = await Log.find({
       healthbuddy: req.params.healthbuddyId
     })
-      .sort({ logDate: -1 })
       .limit(30)
+      // .sort({ logDate: -1 })
       .populate('healthbuddy');
 
     return res
@@ -78,6 +78,8 @@ exports.getLog = asyncHandler(async (req, res, next) => {
 exports.addLog = asyncHandler(async (req, res, next) => {
   req.body.healthbuddy = req.params.healthbuddyId;
   req.body.user = req.user.id;
+
+  console.log(req.body.healthbuddy);
 
   const healthbuddy = await Healthbuddy.findOne({
     _id: req.params.healthbuddyId
