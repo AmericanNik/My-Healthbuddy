@@ -1,0 +1,14 @@
+.journalEntry {
+  width: 90%;
+  min-height: 80px;
+  border-radius: 3px;
+}
+
+.journalContainer {
+  display: block;
+}
+
+.userJournalEntry {
+  text-align: center;
+  margin-top: 15px;
+}

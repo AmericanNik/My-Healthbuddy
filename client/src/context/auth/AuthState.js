@@ -29,22 +29,17 @@ const AuthState = props => {
   //Load User
 
   const loadUser = async () => {
+    console.log('Loading!');
     setAuthToken(localStorage.token);
-    console.log('load user local storage: ' + localStorage);
-    console.log('LOAD USER FUNCTION FIRED!: ' + localStorage.token);
 
     try {
-      console.log('||||||||||||||||||||');
       const res = await axios.get('/api/v1/auth/me');
-      console.log(res.data);
-      console.log('LOADING USER FIRED');
+
       dispatch({
         type: USER_LOADED,
         payload: res.data
       });
     } catch (err) {
-      console.log('AUTH ERRORRR');
-      console.log(err);
       dispatch({ type: AUTH_ERROR });
     }
   };
@@ -63,17 +58,14 @@ const AuthState = props => {
         type: REGISTER_SUCCESS,
         payload: res.data
       });
-      console.log('MADE IT HERE!');
+
       loadUser();
-      console.log(res.data);
     } catch (err) {
-      alert("You Entered The Wrong Email/Password");
+      alert('You Entered The Wrong Email/Password');
       dispatch({
         type: REGISTER_FAIL,
         payload: err.response.data.error
       });
-      console.log('Error!');
-      console.log(err.response.data.error);
     }
   };
 
@@ -90,17 +82,14 @@ const AuthState = props => {
         type: LOGIN_SUCCESS,
         payload: res.data
       });
-      console.log('MADE IT HERE!');
+
       loadUser();
-      console.log(res.data);
     } catch (err) {
-      alert("You Entered The Wrong Email/Password");
+      alert('You Entered The Wrong Email/Password');
       dispatch({
         type: LOGIN_FAIL,
         payload: err.response.data.error
       });
-      console.log('Error!');
-      console.log(err.response.data.error);
     }
   };
   //  Logout

@@ -9,8 +9,17 @@ import { Redirect } from 'react-router-dom';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import './Logs.css';
+import Atmosphere from '../LogEntry/Atmosphere/Atmosphere';
+import OverallWellbeing from '../LogEntry/overallWellbeing/OverallWellbeing';
+import DailyActivity from '../LogEntry/DailyActivity/DailyActivity';
+import SubmitLog from '../LogEntry/SubmitLog/SubmitLog';
+import JournalEntry from '../LogEntry/JournalEntry/JournalEntry';
+import ConditionSearchBar from '../conditionSearchBar/ConditionSearchBar';
+import ConditionsDisplay from '../LogEntry/ConditionsDisplay/ConditionsDisplay';
+import Alerts from '../../components/layout/Alerts';
 import { Link } from 'react-router-dom';
 import StateList from '../../utils/states.json';
+import './LogEntry.css';
 
 const LogEntry = props => {
   const alertContext = useContext(AlertContext);
@@ -29,181 +38,196 @@ const LogEntry = props => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    logEntry: '',
+    journalEntry: '',
     logTime: '',
-    city: '',
-    stateAbbr: '',
-    overallWellbeing: 0,
-    activity: '',
-    conditions: []
+    overallWellbeing: 1,
+    dailyActivity: 1,
+    conditions: [],
+    conditionsTest: [],
+    conditionsString: '',
+    currentSummary: '',
+    dailySummary: '',
+    longitude: '',
+    latitude: '',
+    pressure: '',
+    ozone: '',
+    moonPhase: '',
+    windSpeed: '',
+    humidity: '',
+    dewPoint: '',
+    temperature: '',
+    logDate: '',
+    dataSent: null
   });
 
   const {
-    logEntry,
+    journalEntry,
     logTime,
-    city,
-    stateAbbr,
+    randomObject,
     overallWellbeing,
-    activity,
-    conditions
+    dailyActivity,
+    conditions,
+    currentSummary,
+    dailySummary,
+    longitude,
+    latitude,
+    pressure,
+    ozone,
+    moonPhase,
+    windSpeed,
+    humidity,
+    dewPoint,
+    temperature,
+    logDate,
+    dataSent,
+    conditionsTest
   } = user;
 
-  const onChange = e => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+  const returnCurrentSummary = (
+    currentSummary,
+    dailySummary,
+    longitude,
+    latitude,
+    pressure,
+    ozone,
+    moonPhase,
+    windSpeed,
+    humidity,
+    dewPoint,
+    temperature,
+    logDate,
+    dataSent
+  ) => {
+    console.log('-----------------------------');
+    console.log(currentSummary);
+    setUser({
+      ...user,
+      currentSummary: currentSummary,
+      dailySummary: dailySummary,
+      longitude,
+      latitude,
+      pressure,
+      ozone,
+      moonPhase,
+      windSpeed,
+      humidity,
+      dewPoint,
+      temperature,
+      logDate,
+      dataSent: dataSent + 1
+    });
   };
 
-  const onFormSubmit = e => {
-    console.log('clicked!!!');
-    e.preventDefault();
-    if (overallWellbeing === null) {
-      setAlert('Please Enter Daily Wellbeing', 'danger');
-    } else {
-      let fullLog = {
-        logEntry,
-        overallWellbeing,
-        city,
-        stateAbbr,
-        activity,
-        logTime
-      };
-      console.log(fullLog);
-      props.history.push('/dashboard');
-    }
+  const returnDataSent = dataSent => {
+    setUser({ ...user, dataSent: dataSent });
+  };
+
+  const returnDailySummary = dailySummary => {
+    setUser({ ...user, dailySummary: dailySummary });
+  };
+
+  const returnOverallWellbeing = overallWellbeing => {
+    setUser({ ...user, overallWellbeing: overallWellbeing });
+  };
+
+  const returnDailyAcivity = dailyActivity => {
+    setUser({ ...user, dailyActivity: dailyActivity });
+  };
+
+  const returnJournalEntry = journalEntry => {
+    setUser({ ...user, journalEntry: journalEntry });
+  };
+  const returnConditionToLog = (condition, symptoms, value) => {
+    const newConditions = [...conditions];
+    newConditions.push(condition);
+    const testGroup = {
+      condition: condition,
+      symptoms: symptoms,
+      value: value
+    };
+    const newConditionsTest = [...conditionsTest];
+    newConditionsTest.push(testGroup);
+
+    console.log(condition);
+    console.log(symptoms);
+    console.log(newConditions);
+    setUser({
+      ...user,
+      conditions: [...newConditions],
+      conditionsTest: newConditionsTest
+    });
+  };
+
+  const returnConditionStats = (condition, value) => {
+    const newValues = [...conditionsTest];
+
+    newValues.forEach(i => {
+      if (i.condition === condition) {
+        console.log('changing value of :' + condition);
+        i.value = value;
+      }
+    });
+  };
+
+  const successfullySubmitted = () => {
+    props.history.push('/dashboard');
+  };
+
+  const logAlreadySubmitedAlert = () => {
+    setAlert('Log Already Submited For Today', 'danger');
   };
 
   return (
     <div className='container'>
       <div className='logContainer'>
         <Fragment>
-          <h1 className='large text-primary'>How did you do today?</h1>
-          <div>
-            <div>
-              {logEntry !== '' ? (
-                <div className='screenJournal'>
-                  <h5>{logTime}</h5>
-                  <h4 className='journalHeader'> Dear HealthBuddy...</h4>
-                  <p className='journalEntry'>{logEntry}</p>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
+          <div className='logEntryHeader'>
+            <h1 className='large text-primary'>How Was Today?</h1>
+            <h2>{`Enter todays details to help keep track of your life & health!`}</h2>
           </div>
-          <form className='form' onSubmit={onFormSubmit}>
-            <div className='form-group'>
-              <textarea
-                className='logEntry'
-                type='text'
-                value={logEntry}
-                placeholder='Dear HealthBuddy, today was...'
-                name='logEntry'
-                href='logEntry'
-                onChange={onChange}
-              />
-            </div>
-            <h2>Well-Being</h2>
-            <p>On a scale of 1-10, how did you feel today?</p>
-            <select
-              type='number'
-              value={overallWellbeing}
-              name='overallWellbeing'
-              href='overallWellbeing'
-              onChange={onChange}
-            >
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-            </select>
-            <h2>Activity</h2>
-            <p>On a scale of 1-10, how active were you today?</p>
-            <select
-              type='number'
-              value={activity}
-              name='activity'
-              href='activity'
-              onChange={onChange}
-            >
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-            </select>
-            <h2>Location</h2>
-            <p>Where were you today?</p>
-            <input type='text' name='city' value={city} onChange={onChange} />
-            City
-            <select name='stateAbbr' value={stateAbbr} onChange={onChange}>
-              <option value='AL'>Alabama</option>
-              <option value='AK'>Alaska</option>
-              <option value='AZ'>Arizona</option>
-              <option value='AR'>Arkansas</option>
-              <option value='CA'>California</option>
-              <option value='CO'>Colorado</option>
-              <option value='CT'>Connecticut</option>
-              <option value='DE'>Delaware</option>
-              <option value='FL'>Florida</option>
-              <option value='GA'>Georgia</option>
-              <option value='HI'>Hawaii</option>
-              <option value='ID'>Idaho</option>
-              <option value='IL'>Illinois</option>
-              <option value='IN'>Indiana</option>
-              <option value='IA'>Iowa</option>
-              <option value='KS'>Kansas</option>
-              <option value='KY'>Kentucky</option>
-              <option value='LA'>Louisiana</option>
-              <option value='ME'>Maine</option>
-              <option value='MD'>Maryland</option>
-              <option value='MA'>Massachusetts</option>
-              <option value='MI'>Michigan</option>
-              <option value='MN'>Minnesota</option>
-              <option value='MS'>Mississippi</option>
-              <option value='MO'>Missouri</option>
-              <option value='MT'>Montana</option>
-              <option value='NE'>Nebraska</option>
-              <option value='NV'>Nevada</option>
-              <option value='NH'>New Hampshire</option>
-              <option value='NJ'>New Jersey</option>
-              <option value='NM'>New Mexico</option>
-              <option value='NY'>New York</option>
-              <option value='NC'>North Carolina</option>
-              <option value='ND'>North Dakota</option>
-              <option value='OH'>Ohio</option>
-              <option value='OK'>Oklahoma</option>
-              <option value='OR'>Oregon</option>
-              <option value='PA'>Pennsylvania</option>
-              <option value='RI'>Rhode Island</option>
-              <option value='SC'>South Carolina</option>
-              <option value='SD'>South Dakota</option>
-              <option value='TN'>Tennessee</option>
-              <option value='TX'>Texas</option>
-              <option value='UT'>Utah</option>
-              <option value='VT'>Vermont</option>
-              <option value='VA'>Virginia</option>
-              <option value='WA'>Washington</option>
-              <option value='WV'>West Virginia</option>
-              <option value='WI'>Wisconsin</option>
-              <option value='WY'>Wyoming</option>
-            </select>
-            <label>State</label>
-            <input
-              type='submit'
-              className='btn btn-primary logSubmit'
-              value='Submit'
-            />
-          </form>
+          <JournalEntry returnJournalEntry={returnJournalEntry} />
+          <Atmosphere
+            returnCurrentSummary={returnCurrentSummary}
+            returnDailySummary={returnDailySummary}
+            returnDataSent={returnDataSent}
+          />
+          <OverallWellbeing returnOverallWellbeing={returnOverallWellbeing} />
+          <DailyActivity returnDailyAcivity={returnDailyAcivity} />
+          <ConditionsDisplay
+            conditions={conditions}
+            returnConditionStats={returnConditionStats}
+          />
+          <ConditionSearchBar
+            headline={'Experience any conditions today?'}
+            buttonIntro={'Add To Your Log: '}
+            ButtonOutro={'Clik To Add Condition'}
+            linkTo={'#!'}
+            returnConditionToLog={returnConditionToLog}
+          />
+          <Alerts />
+          <SubmitLog
+            journalEntry={journalEntry}
+            logTime={logTime}
+            overallWellbeing={overallWellbeing}
+            dailyActivity={dailyActivity}
+            conditions={conditions}
+            currentSummary={currentSummary}
+            dailySummary={dailySummary}
+            longitude={longitude}
+            latitude={latitude}
+            pressure={pressure}
+            ozone={ozone}
+            moonPhase={moonPhase}
+            windSpeed={windSpeed}
+            humidity={humidity}
+            dewPoint={dewPoint}
+            temperature={temperature}
+            logDate={logDate}
+            dataSent={dataSent}
+            conditionTest={conditionsTest}
+            logAlreadySubmitedAlert={logAlreadySubmitedAlert}
+            successfullySubmitted={successfullySubmitted}
+          />
         </Fragment>
       </div>
     </div>
