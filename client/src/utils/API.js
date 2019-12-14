@@ -12,7 +12,7 @@ export default {
         })
     },
     createLog : function(){
-        return axios.post("api/v1/logs/:id", res => {
+        return axios.post("api/v1/logs/createLog", res => {
             console.log(res);
         })
     }
