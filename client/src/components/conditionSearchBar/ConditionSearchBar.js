@@ -4,8 +4,8 @@ import VideoSearch from '../VideoSearch/VideoSearch';
 import './ConditionSearchBar.css';
 
 export class ConditionSearchBar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.timer = null;
 
     this.state = {
@@ -72,6 +72,13 @@ export class ConditionSearchBar extends Component {
     event.preventDefault();
   };
 
+  videoSearchButtonClicked = condition => {
+    this.props.returnConditionToLog(
+      this.state.selectedCondition,
+      this.state.selectedSymptoms
+    );
+  };
+
   render() {
     let newData = this.state.results;
     let suggestionsList;
@@ -96,9 +103,7 @@ export class ConditionSearchBar extends Component {
 
     return (
       <div className='container form'>
-        <h1 className='searchHead'>
-          Search Conditions To Start Tracking Your Health:
-        </h1>
+        <h1 className='searchHead'> {this.props.headline}</h1>
         {this.state.conditionSearchTerm === '' ? (
           <div />
         ) : (
@@ -145,6 +150,10 @@ export class ConditionSearchBar extends Component {
               condition={this.state.selectedCondition}
               symptoms={this.state.selectedSymptoms}
               clearSearch={this.clearSearch}
+              buttonIntro={this.props.buttonIntro}
+              buttonOutro={this.props.buttonOutro}
+              linkTo={this.props.linkTo}
+              videoSearchButtonClicked={this.videoSearchButtonClicked}
             />
           </div>
         )}

@@ -9,23 +9,17 @@ import { Redirect } from 'react-router-dom';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import './Logs.css';
+import Atmosphere from '../LogEntry/Atmosphere/Atmosphere';
+import OverallWellbeing from '../LogEntry/overallWellbeing/OverallWellbeing';
+import DailyActivity from '../LogEntry/DailyActivity/DailyActivity';
+import SubmitLog from '../LogEntry/SubmitLog/SubmitLog';
+import JournalEntry from '../LogEntry/JournalEntry/JournalEntry';
+import ConditionSearchBar from '../conditionSearchBar/ConditionSearchBar';
+import ConditionsDisplay from '../LogEntry/ConditionsDisplay/ConditionsDisplay';
+import Alerts from '../../components/layout/Alerts';
 import { Link } from 'react-router-dom';
 import StateList from '../../utils/states.json';
-import Logs from "../../utils/API";
-
-let zipKey;
-let weatherKey;
-
-if (process.env.NODE_ENV !== 'production'){
-  zipKey = process.env.REACT_APP_zipCodeAPIKey;
-  weatherKey = process.env.REACT_APP_weatherAPIKey;
-}
-else{
-  zipKey = process.env.zipCodeAPIKey;
-  weatherKey = process.env.weatherAPIKey;
-}
-
-let ratings = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+import './LogEntry.css';
 
 const LogEntry = props => {
   const alertContext = useContext(AlertContext);
@@ -44,130 +38,196 @@ const LogEntry = props => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    logEntry: '',
+    journalEntry: '',
     logTime: '',
-    city: '',
-    stateAbbr: '',
-    overallWellbeing: 0,
-    activity: '',
-    conditions: []
+    overallWellbeing: 1,
+    dailyActivity: 1,
+    conditions: [],
+    conditionsTest: [],
+    conditionsString: '',
+    currentSummary: '',
+    dailySummary: '',
+    longitude: '',
+    latitude: '',
+    pressure: '',
+    ozone: '',
+    moonPhase: '',
+    windSpeed: '',
+    humidity: '',
+    dewPoint: '',
+    temperature: '',
+    logDate: '',
+    dataSent: null
   });
 
   const {
-    logEntry,
+    journalEntry,
     logTime,
-    city,
-    stateAbbr,
+    randomObject,
     overallWellbeing,
-    activity,
-    conditions
+    dailyActivity,
+    conditions,
+    currentSummary,
+    dailySummary,
+    longitude,
+    latitude,
+    pressure,
+    ozone,
+    moonPhase,
+    windSpeed,
+    humidity,
+    dewPoint,
+    temperature,
+    logDate,
+    dataSent,
+    conditionsTest
   } = user;
 
-  const onChange = e => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+  const returnCurrentSummary = (
+    currentSummary,
+    dailySummary,
+    longitude,
+    latitude,
+    pressure,
+    ozone,
+    moonPhase,
+    windSpeed,
+    humidity,
+    dewPoint,
+    temperature,
+    logDate,
+    dataSent
+  ) => {
+    console.log('-----------------------------');
+    console.log(currentSummary);
+    setUser({
+      ...user,
+      currentSummary: currentSummary,
+      dailySummary: dailySummary,
+      longitude,
+      latitude,
+      pressure,
+      ozone,
+      moonPhase,
+      windSpeed,
+      humidity,
+      dewPoint,
+      temperature,
+      logDate,
+      dataSent: dataSent + 1
+    });
   };
 
-  const onFormSubmit = e => {
-    console.log('clicked!!!');
-    e.preventDefault();
+  const returnDataSent = dataSent => {
+    setUser({ ...user, dataSent: dataSent });
+  };
 
-    Logs.createLog(user);
+  const returnDailySummary = dailySummary => {
+    setUser({ ...user, dailySummary: dailySummary });
+  };
 
-    // if (overallWellbeing === null) {
-    //   setAlert('Please Enter Daily Wellbeing', 'danger');
-    // } else {
-    //   let fullLog = {
-    //     weather,
-    //     logEntry,
-    //     overallWellbeing,
-    //     city,
-    //     stateAbbr,
-    //     activity,
-    //     logTime
-    //   };
-    //   console.log(fullLog);
-    //   props.history.push('/dashboard');
-    // }
+  const returnOverallWellbeing = overallWellbeing => {
+    setUser({ ...user, overallWellbeing: overallWellbeing });
+  };
+
+  const returnDailyAcivity = dailyActivity => {
+    setUser({ ...user, dailyActivity: dailyActivity });
+  };
+
+  const returnJournalEntry = journalEntry => {
+    setUser({ ...user, journalEntry: journalEntry });
+  };
+  const returnConditionToLog = (condition, symptoms, value) => {
+    const newConditions = [...conditions];
+    newConditions.push(condition);
+    const testGroup = {
+      condition: condition,
+      symptoms: symptoms,
+      value: value
+    };
+    const newConditionsTest = [...conditionsTest];
+    newConditionsTest.push(testGroup);
+
+    console.log(condition);
+    console.log(symptoms);
+    console.log(newConditions);
+    setUser({
+      ...user,
+      conditions: [...newConditions],
+      conditionsTest: newConditionsTest
+    });
+  };
+
+  const returnConditionStats = (condition, value) => {
+    const newValues = [...conditionsTest];
+
+    newValues.forEach(i => {
+      if (i.condition === condition) {
+        console.log('changing value of :' + condition);
+        i.value = value;
+      }
+    });
+  };
+
+  const successfullySubmitted = () => {
+    props.history.push('/dashboard');
+  };
+
+  const logAlreadySubmitedAlert = () => {
+    setAlert('Log Already Submited For Today', 'danger');
   };
 
   return (
     <div className='container'>
       <div className='logContainer'>
         <Fragment>
-          <h1 className='large text-primary'>How did you do today?</h1>
-          <div>
-            <div>
-              {logEntry !== '' ? (
-                <div className='screenJournal'>
-                  <h5>{logTime}</h5>
-                  <h4 className='journalHeader'> Dear HealthBuddy...</h4>
-                  <p className='journalEntry'>{logEntry}</p>
-                </div>
-              ) : (
-                  <div></div>
-                )}
-            </div>
+          <div className='logEntryHeader'>
+            <h1 className='large text-primary'>How Was Today?</h1>
+            <h2>{`Enter todays details to help keep track of your life & health!`}</h2>
           </div>
-          <form className='form' onSubmit={onFormSubmit}>
-            <div className='form-group'>
-              <textarea
-                className='logEntry'
-                type='text'
-                value={logEntry}
-                placeholder='Dear HealthBuddy, today was...'
-                name='logEntry'
-                href='logEntry'
-                onChange={onChange}
-              />
-            </div>
-            <h2>Well-Being</h2>
-            <p>On a scale of 1-10, how did you feel today?</p>
-            <select
-              type='number'
-              value={overallWellbeing}
-              name='overallWellbeing'
-              href='overallWellbeing'
-              onChange={onChange}
-            >
-              {ratings.map(function (num, index) {
-                return <Fragment key={`Wellbeing ${index}`}>
-                  <option value={num}>{num}</option>
-                </Fragment>
-              })}
-            </select>
-            <h2>Activity</h2>
-            <p>On a scale of 1-10, how active were you today?</p>
-            <select
-              type='number'
-              value={activity}
-              name='activity'
-              href='activity'
-              onChange={onChange}
-            >
-              {ratings.map(function (num, index) {
-                return <Fragment key={`Activity ${index}`}>
-                  <option value={num}>{num}</option>
-                </Fragment>
-              })}
-            </select>
-            <h2>Location</h2>
-            <p>Where were you today?</p>
-            <input type='text' name='city' value={city} onChange={onChange} />
-            City
-            <select name='stateAbbr' value={stateAbbr} onChange={onChange}>
-              {StateList.map(function (item, index) {
-                return <Fragment key={`StateList ${index}`}>
-                  <option value={item.abbreviation}>{item.name}</option>
-                </Fragment>
-              })}
-            </select>
-            <label>State</label>
-            <input
-              type='submit'
-              className='btn btn-primary logSubmit'
-              value='Submit'
-            />
-          </form>
+          <JournalEntry returnJournalEntry={returnJournalEntry} />
+          <Atmosphere
+            returnCurrentSummary={returnCurrentSummary}
+            returnDailySummary={returnDailySummary}
+            returnDataSent={returnDataSent}
+          />
+          <OverallWellbeing returnOverallWellbeing={returnOverallWellbeing} />
+          <DailyActivity returnDailyAcivity={returnDailyAcivity} />
+          <ConditionsDisplay
+            conditions={conditions}
+            returnConditionStats={returnConditionStats}
+          />
+          <ConditionSearchBar
+            headline={'Experience any conditions today?'}
+            buttonIntro={'Add To Your Log: '}
+            ButtonOutro={'Clik To Add Condition'}
+            linkTo={'#!'}
+            returnConditionToLog={returnConditionToLog}
+          />
+          <Alerts />
+          <SubmitLog
+            journalEntry={journalEntry}
+            logTime={logTime}
+            overallWellbeing={overallWellbeing}
+            dailyActivity={dailyActivity}
+            conditions={conditions}
+            currentSummary={currentSummary}
+            dailySummary={dailySummary}
+            longitude={longitude}
+            latitude={latitude}
+            pressure={pressure}
+            ozone={ozone}
+            moonPhase={moonPhase}
+            windSpeed={windSpeed}
+            humidity={humidity}
+            dewPoint={dewPoint}
+            temperature={temperature}
+            logDate={logDate}
+            dataSent={dataSent}
+            conditionTest={conditionsTest}
+            logAlreadySubmitedAlert={logAlreadySubmitedAlert}
+            successfullySubmitted={successfullySubmitted}
+          />
         </Fragment>
       </div>
     </div>

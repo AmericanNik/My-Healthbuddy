@@ -4,6 +4,7 @@ import youtube from './youtube';
 import VideoDetail from './VideoDetail';
 import VideoList from './VideoList';
 import './VideoSearch.css';
+import { throws } from 'assert';
 
 export class VideoSearch extends Component {
   constructor(props) {
@@ -11,6 +12,8 @@ export class VideoSearch extends Component {
     this.state = { videos: [], selectedVideo: null };
 
     this.onTermSubmit = async condition => {
+      console.log('On Term Submitted!');
+
       console.log('condition: ' + condition);
       const response = await youtube.get('/search', {
         params: {
@@ -33,6 +36,11 @@ export class VideoSearch extends Component {
 
   onVideoSelect = video => {
     this.setState({ selectedVideo: video });
+  };
+
+  conditionButtonClick = e => {
+    this.props.videoSearchButtonClicked();
+    this.props.clearSearch();
   };
 
   render() {
@@ -80,14 +88,18 @@ export class VideoSearch extends Component {
             </div>
           </div>
         </div>
-        <Link to='/register'>
-          <div class='ui animated fade button green huge fluid' tabindex='0'>
-            <div class='visible content'>
-              Track Your{' '}
+        <Link to={this.props.linkTo}>
+          <div
+            className='ui animated fade button green huge fluid'
+            tabIndex='0'
+            onClick={this.conditionButtonClick}
+          >
+            <div className='visible content'>
+              {this.props.buttonIntro}{' '}
               {this.props.condition.charAt(0).toUpperCase() +
                 this.props.condition.slice(1)}
             </div>
-            <div class='hidden content'>Join Healthbuddy Today For Free!</div>
+            <div className='hidden content'>{this.props.buttonOutro}</div>
           </div>
         </Link>
         <div className='clearButton2'>

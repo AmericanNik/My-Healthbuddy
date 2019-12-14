@@ -1,4 +1,5 @@
 const express = require('express');
+const request = require('request');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const colors = require('colors');
@@ -21,13 +22,17 @@ const healthbuddies = require('./routes/healthbuddies');
 const logs = require('./routes/logs');
 const auth = require('./routes/auth');
 const conditions = require('./routes/conditions');
+const dataCall = require('./routes/dataCall');
 
 // Connect to Dabatase
 
 const app = express();
 
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
+  res.header(
+    'Access-Control-Allow-Origin',
+    'https://my-healthbuddy.herokuapp.com'
+  ); // update to match the domain you will make the request from
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
@@ -49,6 +54,7 @@ app.use('/api/v1/healthbuddies', healthbuddies);
 app.use('/api/v1/logs', logs);
 app.use('/api/v1/auth', auth);
 app.use('/api/v1/conditions', conditions);
+app.use('/api/v1/dataCall', dataCall);
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
