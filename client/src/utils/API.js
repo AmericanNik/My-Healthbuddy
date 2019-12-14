@@ -6,5 +6,15 @@ export default {
             console.log(res);
         });
     },
-    
+    createUser: function () {
+        return axios.post("/api/v1/register", res => {
+            console.log(res);
+        })
+    },
+    createLog : function(){
+        return axios.post("api/v1/logs/:id", res => {
+            console.log(res);
+        })
+    }
+
 }

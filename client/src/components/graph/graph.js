@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect } from "react";
+import React, { Component, useContext, useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 import OptionDivider from "./OptionDivider";
@@ -10,6 +10,8 @@ import demoLogs from "../../utils/demoLogs";
 import LogList from "../logList/logList";
 import "./graph.css";
 
+let logEntry = "";
+let logTime = "";
 let dateArray = [];
 let severityArray = [];
 let activityArray = [];
@@ -20,6 +22,24 @@ const Graph = () => {
   const authContext = useContext(AuthContext);
 
   const { isAuthenticated, logout, user } = authContext;
+
+  const [user1, setUser] = useState({
+    logEntry: ''
+  })
+  const[clicked,setClicked]=useState({
+    isClicked: false
+  })
+
+  const {
+    isClicked,
+    logEntry,
+    logTime,
+    city,
+    stateAbbr,
+    overallWellbeing,
+    activity,
+    conditions
+  } = user1;
 
   useEffect(() => {
     authContext.loadUser();
@@ -63,6 +83,20 @@ const Graph = () => {
       }
     ]
   };
+
+  const handleClick = () => {
+    if (clicked.isClicked) {
+      setClicked({
+        isClicked: false
+      })
+    }
+    else {
+      setClicked({
+        isClicked: true
+      })
+    }
+  }
+
   const convertDate = () => {
     let monthArr = [
       "Jan",
@@ -86,6 +120,34 @@ const Graph = () => {
     dateArray.push(fullDate);
   };
 
+  demoLogs.map(function (elem, index) {
+    let monthArr = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ];
+    let dateElem = elem.date;
+    let date = new Date(dateElem);
+    let month = monthArr[date.getMonth()];
+    let day = date.getDate();
+    let fullDate = `${month} ${day}`;
+    dateArray.push(fullDate);
+    severityArray.push(elem.dailyWellbeing);
+    activityArray.push(elem.activity);
+    temperatureArray.push((elem.weather.temperature) / 10);
+    humidityArray.push((elem.weather.humidity) / 10);
+
+  })
+
   // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
   // humidity: Math.floor(response.main.humidity / 10)
 
@@ -107,37 +169,35 @@ const Graph = () => {
 
   return (
     <div className="landing graphContainer">
-      <div className="ui grid fluid">
-        <div className="ui two column centered grid">
-          <div className="column">
-            <h1 className="dashboardTitle">
-              Welcome {user && user.data.name} To Your HealthBuddy Dashboard
-            </h1>
-          </div>
+      <div className="ui fluid grid">
+        <div className="column">
+          <h1 className="dashboardTitle">
+            Welcome {user && user.data.name} To Your HealthBuddy Dashboard
+          </h1>
         </div>
-        <div className="mainArea">
-          <div className="graph">
-            <Line
-              data={this.state.chartData}
-              width={800}
-              height={400}
-              options={{
-                maintainAspectRatio: false,
-                title: {
-                  display: true,
-                  text: "Health Buddy Trends",
-                  fontSize: 25
-                }
-              }}
-            />
-          </div>
-          <OptionDivider />
-          <div className="graph">
+      </div>
+      <div className="mainArea">
+        <div className="graph">
+          <Line
+            data={chartData}
+            width={800}
+            height={400}
+            options={{
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: "Health Buddy Trends",
+                fontSize: 25
+              }
+            }}
+          />
+        </div>
+        <OptionDivider handleClick={handleClick} />
+        <div className="graph">
+          {(clicked.isClicked === true) ?
             <LogList />
-          </div>
+            : null}
         </div>
-
-        <OptionDivider />
       </div>
     </div>
   );
