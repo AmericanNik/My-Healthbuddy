@@ -10,6 +10,11 @@ const User = require('../models/User');
 
 exports.register = asyncHandler(async (req, res, next) => {
   const { name, email, password, role } = req.body;
+  console.log('------------------------');
+  console.log(req.user);
+  console.log(req.body);
+  console.log(req.cookies.token);
+  console.log(res.data);
 
   //    Create user
   const user = await User.create({
@@ -58,6 +63,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 //@access   Private
 
 exports.getMe = asyncHandler(async (req, res, next) => {
+  console.log('GET ME WAS FIRED: ' + req.user);
   const user = await User.findById(req.user.id);
 
   res.status(200).json({ success: true, data: user });

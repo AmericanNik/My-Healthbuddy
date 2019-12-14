@@ -1,0 +1,9 @@
+.mainArea {
+  height: 100%;
+}
+
+@media all and (max-width: 391) {
+  .landing-inner {
+    margin-top: 0px;
+  }
+}

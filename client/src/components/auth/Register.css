@@ -1,0 +1,27 @@
+.validationUl {
+  text-align: initial;
+}
+
+.grid-container {
+  display: inline-grid;
+}
+
+.fail {
+  color: #dc3545;
+}
+
+.pass {
+  color: #35db5a;
+}
+
+.ERROR {
+  display: table;
+  color: #dc3545;
+}
+
+.alertDisplay {
+  display: block;
+}
+.alert {
+  margin: 0;
+}

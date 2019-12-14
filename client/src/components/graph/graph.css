@@ -1,0 +1,51 @@
+.graphContainer {
+  background: rgba(17, 17, 17, 0.3);
+  border: 3px solid #dc3545;
+  max-width: 1160px;
+  margin: auto;
+  margin-top: 80px;
+  border-radius: 15px;
+}
+
+.mainArea {
+  height: fit-content;
+}
+
+.dashboardTitle {
+  text-align: center;
+  color: #dc3545;
+}
+
+.graph {
+  border-bottom: 3px solid #171717;
+  background-color: #f9fafb;
+  margin: 0 15px 30px 15px;
+  border-radius: 15px;
+}
+
+.getLogBtn {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .graphContainer {
+    margin-top: 110px;
+  }
+}
+
+.ui.fluid.button.addLogBtn {
+  margin: 10px;
+}
+
+.ui.fluid.button.getLogBtn {
+  margin: 10px;
+}
+
+h2:last-child.wellbeingDisplay {
+  margin-top: 30px;
+  color: #dc3545;
+}
+
+.optionDivider {
+  margin: 0 15px 0 15px;
+}

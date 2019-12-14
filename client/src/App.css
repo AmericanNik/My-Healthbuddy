@@ -1,4 +1,29 @@
 /* Global Styles */
+html {
+  background: url('./img/healthbuddyBackground.png') no-repeat center
+    center/cover;
+  background-attachment: fixed;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background: none;
+}
+
+footer {
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 2.11rem;
+  min-height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
 :root {
   --primary-color: #dc3545;
   --dark-color: #343a40;
@@ -9,17 +34,6 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #333;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -43,7 +57,7 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  padding-top: 4rem;
   margin-bottom: 3rem;
 }
 
@@ -153,7 +167,8 @@ img {
 
 .alert {
   padding: 0.8rem;
-  margin: 1rem 0;
+  margin: 2px;
+  border-bottom: #171717;
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
@@ -303,12 +318,13 @@ button {
 
 /* Navbar */
 .navbar {
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
+  position: absolute;
+  /* z-index: 1; */
   width: 100%;
   top: 0;
   border-bottom: solid 1px var(--primary-color);
@@ -321,26 +337,26 @@ button {
 
 .navbar a {
   color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
+  /* padding: 0.45rem;
+  margin: 0 0.25rem; */
 }
 
-.navbar a:hover {
+/* .navbar a:hover {
   color: var(--primary-color);
-}
+} */
 
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
 
 /* Landing Page */
-.landing {
+/* .landing {
   position: relative;
   background: url('./img/healthbuddyBackground.png') no-repeat center
     center/cover;
-  padding-top: 20px;
-  height: 100vh;
-}
+  background-attachment: fixed;
+  height: 100%;
+} */
 
 .landing-inner {
   color: #fff;
@@ -495,10 +511,6 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-  .container {
-    margin-top: 8rem;
-  }
-
   .hide-sm {
     display: none;
   }
@@ -520,6 +532,7 @@ button {
   .navbar {
     display: block;
     text-align: center;
+    height: auto;
   }
 
   .navbar ul {
@@ -597,20 +610,29 @@ button {
   height: 340px;
 }
 
+.videoDisplay {
+  margin-bottom: 20px;
+}
+
 .footer {
   flex-shrink: 0;
   text-align: center;
+  margin-bottom: -30px;
   background-color: #dc3545;
   color: white;
 }
 
-.content {
-  flex: 1 0 auto;
-  padding: 10px;
+.ui.red.button,
+.ui.red.buttons .button {
+  background-color: #dc3545;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
 }
