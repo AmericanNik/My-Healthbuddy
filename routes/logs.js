@@ -16,7 +16,7 @@ const router = express.Router({ mergeParams: true });
 const { protect, authorize } = require('../middleware/auth');
 
 router
-  .route('/')
+  .route('/createLog')
   .get(
     protect,
     authorize('standard', 'premium', 'admin'),

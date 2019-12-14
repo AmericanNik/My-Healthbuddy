@@ -79,6 +79,8 @@ exports.addLog = asyncHandler(async (req, res, next) => {
   req.body.healthbuddy = req.params.healthbuddyId;
   req.body.user = req.user.id;
 
+  console.log(req.body.healthbuddy);
+
   const healthbuddy = await Healthbuddy.findOne({
     _id: req.params.healthbuddyId
   });
