@@ -3,6 +3,8 @@ const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 const sendEmail = require('../utils/sendEmail');
 const User = require('../models/User');
+const Healthbuddy = require('../models/Healthbuddy');
+const Log = require('../models/Log');
 
 //@desc     Register user
 //@route    POST /api/v1/auth/register
@@ -64,9 +66,33 @@ exports.login = asyncHandler(async (req, res, next) => {
 
 exports.getMe = asyncHandler(async (req, res, next) => {
   console.log('GET ME WAS FIRED: ' + req.user);
-  const user = await User.findById(req.user.id);
+  const user = await User.findById(req.user.id).populate({
+    path: 'healthbuddy',
+    select: 'name description'
+  });
 
   res.status(200).json({ success: true, data: user });
+});
+
+//@desc     Get current logged in users Healthbuddy by User ID
+//@route    POST /api/v1/auth/me/healthbuddy
+//@access   Private
+
+exports.getMyHealthbuddy = asyncHandler(async (req, res, next) => {
+  console.log('GET MY HEALTHBUDDY WAS FIRED: ' + req.user);
+
+  const healthbuddy = await Healthbuddy.find({
+    user: req.user._id
+  });
+
+  const logs = await Log.find({ healthbuddy: healthbuddy[0]._id });
+
+  data = {
+    healthbuddy,
+    logs
+  };
+
+  res.status(200).json({ success: true, data });
 });
 
 //@desc     Update user details
