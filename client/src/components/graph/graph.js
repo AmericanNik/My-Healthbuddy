@@ -43,6 +43,7 @@ const Graph = () => {
 
   useEffect(() => {
     authContext.loadUser();
+    loadDemoData();
     // eslint-disable-next-line
   }, []);
 
@@ -119,32 +120,75 @@ const Graph = () => {
     dateArray.push(fullDate);
   };
 
-  demoLogs.map(function(elem, index) {
-    let monthArr = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ];
-    let dateElem = elem.date;
-    let date = new Date(dateElem);
-    let month = monthArr[date.getMonth()];
-    let day = date.getDate();
-    let fullDate = `${month} ${day}`;
-    dateArray.push(fullDate);
-    severityArray.push(elem.dailyWellbeing);
-    activityArray.push(elem.activity);
-    temperatureArray.push(elem.weather.temperature / 10);
-    humidityArray.push(elem.weather.humidity / 10);
-  });
+  const mapData = () => {
+    demoLogs.map(function (elem, index) {
+      let monthArr = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ];
+      let dateElem = elem.date;
+      let date = new Date(dateElem);
+      let month = monthArr[date.getMonth()];
+      let day = date.getDate();
+      let fullDate = `${month} ${day}`;
+      dateArray.push(fullDate);
+      severityArray.push(elem.dailyWellbeing);
+      activityArray.push(elem.activity);
+      temperatureArray.push(elem.weather.temperature / 10);
+      humidityArray.push(elem.weather.humidity / 10);
+    });
+  }
+
+
+  const loadDemoData = () => {
+    if (dateArray.length === 0) {
+      mapData()
+    }
+    else {
+      dateArray.length = [];
+      severityArray.length = [];
+      activityArray.length = [];
+      temperatureArray.length = [];
+      humidityArray.length = [];
+      demoLogs.map(function (elem, index) {
+        let monthArr = [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec'
+        ];
+        let dateElem = elem.date;
+        let date = new Date(dateElem);
+        let month = monthArr[date.getMonth()];
+        let day = date.getDate();
+        let fullDate = `${month} ${day}`;
+        dateArray.push(fullDate);
+        severityArray.push(elem.dailyWellbeing);
+        activityArray.push(elem.activity);
+        temperatureArray.push(elem.weather.temperature / 10);
+        humidityArray.push(elem.weather.humidity / 10);
+      });
+    };
+  }
+
 
   // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
   // humidity: Math.floor(response.main.humidity / 10)
