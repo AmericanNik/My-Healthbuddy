@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useContext } from "react";
+import { Redirect } from "react-router-dom";
 
-import axios from 'axios';
+import axios from "axios";
 
-import './SubmitLog.css';
+import "./SubmitLog.css";
 
 const dailyLog = async props => {
   if (props) {
@@ -32,10 +32,10 @@ const dailyLog = async props => {
     console.log(compiledLog);
 
     const data = await axios.get(
-      'https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy'
+      "https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy"
     );
     console.log(data.data.data);
-    console.log('HealthbuddyID: ' + data.data.data.healthbuddy[0]._id);
+    console.log("HealthbuddyID: " + data.data.data.healthbuddy[0]._id);
 
     console.log(compiledLog.logDate);
 
@@ -45,11 +45,11 @@ const dailyLog = async props => {
     const logTotal = data.data.data.logs.length;
 
     console.log(data.data.data.logs.length);
-    console.log('LogTotal: ' + logTotal);
-    console.log('HealthbuddyID: ' + healthbuddyID);
+    console.log("LogTotal: " + logTotal);
+    console.log("HealthbuddyID: " + healthbuddyID);
 
     if (logTotal === 0) {
-      console.log('Firing Post!!!!!!!!!!!');
+      console.log("Firing Post!!!!!!!!!!!");
       const logPost = await axios.post(
         `https://my-healthbuddy.herokuapp.com/api/v1/healthbuddies/${healthbuddyID}/logs`,
         compiledLog
@@ -59,10 +59,10 @@ const dailyLog = async props => {
 
       if (logPost.status === 200) {
         props.successfullySubmitted();
-        return <Redirect push to='/dashboard' />;
+        return <Redirect push to="/dashboard" />;
       }
 
-      return <Redirect push to='/dashboard' />;
+      return <Redirect push to="/dashboard" />;
     } else if (logTotal >= 1) {
       const existingLogs = data.data.data.logs;
       const submitedLogDate = compiledLog.logDate.slice(0, 10);
@@ -73,7 +73,7 @@ const dailyLog = async props => {
 
       if (submitedLogDate === mostRecentLogDate) {
         props.logAlreadySubmitedAlert();
-        console.log('already submited today');
+        console.log("already submited today");
       } else {
         const logPost = await axios.post(
           `https://my-healthbuddy.herokuapp.com/api/v1/healthbuddies/${healthbuddyID}/logs`,
@@ -81,15 +81,15 @@ const dailyLog = async props => {
         );
 
         console.log(logPost);
-        console.log('ATTEMPTING TO REDIRECT HERE TOO');
-        return <Redirect to='/dashboard' />;
+        console.log("ATTEMPTING TO REDIRECT HERE TOO");
+        return <Redirect to="/dashboard" />;
       }
 
       console.log(existingLogs.length);
       console.log(mostRecentLogDate);
       console.log(submitedLogDate);
     } else {
-      console.log('Nothing Happened!');
+      console.log("Nothing Happened!");
     }
   }
 };
@@ -100,8 +100,8 @@ const SubmitLog = props => {
   };
 
   return (
-    <div className='submitLogButtonContainer'>
-      <div className='submitLogButton' onClick={onLogSubmit}>
+    <div className="submitLogButtonContainer">
+      <div className="submitLogButton" onClick={onLogSubmit}>
         <h2>Submit Log</h2>
       </div>
     </div>
