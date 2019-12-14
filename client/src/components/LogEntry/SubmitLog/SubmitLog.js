@@ -32,7 +32,7 @@ const dailyLog = async props => {
     console.log(compiledLog);
 
     const data = await axios.get(
-      'http://localhost:5000/api/v1/auth/myHealthbuddy'
+      'https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy'
     );
     console.log(data.data.data);
     console.log('HealthbuddyID: ' + data.data.data.healthbuddy[0]._id);
@@ -51,7 +51,7 @@ const dailyLog = async props => {
     if (logTotal === 0) {
       console.log('Firing Post!!!!!!!!!!!');
       const logPost = await axios.post(
-        `http://localhost:5000/api/v1/healthbuddies/${healthbuddyID}/logs`,
+        `https://my-healthbuddy.herokuapp.com/api/v1/healthbuddies/${healthbuddyID}/logs`,
         compiledLog
       );
 
@@ -76,7 +76,7 @@ const dailyLog = async props => {
         console.log('already submited today');
       } else {
         const logPost = await axios.post(
-          `http://localhost:5000/api/v1/healthbuddies/${healthbuddyID}/logs`,
+          `https://my-healthbuddy.herokuapp.com/api/v1/healthbuddies/${healthbuddyID}/logs`,
           compiledLog
         );
 
@@ -88,12 +88,6 @@ const dailyLog = async props => {
       console.log(existingLogs.length);
       console.log(mostRecentLogDate);
       console.log(submitedLogDate);
-
-      // const logPost = await axios.post(
-      //   `http://localhost:5000/api/v1/healthbuddies/${healthbuddyID}/logs`,
-      //   compiledLog
-      // );
-      // console.log(logPost);
     } else {
       console.log('Nothing Happened!');
     }

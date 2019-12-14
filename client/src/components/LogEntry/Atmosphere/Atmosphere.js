@@ -4,7 +4,6 @@ import Alerts from '../../../components/layout/Alerts';
 import AtmosphereDisplay from './AtmosphereDisplay';
 import axios from 'axios';
 import WeatherAPI from './WeatherAPI';
-import ZipApi from './ZipAPI';
 import './Atmosphere.css';
 import ZipAPI from './ZipAPI';
 
@@ -120,7 +119,7 @@ const Atmosphere = props => {
     if (zipTest.test(zipcode)) {
       console.log('Passed!');
 
-      const response = await ZipAPI.get(`/${zipcode}/degrees`);
+      const response = await ZipAPI.get(`/${zipcode}`);
       console.log(response);
       setLogLocation({
         ...logLocation,
@@ -180,7 +179,7 @@ const Atmosphere = props => {
     if (accur === accuracy) {
       return console.log('STOP THE PRESSES');
     }
-    const response = await WeatherAPI.get(`/${lat},${long}`);
+    const response = await WeatherAPI.get(`/${lat}/${long}`);
 
     console.log(response);
 
