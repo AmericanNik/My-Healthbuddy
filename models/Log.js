@@ -6,10 +6,9 @@ const LogSchema = new mongoose.Schema({
     default: Date.now,
     required: true
   },
-  logEntry: {
+  journalEntry: {
     type: String,
-    maxLength: [500, 'Logs can contain up to 500 characters'],
-    required: [true, 'Please add a log entry']
+    maxLength: [500, 'Logs can contain up to 500 characters']
   },
   dailyWellbeing: {
     type: Number,
@@ -27,19 +26,28 @@ const LogSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  feltBest: {
-    type: [String],
-    enum: ['Morning', 'Afternoon', 'Evening', 'All-Day']
+  currentSummary: {
+    type: String
   },
-  dailyCondition: [Object],
-  dailyActivity: [Object],
-  logMeds: [Object],
-  logNutrients: [Object],
-  logWeather: [Object]
+  dailyActivity: {
+    type: Number
+  },
+  dailySummary: {
+    type: String
+  },
+  dewPoint: Number,
+  humidity: Number,
+  latitude: Number,
+  longitude: Number,
+  moonPhase: Number,
+  ozone: Number,
+  pressure: Number,
+  temperature: Number,
+  windSpeed: Number
 });
 
 //  Static method to get average wellbeing
-LogSchema.statics.getAverageWellbeing = async function (healthbuddyId) {
+LogSchema.statics.getAverageWellbeing = async function(healthbuddyId) {
   console.log('Calculating average wellbeing<3'.brightBlue);
 
   const obj = await this.aggregate([
@@ -66,13 +74,13 @@ LogSchema.statics.getAverageWellbeing = async function (healthbuddyId) {
 
 // Call getAverageWellbeing after save
 
-LogSchema.post('save', function () {
+LogSchema.post('save', function() {
   this.constructor.getAverageWellbeing(this.healthbuddy);
 });
 
 //  Call before remove
 
-LogSchema.pre('remove', function () {
+LogSchema.pre('remove', function() {
   this.constructor.getAverageWellbeing(this.healthbuddy);
 });
 

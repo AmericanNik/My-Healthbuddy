@@ -62,9 +62,22 @@ const Atmosphere = props => {
     setLogLocation({ ...logLocation, [e.target.name]: e.target.value });
   };
 
-  const sendAtmosphereData = () => {
-    props.returnAtmosphere(logLocation);
-    setLogLocation({ ...logLocation, dataSent: dataSent + 1 });
+  const sendAtmosphereData = async () => {
+    await props.returnCurrentSummary(
+      currentSummary,
+      dailySummary,
+      longitude,
+      latitude,
+      pressure,
+      ozone,
+      moonPhase,
+      windSpeed,
+      humidity,
+      dewPoint,
+      temperature,
+      logDate,
+      dataSent
+    );
   };
 
   //USE EFFECT
@@ -74,10 +87,10 @@ const Atmosphere = props => {
     // eslint-disable-next-line
     console.log('accuracy: ' + accuracy);
     console.log('dataSent: ' + dataSent);
-    console.log(longitude, saveLong);
 
-    if (accuracy !== '' && longitude !== saveLong) {
+    if (accuracy !== '' && dataSent <= 0) {
       sendAtmosphereData();
+      setLogLocation({ ...logLocation, dataSent: dataSent + 1 });
     }
   }, props.history);
 
@@ -134,7 +147,8 @@ const Atmosphere = props => {
         ...logLocation,
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
-        accuracy: position.coords.accuracy
+        accuracy: position.coords.accuracy,
+        dataSent: 1
       });
     } else {
       getWeatherData(
@@ -157,6 +171,7 @@ const Atmosphere = props => {
   //  CLEAR LOCATION BUTTON ACTION
   const clearLocation = () => {
     setLogLocation({ ...logLocation, latitude: '', longitude: '' });
+    props.returnDataSent(0);
   };
 
   //  GET ATMOSPHERIC DATA
@@ -170,6 +185,7 @@ const Atmosphere = props => {
     console.log(response);
 
     setLogLocation({
+      ...logLocation,
       latitude: lat,
       longitude: long,
       saveLat: lat,
