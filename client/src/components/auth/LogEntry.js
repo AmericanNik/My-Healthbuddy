@@ -28,15 +28,6 @@ const LogEntry = props => {
   const { setAlert } = alertContext;
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
-  useEffect(() => {
-    authContext.loadUser();
-    if (error === 'Duplicate field value entered') {
-      setAlert('User Already Exists', 'danger');
-      clearErrors();
-    }
-    // eslint-disable-next-line
-  }, [error, isAuthenticated, props.history]);
-
   const [user, setUser] = useState({
     journalEntry: '',
     logTime: '',
@@ -57,12 +48,15 @@ const LogEntry = props => {
     dewPoint: '',
     temperature: '',
     logDate: '',
-    dataSent: null
+    dataSent: null,
+    userName: '',
+    userEmail: ''
   });
 
   const {
     journalEntry,
     logTime,
+    userName,
     randomObject,
     overallWellbeing,
     dailyActivity,
@@ -80,8 +74,28 @@ const LogEntry = props => {
     temperature,
     logDate,
     dataSent,
-    conditionsTest
+    conditionsTest,
+    userEmail
   } = user;
+
+  useEffect(() => {
+    console.log('THIS USE EFFECT IS BEING USED!');
+    console.log(isAuthenticated);
+    authContext.loadUser();
+    if (userName === '' && isAuthenticated === true) {
+      setUser({
+        ...user,
+        userName: authContext.user.data.name,
+        userEmail: authContext.user.data.email
+      });
+    }
+    if (error === 'Duplicate field value entered') {
+      setAlert('User Already Exists', 'danger');
+
+      clearErrors();
+    }
+    // eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
 
   const returnCurrentSummary = (
     currentSummary,
@@ -227,6 +241,8 @@ const LogEntry = props => {
             conditionTest={conditionsTest}
             logAlreadySubmitedAlert={logAlreadySubmitedAlert}
             successfullySubmitted={successfullySubmitted}
+            userName={userName}
+            userEmail={userEmail}
           />
         </Fragment>
       </div>

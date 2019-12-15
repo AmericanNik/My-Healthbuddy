@@ -41,9 +41,23 @@ const Graph = () => {
     conditions
   } = user1;
 
+  const loadData = async () => {
+    try {
+      const userData = await axios.get(
+        'https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy'
+      );
+      console.log(userData);
+      console.log(userData.data.data.logs);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     authContext.loadUser();
     loadDemoData();
+    loadData();
+
     // eslint-disable-next-line
   }, []);
 
@@ -121,7 +135,7 @@ const Graph = () => {
   };
 
   const mapData = () => {
-    demoLogs.map(function (elem, index) {
+    demoLogs.map(function(elem, index) {
       let monthArr = [
         'Jan',
         'Feb',
@@ -147,20 +161,18 @@ const Graph = () => {
       temperatureArray.push(elem.weather.temperature / 10);
       humidityArray.push(elem.weather.humidity / 10);
     });
-  }
-
+  };
 
   const loadDemoData = () => {
     if (dateArray.length === 0) {
-      mapData()
-    }
-    else {
+      mapData();
+    } else {
       dateArray.length = [];
       severityArray.length = [];
       activityArray.length = [];
       temperatureArray.length = [];
       humidityArray.length = [];
-      demoLogs.map(function (elem, index) {
+      demoLogs.map(function(elem, index) {
         let monthArr = [
           'Jan',
           'Feb',
@@ -186,9 +198,8 @@ const Graph = () => {
         temperatureArray.push(elem.weather.temperature / 10);
         humidityArray.push(elem.weather.humidity / 10);
       });
-    };
-  }
-
+    }
+  };
 
   // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
   // humidity: Math.floor(response.main.humidity / 10)

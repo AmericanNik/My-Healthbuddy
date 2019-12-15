@@ -28,6 +28,12 @@
 
 @media all and (min-height: 1000px) {
   div.landing-inner {
-    margin-top: 400px;
+    margin-top: 290px;
+  }
+}
+
+@media all and (min-height: 1200px) {
+  div.landing-inner {
+    margin-top: 340px;
   }
 }
