@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://my-healthbuddy.herokuapp.com/api/v1/dataCall/zipcode"
+  baseURL: "https://localhost:5000/api/v1/dataCall/zipcode"
 });

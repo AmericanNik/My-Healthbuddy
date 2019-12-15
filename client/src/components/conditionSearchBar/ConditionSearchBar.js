@@ -29,7 +29,7 @@ export class ConditionSearchBar extends Component {
   callConditions = () => {
     axios
       .get(
-        `https://my-healthbuddy.herokuapp.com/api/v1/conditions/search/${this.state.conditionSearchTerm}?limit=5`
+        `https://localhost:5000/api/v1/conditions/search/${this.state.conditionSearchTerm}?limit=5`
       )
       .then(({ data }) => {
         this.setState({ conditionsReturned: data.data.length });

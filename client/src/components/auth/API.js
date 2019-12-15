@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://my-healthbuddy.herokuapp.com/",
+  baseURL: "https://localhost:5000/",
   responseType: "json"
 });
