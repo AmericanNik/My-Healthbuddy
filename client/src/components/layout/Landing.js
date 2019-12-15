@@ -25,12 +25,12 @@ class Landing extends React.Component {
                     Login
                   </Link>
                 </div>
-                <ConditionSearchBar
+                {/* <ConditionSearchBar
                   headline={'Search Conditions To Start Tracking Your Health:'}
                   buttonIntro={'Track Your '}
                   buttonOutro={'Join Healthbuddy Today Free!'}
                   linkTo={'/register'}
-                />
+                /> */}
               </div>
             </div>
           </div>
