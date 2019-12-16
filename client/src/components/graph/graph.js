@@ -47,7 +47,7 @@ const Graph = () => {
       const userData = await axios.get(
         'https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy'
       );
-      console.log(userData);
+      // console.log(userData);
       console.log(userData.data.data.logs);
       if (dateArray.lenth === 0) {
         let logArray = userData.data.data.logs;
@@ -58,8 +58,7 @@ const Graph = () => {
           severityArray.push(elem.dailyWellbeing);
           activityArray.push(elem.dailyActivity);
           temperatureArray.push((elem.temperature) / 10);
-          humidityArray.push(((elem.humidity) * 100) / 10);
-
+          humidityArray.push(((elem.humidity) * 1000) / 10);
         })
       }
       else {
