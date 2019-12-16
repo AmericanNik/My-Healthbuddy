@@ -188,8 +188,9 @@ const Graph = () => {
       });
     };
   }
-
-
+  
+  //database return data
+  // elem.data.logs.{whatever}
   // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
   // humidity: Math.floor(response.main.humidity / 10)
 
