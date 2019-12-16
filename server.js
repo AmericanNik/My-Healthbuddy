@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 const path = require('path');
+const cors = require('cors');
 require('dotenv').config();
 
 //load env vars
@@ -49,6 +50,7 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+app.use(cors());
 //  Mount routers
 app.use('/api/v1/healthbuddies', healthbuddies);
 app.use('/api/v1/logs', logs);

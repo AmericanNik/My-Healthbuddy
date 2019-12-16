@@ -6,7 +6,6 @@ const HealthbuddySchema = new mongoose.Schema(
     name: {
       type: String,
       required: [true, 'Please give a name to your Healthbuddy'],
-      unique: true,
       trim: true,
       maxLength: [50, 'Name cannot be more than 50 characters.']
     },
@@ -21,11 +20,7 @@ const HealthbuddySchema = new mongoose.Schema(
       max: 10
     },
     slug: String,
-    description: {
-      type: String,
-      required: [true, 'Please add a healthbuddy description'],
-      maxLength: [500, 'Description cannot be more than 500 characters.']
-    },
+
     medications: [Object],
     nutrients: [Object],
     buddyPhoto: {

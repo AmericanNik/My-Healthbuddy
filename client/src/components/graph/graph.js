@@ -6,9 +6,10 @@ import AuthContext from '../../context/auth/authContext';
 import axios from 'axios';
 // const logs = require('../../../../controllers/logs');
 import Logs from '../../utils/API';
-import demoLogs from '../../utils/demoLogs';
+// import demoLogs from '../../utils/demoLogs';
 import LogList from '../logList/logList';
 import './graph.css';
+var moment = require('moment');
 
 let logEntry = '';
 let logTime = '';
@@ -41,9 +42,53 @@ const Graph = () => {
     conditions
   } = user1;
 
+  const loadData = async () => {
+    try {
+      const userData = await axios.get(
+        'https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy'
+      );
+      console.log(userData);
+      console.log(userData.data.data.logs);
+      if (dateArray.lenth === 0) {
+        let logArray = userData.data.data.logs;
+        logArray.forEach(function (elem) {
+          let date = ((elem.logDate) * 1000);
+          let fullDate = moment(date).format("MMM DD");
+          dateArray.push(fullDate);
+          severityArray.push(elem.dailyWellbeing);
+          activityArray.push(elem.dailyActivity);
+          temperatureArray.push((elem.temperature) / 10);
+          humidityArray.push(((elem.humidity) * 100) / 10);
+
+        })
+      }
+      else {
+        dateArray = [];
+        severityArray = [];
+        activityArray = [];
+        temperatureArray = [];
+        humidityArray = [];
+        let logArray = userData.data.data.logs;
+        logArray.forEach(function (elem) {
+          let date = ((elem.logDate) * 1000);
+          let fullDate = moment(date).format("MMM DD");
+          dateArray.push(fullDate);
+          severityArray.push(elem.dailyWellbeing);
+          activityArray.push(elem.dailyActivity);
+          temperatureArray.push((elem.temperature) / 10);
+          humidityArray.push(((elem.humidity) * 100) / 10);
+        })
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     authContext.loadUser();
-    loadDemoData();
+    // loadDemoData();
+    loadData();
+
     // eslint-disable-next-line
   }, []);
 
@@ -97,118 +142,7 @@ const Graph = () => {
     }
   };
 
-  const convertDate = () => {
-    let monthArr = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ];
-    let dateElem = null;
-    let date = new Date(dateElem);
-    let month = monthArr[date.getMonth()];
-    let day = date.getDate();
-    let fullDate = `${month} ${day}`;
-    dateArray.push(fullDate);
-  };
 
-  const mapData = () => {
-    demoLogs.map(function (elem, index) {
-      let monthArr = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-      ];
-      let dateElem = elem.date;
-      let date = new Date(dateElem);
-      let month = monthArr[date.getMonth()];
-      let day = date.getDate();
-      let fullDate = `${month} ${day}`;
-      dateArray.push(fullDate);
-      severityArray.push(elem.dailyWellbeing);
-      activityArray.push(elem.activity);
-      temperatureArray.push(elem.weather.temperature / 10);
-      humidityArray.push(elem.weather.humidity / 10);
-    });
-  }
-
-
-  const loadDemoData = () => {
-    if (dateArray.length === 0) {
-      mapData()
-    }
-    else {
-      dateArray.length = [];
-      severityArray.length = [];
-      activityArray.length = [];
-      temperatureArray.length = [];
-      humidityArray.length = [];
-      demoLogs.map(function (elem, index) {
-        let monthArr = [
-          'Jan',
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
-          'Oct',
-          'Nov',
-          'Dec'
-        ];
-        let dateElem = elem.date;
-        let date = new Date(dateElem);
-        let month = monthArr[date.getMonth()];
-        let day = date.getDate();
-        let fullDate = `${month} ${day}`;
-        dateArray.push(fullDate);
-        severityArray.push(elem.dailyWellbeing);
-        activityArray.push(elem.activity);
-        temperatureArray.push(elem.weather.temperature / 10);
-        humidityArray.push(elem.weather.humidity / 10);
-      });
-    };
-  }
-  
-  //database return data
-  // elem.data.logs.{whatever}
-  // temperature: Math.floor(((response.data.main.temp - 273.15) * 1.8 + 32) / 10),
-  // humidity: Math.floor(response.main.humidity / 10)
-
-  // componentDidMount() {
-  // Logs.getLogs()
-  //   .then
-  //   logs.forEach(function(elem) {
-  //     dateArray.push(this.convertDate(elem.logDate));
-  //     severityArray.push(elem.dailyWellbeing);
-  //     temperatureArray.push(this.convertTemp(elem.logWeather.weatherTemp));
-  //     humidityArray.push(
-  //       this.convertHumidity(elem.logWeather.weatherHumidity)
-  //     );
-  //     activityArray.push(elem.dailyActivity);
-  //   }),
-  //   this.forceUpdate()
-  //     ();
-  // }
 
   return (
     <div className='landing graphContainer'>

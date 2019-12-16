@@ -28,7 +28,7 @@ exports.getZipcode = asyncHandler(async (req, res, next) => {
 
   request(
     {
-      url: `https://www.zipcodeapi.com/rest/dLIDvWBNeU8aY47XVNtyWX3JPygjMK9uPDS8uKBpLGHkGilmKVaK79JUdk22uKZO/info.json/${zipcode}/degrees`
+      url: `https://www.zipcodeapi.com/rest/j1Z2v9Je4bxMeBYJ2CcXLTAiTthfgamGGXxpzjt1GRl477v2MLBJ2YgqtjC2TjPE/info.json/${zipcode}/degrees`
     },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {

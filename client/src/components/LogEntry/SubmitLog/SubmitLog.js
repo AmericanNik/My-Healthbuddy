@@ -7,14 +7,19 @@ import './SubmitLog.css';
 
 const dailyLog = async props => {
   if (props) {
-    var logDate = new Date();
+    var logDate = Date.now();
+    const answerArr = [];
+    for (let i = 0; i < props.conditionTest.length; i++) {
+      answerArr.push(props.conditionTest[i].value);
+    }
+    console.log(answerArr);
 
     const compiledLog = {
       journalEntry: props.journalEntry,
       logTime: props.logTime,
       dailyWellbeing: parseInt(props.overallWellbeing),
       dailyActivity: parseInt(props.dailyActivity),
-      conditions: props.conditions,
+      conditions: props.conditionTest,
       currentSummary: props.currentSummary,
       dailySummary: props.dailySummary,
       longitude: props.longitude,
@@ -26,10 +31,27 @@ const dailyLog = async props => {
       humidity: props.humidity,
       dewPoint: props.dewPoint,
       temperature: props.temperature,
-      logDate: logDate.toISOString(),
-      conditionTest: props.conditionTest
+      logDate: logDate
     };
     console.log(compiledLog);
+
+    try {
+      const data = await axios.get(
+        'https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy'
+      );
+      console.log(data);
+    } catch (err) {
+      console.log('ERRORRRRRR' + err);
+      console.log('TYPEERROR: ' + err.error);
+      if (err.toString() === 'Error: Request failed with status code 500') {
+        const creatingHealthbuddy = await axios.post(
+          'https://my-healthbuddy.herokuapp.com/api/v1/healthbuddies',
+          { name: props.userName }
+        );
+        console.log('YOU SHOULD CREATE A HEALTHBUDDY');
+        console.log(creatingHealthbuddy);
+      }
+    }
 
     const data = await axios.get(
       'https://my-healthbuddy.herokuapp.com/api/v1/auth/myHealthbuddy'
@@ -38,7 +60,10 @@ const dailyLog = async props => {
     console.log('HealthbuddyID: ' + data.data.data.healthbuddy[0]._id);
 
     console.log(compiledLog.logDate);
-
+    if (!data) {
+      console.log('NO HEALTHBUDDY FOUND');
+      return console.log('DYING');
+    }
     console.log();
 
     const healthbuddyID = data.data.data.healthbuddy[0]._id;
@@ -64,12 +89,18 @@ const dailyLog = async props => {
 
       return <Redirect push to='/dashboard' />;
     } else if (logTotal >= 1) {
-      const existingLogs = data.data.data.logs;
-      const submitedLogDate = compiledLog.logDate.slice(0, 10);
-      const mostRecentLogDate = existingLogs
-        .pop()
-        .logDate.toString()
-        .slice(0, 10);
+      const mostRecentLog = data.data.data.logs.pop();
+
+      const submitedLogDate = Date(compiledLog.logDate)
+        .toString()
+        .slice(0, 16);
+      console.log('submitedLogDate:' + submitedLogDate);
+
+      const mostRecentLogDate = Date(mostRecentLog.logDate)
+        .toString()
+        .slice(0, 16);
+
+      console.log('mostRecentLogDate: ' + mostRecentLogDate);
 
       if (submitedLogDate === mostRecentLogDate) {
         props.logAlreadySubmitedAlert();
@@ -84,10 +115,6 @@ const dailyLog = async props => {
         console.log('ATTEMPTING TO REDIRECT HERE TOO');
         return <Redirect to='/dashboard' />;
       }
-
-      console.log(existingLogs.length);
-      console.log(mostRecentLogDate);
-      console.log(submitedLogDate);
     } else {
       console.log('Nothing Happened!');
     }

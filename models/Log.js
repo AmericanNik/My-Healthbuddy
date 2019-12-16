@@ -2,13 +2,15 @@ const mongoose = require('mongoose');
 
 const LogSchema = new mongoose.Schema({
   logDate: {
-    type: Date,
-    default: Date.now,
+    type: Number,
     required: true
   },
   journalEntry: {
     type: String,
     maxLength: [500, 'Logs can contain up to 500 characters']
+  },
+  conditions: {
+    type: [Object]
   },
   dailyWellbeing: {
     type: Number,

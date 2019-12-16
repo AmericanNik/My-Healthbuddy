@@ -4,6 +4,7 @@ const Log = require('../models/Log');
 const Healthbuddy = require('../models/Healthbuddy');
 
 exports.getAllLogs = asyncHandler(async (req, res, next) => {
+  console.log('Getting all logs!');
   if (req.params.healthbuddyId) {
     const logs = await Log.find({
       healthbuddy: req.params.healthbuddyId

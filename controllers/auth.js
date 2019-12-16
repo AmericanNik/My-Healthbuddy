@@ -85,6 +85,10 @@ exports.getMyHealthbuddy = asyncHandler(async (req, res, next) => {
     user: req.user._id
   });
 
+  if (!healthbuddy) {
+    console.log('NO HEALTHBUDDY FOUND, SHOULD PROBABLY MAKE ONE');
+  }
+
   const logs = await Log.find({ healthbuddy: healthbuddy[0]._id });
 
   data = {
