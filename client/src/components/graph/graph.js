@@ -28,7 +28,7 @@ const Graph = () => {
     logEntry: ''
   });
   const [clicked, setClicked] = useState({
-    isClicked: false
+    isClicked: true
   });
 
   const {
@@ -51,32 +51,31 @@ const Graph = () => {
       console.log(userData.data.data.logs);
       if (dateArray.lenth === 0) {
         let logArray = userData.data.data.logs;
-        logArray.forEach(function (elem) {
-          let date = ((elem.logDate) * 1000);
-          let fullDate = moment(date).format("MMM DD");
+        logArray.forEach(function(elem) {
+          let date = elem.logDate * 1000;
+          let fullDate = moment(date).format('MMM DD');
           dateArray.push(fullDate);
           severityArray.push(elem.dailyWellbeing);
           activityArray.push(elem.dailyActivity);
-          temperatureArray.push((elem.temperature) / 10);
-          humidityArray.push(((elem.humidity) * 1000) / 10);
-        })
-      }
-      else {
+          temperatureArray.push(elem.temperature / 10);
+          humidityArray.push((elem.humidity * 1000) / 10);
+        });
+      } else {
         dateArray = [];
         severityArray = [];
         activityArray = [];
         temperatureArray = [];
         humidityArray = [];
         let logArray = userData.data.data.logs;
-        logArray.forEach(function (elem) {
-          let date = ((elem.logDate) * 1000);
-          let fullDate = moment(date).format("MMM DD");
+        logArray.forEach(function(elem) {
+          let date = elem.logDate * 1000;
+          let fullDate = moment(date).format('MMM DD');
           dateArray.push(fullDate);
           severityArray.push(elem.dailyWellbeing);
           activityArray.push(elem.dailyActivity);
-          temperatureArray.push((elem.temperature) / 10);
-          humidityArray.push(((elem.humidity) * 100) / 10);
-        })
+          temperatureArray.push(elem.temperature / 10);
+          humidityArray.push((elem.humidity * 100) / 10);
+        });
       }
     } catch (err) {
       console.log(err);
@@ -140,8 +139,6 @@ const Graph = () => {
       });
     }
   };
-
-
 
   return (
     <div className='landing graphContainer'>
