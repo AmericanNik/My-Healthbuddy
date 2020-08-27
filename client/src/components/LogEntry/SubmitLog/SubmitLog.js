@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import './SubmitLog.css';
 
-const dailyLog = async props => {
+const dailyLog = async (props) => {
   if (props) {
     var logDate = Date.now();
     const answerArr = [];
@@ -31,7 +31,7 @@ const dailyLog = async props => {
       humidity: props.humidity,
       dewPoint: props.dewPoint,
       temperature: props.temperature,
-      logDate: logDate
+      logDate: logDate,
     };
     console.log(compiledLog);
 
@@ -89,23 +89,41 @@ const dailyLog = async props => {
 
       return <Redirect push to='/dashboard' />;
     } else if (logTotal >= 1) {
+      console.log('object');
       const mostRecentLog = data.data.data.logs.pop();
 
-      const submitedLogDate = Date(compiledLog.logDate)
-        .toString()
-        .slice(0, 16);
+      const submitedLogDate = Date(compiledLog.logDate).toString().slice(0, 16);
       console.log('submitedLogDate:' + submitedLogDate);
 
       const mostRecentLogDate = Date(mostRecentLog.logDate)
         .toString()
         .slice(0, 16);
 
-      console.log('mostRecentLogDate: ' + mostRecentLogDate);
+      let todaysDate = Date.now();
 
-      if (submitedLogDate === mostRecentLogDate) {
+      console.log('Todays Date Step 1: ' + todaysDate);
+
+      todaysDate = Date(todaysDate);
+
+      console.log('Todays Date Step 2: ' + todaysDate.slice(0, 16));
+
+      let submittedDate = new Date();
+      submittedDate.setTime(mostRecentLog.logDate);
+      console.log('---------------------------------');
+      console.log(mostRecentLog);
+      console.log(mostRecentLog.logDate);
+      console.log(submitedLogDate);
+      console.log(mostRecentLogDate);
+
+      submittedDate = submittedDate.toString().slice(0, 16);
+      console.log(submittedDate);
+      console.log('----------------------------------');
+
+      if (submittedDate === mostRecentLogDate) {
+        console.log('Already submitted a log for today!');
         props.logAlreadySubmitedAlert();
-        console.log('already submited today');
       } else {
+        console.log('----First Log Of The Day----');
         const logPost = await axios.post(
           `https://my-healthbuddy.herokuapp.com/api/v1/healthbuddies/${healthbuddyID}/logs`,
           compiledLog
@@ -121,8 +139,8 @@ const dailyLog = async props => {
   }
 };
 
-const SubmitLog = props => {
-  const onLogSubmit = e => {
+const SubmitLog = (props) => {
+  const onLogSubmit = (e) => {
     dailyLog(props);
   };
 
