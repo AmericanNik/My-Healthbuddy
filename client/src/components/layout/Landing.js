@@ -13,6 +13,7 @@ class Landing extends React.Component {
               <div className='container landing-inner '>
                 <h1 className='x-large'>Health Buddy</h1>
                 <p className='lead'>Helping you take control of your health!</p>
+                <ConditionSearchBar />
                 <div className='buttons'>
                   <Link
                     to='register'
